@@ -1,0 +1,31 @@
+/* layout */
+html:not(.touchmode) {
+    ::-webkit-scrollbar {width: 12px;background-color: transparent;height:12px;}
+    ::-webkit-scrollbar-thumb {background-color: #ccc;border-radius: 12px;background-clip: padding-box;border: 3px solid transparent;}
+    ::-webkit-scrollbar-track {background-color: transparent;border-radius: 12px;box-shadow: inset 0px 0px 5px transparent;}
+}
+
+
+.front_body{
+  min-width:1440px;
+    &.center_form_body{
+        background:#f5f5f5 url("../images/background@2x.jpg") no-repeat 0 0/100% auto;
+        .page_wrap{
+            min-height:100vh; position:relative; height:auto;
+            // background:url("../images/login_object2@2x.png") no-repeat 100% 100%/244px auto;;
+            display:flex;align-items: center;justify-content: center;
+        }
+    }
+    &.map_api_body{
+       
+    }
+    .page_wrap{display:flex;flex-direction: column;height:100vh;
+        > div:not(.tooltip_wrap),
+        > section,
+        > header,
+        > footer{width:100%;box-sizing: border-box;}
+    }
+}
+
+.page_wrap{min-width:1440px;}
+
