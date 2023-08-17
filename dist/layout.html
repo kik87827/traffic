@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="format-detection" content="telephone=no" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=1440" />
+	<link rel="stylesheet" href="./assets/css/common.css" />
+	<script src="./assets/js/jquery-3.4.1.min.js"></script>
+	<script src="./assets/js/dynamicListener.min.js"></script>
+	<script src="./assets/js/swiper.min.js"></script>
+	<script src="./assets/js/comboTreePlugin.js"></script>
+	<script src="./assets/js/tui-time-picker.js"></script>
+	<script src="./assets/js/tui-date-picker.js"></script>
+	<script src="./assets/js/ui.js"></script>
+
+	<title></title>
+</head>
+
+<body class="front_body half_form_body">
+	<div class="page_wrap">
+		<div class="half_form_page">
+			<div class="bg_half_form"></div>
+			<div class="hform_content_wrap">
+				<div class="hform_long_row">
+					<div class="hform_inner_field">
+						<h1 class="hform_inner_logo"><img src="./assets/images/logo@2x.png" alt="교통관리 서비스 Traffic Management Service"></h1>
+						<div class="hform_inner_cont">
+							내용이 들어갑니다.
+						</div>
+					</div>
+				</div>
+				<div class="hform_short_row">
+					<ul class="hform_bottom_logo_list">
+						<li><a href="#" class="hform_bottom_logo" target="_blank" title="새창"><img src="./assets/images/bottom_logo_01.png" alt=""></a></li>
+						<li><a href="#" class="hform_bottom_logo" target="_blank" title="새창"><img src="./assets/images/bottom_logo_02.png" alt=""></a></li>
+						<li><a href="#" class="hform_bottom_logo" target="_blank" title="새창"><img src="./assets/images/bottom_logo_03.png" alt=""></a></li>
+						<li><a href="#" class="hform_bottom_logo" target="_blank" title="새창"><img src="./assets/images/bottom_logo_04.png" alt=""></a></li>
+						<li><a href="#" class="hform_bottom_logo" target="_blank" title="새창"><img src="./assets/images/bottom_logo_05.png" alt=""></a></li>
+						<li><a href="#" class="hform_bottom_logo" target="_blank" title="새창"><img src="./assets/images/bottom_logo_06.png" alt=""></a></li>
+						<li><a href="#" class="hform_bottom_logo" target="_blank" title="새창"><img src="./assets/images/bottom_logo_05.png" alt=""></a></li>
+						<li><a href="#" class="hform_bottom_logo" target="_blank" title="새창"><img src="./assets/images/bottom_logo_07.png" alt=""></a></li>
+						<li><a href="#" class="hform_bottom_logo" target="_blank" title="새창"><img src="./assets/images/bottom_logo_08.png" alt=""></a></li>
+						<li><a href="#" class="hform_bottom_logo" target="_blank" title="새창"><img src="./assets/images/bottom_logo_09.png" alt=""></a></li>
+					</ul>
+					<p class="hform_footer_copy">본 홈페이지의 모든 콘텐츠 및 정보는 <strong class="emp">저작권법의 보호</strong>를 받는바, 무단 연계, 전재, 복사, 배포 등은 법적제재를 받을 수 있습니다.</p>
+				</div>
+			</div>
+		</div>
+
+		<script>
+			// 퍼블확인용
+			let url = window.location.href.split('?')[1];
+			let url_2 = url !== undefined ? url.split('#')[0] : null;
+			if (url_2 === "loading") {
+				document.querySelector(".loading_layer").classList.add("active");
+			}
+		</script>
+	</div>
+</body>
+
+</html>

@@ -68,46 +68,10 @@
    </div>
    <div class="bg_twonav"></div>
 </header>
-<!-- popup -->
-@@include('_user_popup.html')
-@@include('_user_popup_modify.html')
-<!-- // popup -->
 <script>
-    // 선언
-    var user_popup = new DesignPopup({
-        selector: "#user_popup",
-        beforeCallback(){
-            console.log('beforeCallback');
-        },
-        callback(){
-            console.log('callback');
-        }
-    });
-    var user_modify = new DesignPopup({
-        selector: "#user_modify_popup",
-        beforeCallback(){
-            console.log('beforeCallback');
-        },
-        callback(){
-            console.log('callback');
-        }
-    });
-
-    //이벤트
-    document.querySelector("#btn_user_popup").addEventListener("click",(e)=>{
-        e.preventDefault();
-        user_popup.popupShow();
-    })
-
+   
     // 퍼블확인용
     let header_url = window.location.href.split('?')[1];
     let header_url_2 = header_url !== undefined ? header_url.split('#')[0] : null;
-    if(header_url_2 === "user"){
-        // show 호출
-        user_popup.popupShow();
-    }
-    if(header_url_2 === "user_modify"){
-        // show 호출
-        user_modify.popupShow();
-    }
+    
 </script>
