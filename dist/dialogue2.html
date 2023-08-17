@@ -1,14 +1,62 @@
 <!DOCTYPE html>
 <html lang="ko">
-@@include('./include/_head.html')
+
+<head>
+	<meta charset="utf-8">
+	<meta name="format-detection" content="telephone=no" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=1440" />
+	<link rel="stylesheet" href="./assets/css/common.css" />
+	<script src="./assets/js/jquery-3.4.1.min.js"></script>
+	<script src="./assets/js/dynamicListener.min.js"></script>
+	<script src="./assets/js/swiper.min.js"></script>
+	<script src="./assets/js/comboTreePlugin.js"></script>
+	<script src="./assets/js/tui-time-picker.js"></script>
+	<script src="./assets/js/tui-date-picker.js"></script>
+	<script src="./assets/js/ui.js"></script>
+
+	<title></title>
+</head>
+
 <body class="front_body user_body">
 	<div class="page_wrap">
-		@@include('./include/_header.html')
+		<header class="header_wrap">
+			<div class="hgroup_main_cols">
+				<h1 class="toplogo"><a href="#" class="toplogo_link"><span class="hdtext">교통관리 서비스 Traffic Management Service</span></a></h1>
+				<nav class="nav_list_wrap">
+					<ul class="nav_list">
+						<li id="one_depth_01">
+							<a href="#" class="nav_oneitem active"><span class="nav_oneitem_text">Use-case 관리</span></a>
+						</li>
+						<li id="one_depth_02">
+							<a href="#" class="nav_oneitem"><span class="nav_oneitem_text">Simulation 목록 관리</span></a>
+						</li>
+					</ul>
+				</nav>
+			</div>
+			<div class="hgroup_sub_cols">
+				<ul class="hgroup_util_list">
+					<li>
+						<a href="#" class="util_text_item">
+							<span class="util_who_dom">Admin</span> <span class="util_sir_dom">님</span>
+						</a>
+					</li>
+					<li><a href="#" class="util_ico_menu"><span class="hdtext">로그아웃</span></a></li>
+				</ul>
+			</div>
+		</header>
+		<script>
+			// 퍼블확인용
+			let header_url = window.location.href.split('?')[1];
+			let header_url_2 = header_url !== undefined ? header_url.split('#')[0] : null;
+		</script>
 		<div class="api_middle_wrap">
 			<div class="api_middle_main_cols">
 				<div class="mid_short_row">
 					<div class="api_subvisual_box">
-						<div class="api_sv_img_cols"><h2 class="api_sv_title">Use-case 관리</h2></div>
+						<div class="api_sv_img_cols">
+							<h2 class="api_sv_title">Use-case 관리</h2>
+						</div>
 						<div class="api_sv_else_cols">
 							<a href="#" class="btn_api_sv">
 								<i class="ico_inc"></i>
@@ -110,95 +158,67 @@
 					<h2 class="popup_title">타이틀</h2>
 					<a href="javascript:;" class="btn_popup_close"><span class="hdtext">팝업 닫기</span></a>
 				</div>
-				<div class="popup_content_low type2">
-					<div class="mid_short_row">
-						<div class="list_data_search_wrap">
-							<div style="background:#fff;height:35px;border-radius:4px;display:flex;align-items: center;justify-content: center;">
-								search
-							</div>
-						</div>
-						<div class="listdata_render_wrap">
-							<div class="listdata_render_data_cols">
-								<p class="ico_copy_parag"><span class="ico_copy_intext">병합을 원하는 Use-case를 선택해주세요.</span></p>
-							</div>
-							<div class="listdata_render_control_cols">
-								<ul class="btn_listdata_control_list">
-									<li><a href="#" class="btn_onlytext">전체해제</a></li>
-									<li>
-										<a href="#" class="btn_field_formbox small">
-											<span class="btn_field_formbox_text">병합</span>
-										</a>
-									</li>
-								</ul>
-							</div>
-						</div>
-					</div>
-					<div class="mid_liquid_row">
-						<!-- list_table_render_wrap -->
-						<div class="list_table_render_wrap">
-							내용이 들어갑니다.<br>
-							내용이 들어갑니다.<br>
-							내용이 들어갑니다.<br>
-							내용이 들어갑니다.<br>
-							내용이 들어갑니다.<br>
-							내용이 들어갑니다.<br>
-							내용이 들어갑니다.<br>
-							내용이 들어갑니다.<br>
-							내용이 들어갑니다.<br>
-							내용이 들어갑니다.<br>
-							내용이 들어갑니다.<br>
-							내용이 들어갑니다.<br>
-							내용이 들어갑니다.<br>
-							내용이 들어갑니다.<br>
-							내용이 들어갑니다.<br>
-							내용이 들어갑니다.<br>
-							내용이 들어갑니다.<br>
-							내용이 들어갑니다.<br>
-							내용이 들어갑니다.<br>
-							내용이 들어갑니다.<br>
-							내용이 들어갑니다.<br>
-							내용이 들어갑니다.<br>
-							내용이 들어갑니다.<br>
-							내용이 들어갑니다.<br>
-							내용이 들어갑니다.<br>
-							내용이 들어갑니다.<br>
-							내용이 들어갑니다.<br>
-							내용이 들어갑니다.<br>
-							내용이 들어갑니다.<br>
-							내용이 들어갑니다.<br>
-							내용이 들어갑니다.<br>
-							내용이 들어갑니다.<br>
-							내용이 들어갑니다.<br>
-							내용이 들어갑니다.<br>
-							내용이 들어갑니다.<br>
-							내용이 들어갑니다.<br>
-							내용이 들어갑니다.<br>
-							내용이 들어갑니다.<br>
-							내용이 들어갑니다.<br>
-							내용이 들어갑니다.<br>
-							내용이 들어갑니다.<br>
-							내용이 들어갑니다.<br>
-							내용이 들어갑니다.<br>
-							내용이 들어갑니다.<br>
-							내용이 들어갑니다.<br>
-							내용이 들어갑니다.<br>
-							내용이 들어갑니다.
-						</div>
-						<!-- list_table_render_wrap -->
-					</div>
+				<div class="popup_content_low">
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.<br>
+					내용이 들어갑니다.
 				</div>
 			</div>
 		</div>
 		<!-- // popup -->
-		
+
 		<script>
 			// 선언
 			var designPopup = new DesignPopup({
 				selector: "#samplePopup",
-				beforeCallback(){
+				beforeCallback() {
 					console.log('beforeCallback');
 				},
-				callback(){
+				callback() {
 					console.log('callback');
 				}
 			});
@@ -208,7 +228,7 @@
 			// 퍼블확인용
 			let url = window.location.href.split('?')[1];
 			let url_2 = url !== undefined ? url.split('#')[0] : null;
-			if(url_2 === "loading"){
+			if (url_2 === "loading") {
 				document.querySelector(".loading_layer").classList.add("active");
 			}
 		</script>

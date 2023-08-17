@@ -184,3 +184,72 @@ html:not(.touchmode) {
         color: #007e67; font-weight: 500;
     }
 }
+
+
+
+
+  
+  /* popup */
+  
+/* 공통 popup */
+.popup_wrap {position: fixed;top: 0;left: 0;width: 100%;height: 100%;opacity:0;transition:.4s;z-index: 130;display: none;align-items: center;justify-content: center;min-width:1440px;overflow: hidden;flex-wrap: wrap;box-sizing:border-box;padding:0 20px;
+    &.active {display: flex;}
+    &.motion_end{opacity:1;}
+    &.small {
+        .popup_item{width:500px;}
+    }
+    &.skin2{
+        .popup_title_low{
+        border-bottom:1px solid #ddd;padding:16px 0 0;margin:0 40px;
+        }
+        .popup_content_low{margin-top:30px;}
+    }
+}
+  
+  .popup_item {
+    box-sizing: border-box;z-index: 20;width:948px;margin: 40px auto;max-height: calc(100% - 80px);position: relative;display: flex;flex-direction: column;border-radius: 4px;
+    border-radius: 4px;
+    background-color: #eef1f4;
+  }
+  
+  .layer_wrap_parent{
+    &.has_active_multi{
+        .bg_dim{visibility: hidden;}
+        .popup_wrap{
+            &.active{
+                &.active_first{
+                    .bg_dim{visibility: visible;}
+                }
+            }
+        }
+    }
+  }
+  
+  
+  .bg_dim {display: block;width: 100%;height: 100%;position: fixed;top: 0;left: 0;z-index: 0;background: #222;opacity:.6;
+  }
+  
+  .popup_title_low {flex: 0;padding: 38px 80px 35px;
+    
+  }
+  
+  .popup_title {
+    font-weight: 700;
+    letter-spacing: -0.44px;
+    color: #000;
+
+    font-size: 16px;
+    line-height: 1.3;
+    text-align: center;
+    color: #000;
+  
+  }
+  
+  .btn_popup_close{display:block;width:36px;height:36px;background:url("../images/ic_close@2x.png") no-repeat 0 0/100% auto;position:absolute;top:30px;right:30px;}
+  
+.popup_content_low{
+    flex:1;min-height:0;position:relative;overflow:hidden;overflow-y:overlay;padding:0 30px 30px;
+    &.type2{
+        overflow: hidden;display:flex;flex-direction: column;
+    }
+}
