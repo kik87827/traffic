@@ -1,3 +1,28 @@
 /* contents */
+.cform_field_form{
+    margin-top:40px;
+}
+.cform_field_row{
+    margin-bottom:10px;
+    &:last-of-type{margin-bottom:0;}
+    .input_component_box{
+    }
+}
+
+
+.cform_field_row{
+    &.warn_message{
+        display:none;
+        &.active{display:block;}
+    }
+}
+.warn_message_list{
+    margin:10px 0 0 6px; color:$warn; font-size:14px;
+     > li{
+        margin-bottom:6px; position:relative;padding-left:10px;
+         &:before{display:block;content:'';width:4px;height:6px;background:url("../images/ic_error@2x.png") no-repeat 0 0/100% auto;position:absolute;top:5px;left:0;}
+         &:last-of-type{margin-bottom:0;}
+     }
+}
 
 /* component */

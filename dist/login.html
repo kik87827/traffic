@@ -18,16 +18,282 @@
 	<title></title>
 </head>
 
-<body class="front_body">
+<body class="front_body half_form_body">
 	<div class="page_wrap">
+		<div class="half_form_page">
+			<div class="bg_half_form"></div>
+			<div class="hform_content_wrap">
+				<div class="hform_long_row">
+					<div class="hform_inner_field">
+						<h1 class="hform_inner_logo"><img src="./assets/images/logo@2x.png" alt="교통관리 서비스 Traffic Management Service"></h1>
+						<div class="hform_inner_cont">
+							<!-- 내용이 들어갑니다. -->
+							<div class="cform_field_form">
+								<div class="cform_field_row">
+									<div class="input_component_box">
+										<i class="ico_input ico_men"></i>
+										<input type="text" class="input_origin_item" placeholder="아이디">
+										<span class="count_wrap">
+											<span class="count_text">0/0</span>
+										</span>
+										<button class="btn_form_reset"><span class="hdtext">리셋</span></button>
+									</div>
+								</div>
+								<div class="cform_field_row warn_message">
+									<p class="warn_para"><strong class="warn_bold">아이디</strong>를 입력해주세요.</p>
+								</div>
+								<div class="cform_field_row">
+									<div class="input_component_box" id="sample_color_warn">
+										<i class="ico_input ico_password"></i>
+										<input type="password" class="input_origin_item" placeholder="비밀번호">
+										<span class="count_wrap">
+											<span class="count_text">0/0</span>
+										</span>
+										<button class="btn_form_reset"><span class="hdtext">리셋</span></button>
+									</div>
+								</div>
+								<div class="cform_field_row warn_message">
+									<p class="warn_para"><strong class="warn_bold">비밀번호</strong>를 입력해주세요.</p>
+								</div>
+							</div>
+							<div class="cform_btn_primary_row">
+								<a href="#" class="btn_formbox_submit"><span class="btn_formbox_submit_text">로그인</span></a>
+							</div>
+							<div class="cform_other_row">
+								<p class="cform_other_label">비밀번호를 잊으셨나요?</p>
+								<div class="cform_other_btn">
+									<a href="#" class="btn_text_cfrom">비밀번호 찾기</a>
+								</div>
+							</div>
+							<div class="cform_btn_sub_row">
+								<a href="#" class="btn_formbox_submit type2"><span class="btn_formbox_submit_text">회원가입</span></a>
+							</div>
+							<!-- // 내용이 들어갑니다. -->
+						</div>
+					</div>
+				</div>
+				<div class="hform_short_row">
+					<ul class="hform_bottom_logo_list">
+						<li><a href="#" class="hform_bottom_logo" target="_blank" title="새창"><img src="./assets/images/bottom_logo_01.png" alt=""></a></li>
+						<li><a href="#" class="hform_bottom_logo" target="_blank" title="새창"><img src="./assets/images/bottom_logo_02.png" alt=""></a></li>
+						<li><a href="#" class="hform_bottom_logo" target="_blank" title="새창"><img src="./assets/images/bottom_logo_03.png" alt=""></a></li>
+						<li><a href="#" class="hform_bottom_logo" target="_blank" title="새창"><img src="./assets/images/bottom_logo_04.png" alt=""></a></li>
+						<li><a href="#" class="hform_bottom_logo" target="_blank" title="새창"><img src="./assets/images/bottom_logo_05.png" alt=""></a></li>
+						<li><a href="#" class="hform_bottom_logo" target="_blank" title="새창"><img src="./assets/images/bottom_logo_06.png" alt=""></a></li>
+						<li><a href="#" class="hform_bottom_logo" target="_blank" title="새창"><img src="./assets/images/bottom_logo_05.png" alt=""></a></li>
+						<li><a href="#" class="hform_bottom_logo" target="_blank" title="새창"><img src="./assets/images/bottom_logo_07.png" alt=""></a></li>
+						<li><a href="#" class="hform_bottom_logo" target="_blank" title="새창"><img src="./assets/images/bottom_logo_08.png" alt=""></a></li>
+						<li><a href="#" class="hform_bottom_logo" target="_blank" title="새창"><img src="./assets/images/bottom_logo_09.png" alt=""></a></li>
+					</ul>
+					<p class="hform_footer_copy">본 홈페이지의 모든 콘텐츠 및 정보는 <strong class="emp">저작권법의 보호</strong>를 받는바, 무단 연계, 전재, 복사, 배포 등은 법적제재를 받을 수 있습니다.</p>
+				</div>
+				<!-- hform_layer_wrap -->
+				<div class="hform_layer_wrap" id="join_layer">
+					<div class="hform_layer_inner_container">
+						<div class="hform_layer_inner_row">
+							<div class="hform_layer_inner_cont">
+								<h3 class="hform_layer_in_title">회원가입</h3>
+								<div class="hform_layer_in_content">
+									<!-- form -->
+									<div class="cform_field_tb_row">
+										<table class="cform_field_tb">
+											<tr>
+												<th><label for="formitem_01" class="cform_field_label imp">아이디</label></th>
+												<td>
+													<div class="input_component_box">
+														<input type="text" class="input_origin_item" placeholder="아이디" id="formitem_01">
+														<span class="count_wrap">
+															<span class="count_text">0/0</span>
+														</span>
+														<button class="btn_form_reset"><span class="hdtext">리셋</span></button>
+													</div>
+													<div class="form_each_message_group">
+														<p class="form_each_message"><strong>아이디</strong>를 입력해 주세요.</p>
+													</div>
+												</td>
+											</tr>
+											<tr>
+												<th><label for="formitem_02" class="cform_field_label imp">이메일</label></th>
+												<td>
+													<div class="input_component_box">
+														<input type="text" class="input_origin_item" placeholder="ex) abc@abc.com" id="formitem_02">
+														<span class="count_wrap">
+															<span class="count_text">0/0</span>
+														</span>
+														<button class="btn_form_reset"><span class="hdtext">리셋</span></button>
+													</div>
+													<div class="form_each_message_group">
+														<p class="form_each_message"><strong>이메일</strong>을 입력해 주세요.</p>
+													</div>
+												</td>
+											</tr>
+											<tr>
+												<th><label for="formitem_03" class="cform_field_label imp">이름</label></th>
+												<td>
+													<div class="input_component_box">
+														<input type="text" class="input_origin_item" placeholder="2~16자 / 국문, 영문" id="formitem_03">
+														<span class="count_wrap">
+															<span class="count_text">0/0</span>
+														</span>
+														<button class="btn_form_reset"><span class="hdtext">리셋</span></button>
+													</div>
+													<div class="form_each_message_group">
+														<p class="form_each_message"><strong>이름</strong>을 입력해 주세요.</p>
+													</div>
+												</td>
+											</tr>
+											<tr>
+												<th><label for="formitem_04" class="cform_field_label imp">전화번호</label></th>
+												<td>
+													<div class="input_component_box">
+														<input type="text" class="input_origin_item" placeholder="9~11자 / ‘-’없이 입력" id="formitem_04">
+														<span class="count_wrap">
+															<span class="count_text">0/0</span>
+														</span>
+														<button class="btn_form_reset"><span class="hdtext">리셋</span></button>
+													</div>
+													<div class="form_each_message_group">
+														<p class="form_each_message"><strong>전화번호</strong>를 입력해 주세요.</p>
+													</div>
+												</td>
+											</tr>
+											<tr>
+												<th><label for="formitem_05" class="cform_field_label imp">소속</label></th>
+												<td>
+													<div class="input_component_box">
+														<input type="text" class="input_origin_item" placeholder="소속업체명" id="formitem_05">
+														<span class="count_wrap">
+															<span class="count_text">0/0</span>
+														</span>
+														<button class="btn_form_reset"><span class="hdtext">리셋</span></button>
+													</div>
+													<div class="form_each_message_group">
+														<p class="form_each_message"><strong>소속</strong>을 입력해 주세요.</p>
+													</div>
+												</td>
+											</tr>
+											<tr>
+												<th><label for="formitem_06" class="cform_field_label imp">비밀번호</label></th>
+												<td>
+													<div class="td_blockitem">
+														<div class="input_component_box">
+															<input type="password" class="input_origin_item" placeholder="8~16자 / 영문+숫자+특수기호 조합" id="formitem_06">
+															<span class="count_wrap">
+																<span class="count_text">0/0</span>
+															</span>
+															<button class="btn_form_reset"><span class="hdtext">리셋</span></button>
+														</div>
+														<div class="form_each_message_group">
+															<p class="form_each_message"><strong>8~16자로 영문, 숫자, 특수기호</strong>를 조합해서 입력해 주세요.</p>
+														</div>
+													</div>
+													<div class="td_blockitem">
+														<div class="input_component_box">
+															<input type="password" class="input_origin_item" placeholder="비밀번호 확인">
+															<span class="count_wrap">
+																<span class="count_text">0/0</span>
+															</span>
+															<button class="btn_form_reset"><span class="hdtext">리셋</span></button>
+														</div>
+														<div class="form_each_message_group">
+															<p class="form_each_message"><strong>비밀번호</strong>를 입력해 주세요.</p>
+														</div>
+													</div>
+												</td>
+											</tr>
+										</table>
+									</div>
+									<div class="cform_btn_primary_row">
+										<a href="#" class="btn_formbox_submit else"><span class="btn_formbox_submit_text">취소</span></a>
+										<a href="#" class="btn_formbox_submit"><span class="btn_formbox_submit_text">가입하기</span></a>
+									</div>
+									<!-- // form -->
+								</div>
+							</div>
+						</div>
+					</div>
+					<a href="#" class="btn_hform_layer_close"><span class="hdtext">닫기</span></a>
+				</div>
+				<!-- // hform_layer_wrap -->
+				<!-- hform_layer_wrap -->
+				<div class="hform_layer_wrap" id="password_layer">
+					<div class="hform_layer_inner_container">
+						<div class="hform_layer_inner_row">
+							<div class="hform_layer_inner_cont">
+								<h3 class="hform_layer_in_title">비밀번호 찾기</h3>
+								<div class="hform_layer_in_content">
+									<!-- form -->
+									<div class="cform_field_tb_row">
+										<table class="cform_field_tb">
+											<tr>
+												<th><label for="formitem_01" class="cform_field_label imp">아이디</label></th>
+												<td>
+													<div class="input_component_box">
+														<input type="text" class="input_origin_item" placeholder="아이디" id="formitem_01">
+														<span class="count_wrap">
+															<span class="count_text">0/0</span>
+														</span>
+														<button class="btn_form_reset"><span class="hdtext">리셋</span></button>
+													</div>
+													<div class="form_each_message_group">
+														<p class="form_each_message"><strong>아이디</strong>를 입력해 주세요.</p>
+													</div>
+												</td>
+											</tr>
+											<tr>
+												<th><label for="formitem_02" class="cform_field_label imp">이메일</label></th>
+												<td>
+													<div class="input_component_box">
+														<input type="text" class="input_origin_item" placeholder="ex) abc@abc.com" id="formitem_02">
+														<span class="count_wrap">
+															<span class="count_text">0/0</span>
+														</span>
+														<button class="btn_form_reset"><span class="hdtext">리셋</span></button>
+													</div>
+													<div class="form_each_message_group">
+														<p class="form_each_message"><strong>이메일</strong>을 입력해 주세요.</p>
+													</div>
+												</td>
+											</tr>
+											<tr>
+												<th><label for="formitem_03" class="cform_field_label imp">이름</label></th>
+												<td>
+													<div class="input_component_box">
+														<input type="text" class="input_origin_item" placeholder="2~16자 / 국문, 영문" id="formitem_03">
+														<span class="count_wrap">
+															<span class="count_text">0/0</span>
+														</span>
+														<button class="btn_form_reset"><span class="hdtext">리셋</span></button>
+													</div>
+													<div class="form_each_message_group">
+														<p class="form_each_message"><strong>이름</strong>을 입력해 주세요.</p>
+													</div>
+												</td>
+											</tr>
+										</table>
+									</div>
+									<div class="cform_btn_primary_row">
+										<a href="#" class="btn_formbox_submit"><span class="btn_formbox_submit_text">확인</span></a>
+									</div>
+									<!-- // form -->
+								</div>
+							</div>
+						</div>
+					</div>
+					<a href="#" class="btn_hform_layer_close"><span class="hdtext">닫기</span></a>
+				</div>
+				<!-- // hform_layer_wrap -->
+			</div>
 
-
+		</div>
 		<script>
 			// 퍼블확인용
 			let url = window.location.href.split('?')[1];
 			let url_2 = url !== undefined ? url.split('#')[0] : null;
-			if (url_2 === "loading") {
-				document.querySelector(".loading_layer").classList.add("active");
+			if (url_2 === "join") {
+				hformLayerFunc("#join_layer");
+			} else if (url_2 === "password") {
+				hformLayerFunc("#password_layer");
 			}
 		</script>
 	</div>

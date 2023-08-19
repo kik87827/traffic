@@ -1,0 +1,70 @@
+
+
+/* component */
+.input_component_box{
+    display:flex;height:48px;padding: 0 8px 0 16px;align-items: center;box-sizing: border-box;border-radius: 10px;
+    background-color: rgba(143, 146, 161, 0.05);border:2px solid transparent;
+    background-color: rgba(143, 146, 161, 0.05);
+    .ico_input{
+        display:block;width:16px;height:16px;background-repeat:no-repeat;background-size:100% auto;background-position:0 0;margin-right:8px;
+        & + input.input_origin_item{padding:0;}
+        &.ico_men{background-image:url("../images/ic_id_off@2x.png");}
+        &.ico_password{background-image:url("../images/ic_pw_off@2x.png");}
+    }
+    .count_wrap{
+        display:none;white-space:nowrap;position:relative;top:-1px;
+        & + .btn_form_reset{margin-left:4px;}
+    }
+    .count_text{font-size:12px;color: rgba(49, 52, 68, 0.5)}
+    .btn_form_reset{display:none;width:24px;height:24px;background:url("../images/ic_txt_del2@2x.png") no-repeat 0 0/100% auto;}
+    &.warn{
+        border-color:$warn !important;
+        .ico_input{}
+        .ico_input.ico_men{}
+        .count_wrap{}
+        .count_text{}
+        .btn_form_reset{}
+        &+ .form_each_message_group{}
+    }
+    // &.color_focus{
+    //     border-color:#9747ff;
+    // }
+    &.wtype2{
+        &.warn{
+            .ico_input{}
+            .ico_input.ico_men{}
+            .count_wrap{}
+            .count_text{}
+            .btn_form_reset{}
+            & + .form_each_message_group{}
+        }
+    }
+    &.focus{
+        
+        .ico_input{}
+        .ico_input.ico_men{}
+        .count_wrap{display:block;}
+        .count_text{}
+        .btn_form_reset{display:block;}
+        & + .form_each_message_group{}
+    }
+    &.filled{
+        border-color:#9747ff;
+        &.focus{
+        }
+        .count_wrap{display:block;}
+        .btn_form_reset{display:block;}
+    }
+    &.skin2{
+        input.input_origin_item{}
+    }
+    &.small{
+        border-radius: 4px;height:auto;padding:0 5px 0 10px;
+        input.input_origin_item{height:36px;font-size:13px;}
+    }
+}
+
+
+input.input_origin_item{
+    border:0;width:100%;flex:1;line-height:1;font-size:14px;height:44px;color:#313444;background:transparent;
+}
