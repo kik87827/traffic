@@ -46,7 +46,7 @@ function layoutFunc() {
 function menuRock(target) {
   const targetDom = document.querySelector(target);
   if (!!targetDom) {
-    targetDom.classList.add("active");
+    targetDom.querySelector(".nav_oneitem").classList.add("active");
   }
 }
 

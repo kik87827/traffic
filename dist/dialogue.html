@@ -26,7 +26,7 @@
 				<nav class="nav_list_wrap">
 					<ul class="nav_list">
 						<li id="one_depth_01">
-							<a href="#" class="nav_oneitem active"><span class="nav_oneitem_text">Use-case 관리</span></a>
+							<a href="#" class="nav_oneitem"><span class="nav_oneitem_text">Use-case 관리</span></a>
 						</li>
 						<li id="one_depth_02">
 							<a href="#" class="nav_oneitem"><span class="nav_oneitem_text">Simulation 목록 관리</span></a>
@@ -45,10 +45,178 @@
 				</ul>
 			</div>
 		</header>
+
+		<!-- popup -->
+		<div class="popup_wrap small" id="userDataPopup">
+			<div class="bg_dim"></div>
+			<div class="popup_item">
+				<div class="popup_title_low">
+					<h2 class="popup_title">사용자 정보</h2>
+					<a href="javascript:;" class="btn_popup_close"><span class="hdtext">팝업 닫기</span></a>
+				</div>
+				<div class="popup_content_low">
+					<div class="data_viewer_table_wrap">
+						<table class="data_viewer_table">
+							<tr>
+								<th><span class="data_viewer_key">이메일</span></th>
+								<td>
+									<div class="data_viewer_value">abc@abc.com</div>
+								</td>
+							</tr>
+							<tr>
+								<th><span class="data_viewer_key">이름</span></th>
+								<td>
+									<div class="data_viewer_value">김사용자</div>
+								</td>
+							</tr>
+							<tr>
+								<th><span class="data_viewer_key">전화번호</span></th>
+								<td>
+									<div class="data_viewer_value">01012341234</div>
+								</td>
+							</tr>
+							<tr>
+								<th><span class="data_viewer_key">소속</span></th>
+								<td>
+									<div class="data_viewer_value">엠큐닉</div>
+								</td>
+							</tr>
+						</table>
+					</div>
+					<div class="cform_btn_primary_row">
+						<a href="#" class="btn_formbox_submit primary"><span class="btn_formbox_submit_text">수정</span></a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- // popup -->
+
+		<!-- popup -->
+		<div class="popup_wrap small" id="userDataModfyPopup">
+			<div class="bg_dim"></div>
+			<div class="popup_item">
+				<div class="popup_title_low">
+					<h2 class="popup_title">사용자 정보 수정</h2>
+					<a href="javascript:;" class="btn_popup_close"><span class="hdtext">팝업 닫기</span></a>
+				</div>
+				<div class="popup_content_low">
+					<div class="cform_field_tb_wrap">
+						<table class="cform_field_tb">
+							<tr>
+								<th><span class="cform_field_label">아이디</span></th>
+								<td>
+									<div class="form_table_value">User</div>
+								</td>
+							</tr>
+							<tr>
+								<th><span class="cform_field_label">이메일</span></th>
+								<td>
+									<div class="form_table_value">abc@abc.com</div>
+								</td>
+							</tr>
+							<tr>
+								<th><span class="data_viewer_key imp">이름</span></th>
+								<td>
+									<div class="input_component_box">
+										<input type="text" class="input_origin_item" value="김사용자">
+										<span class="count_wrap">
+											<span class="count_text"><span class="emp">3</span>/40</span>
+										</span>
+										<button class="btn_form_reset"><span class="hdtext">리셋</span></button>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<th><span class="data_viewer_key imp">전화번호</span></th>
+								<td>
+									<div class="input_component_box">
+										<input type="text" class="input_origin_item" value="01012341234">
+										<span class="count_wrap">
+											<span class="count_text"><span class="emp">3</span>/40</span>
+										</span>
+										<button class="btn_form_reset"><span class="hdtext">리셋</span></button>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<th><span class="data_viewer_key imp">소속</span></th>
+								<td>
+									<div class="input_component_box">
+										<input type="text" class="input_origin_item" value="엠큐닉">
+										<span class="count_wrap">
+											<span class="count_text"><span class="emp">3</span>/40</span>
+										</span>
+										<button class="btn_form_reset"><span class="hdtext">리셋</span></button>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<th><span class="data_viewer_key imp">비밀번호</span></th>
+								<td>
+									<div class="input_component_box">
+										<input type="password" class="input_origin_item" placeholder="8~16자 / 영문+숫자+특수기호 조합">
+										<span class="count_wrap">
+											<span class="count_text"><span class="emp">3</span>/40</span>
+										</span>
+										<button class="btn_form_reset"><span class="hdtext">리셋</span></button>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<th><span class="data_viewer_key imp">비밀번호 확인</span></th>
+								<td>
+									<div class="input_component_box">
+										<input type="password" class="input_origin_item" placeholder="비밀번호 확인">
+										<span class="count_wrap">
+											<span class="count_text"><span class="emp">3</span>/40</span>
+										</span>
+										<button class="btn_form_reset"><span class="hdtext">리셋</span></button>
+									</div>
+								</td>
+							</tr>
+						</table>
+					</div>
+					<div class="cform_btn_primary_row">
+						<a href="#" class="btn_formbox_submit else"><span class="btn_formbox_submit_text">로그아웃</span></a>
+						<a href="#" class="btn_formbox_submit"><span class="btn_formbox_submit_text">저장</span></a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- // popup -->
+
 		<script>
+			// 선언
+			var userDataPopup = new DesignPopup({
+				selector: "#userDataPopup",
+				beforeCallback() {
+					console.log('beforeCallback');
+				},
+				callback() {
+					console.log('callback');
+				}
+			});
+			var userDataModfyPopup = new DesignPopup({
+				selector: "#userDataModfyPopup",
+				beforeCallback() {
+					console.log('beforeCallback');
+				},
+				callback() {
+					console.log('callback');
+				}
+			});
+
+
+
 			// 퍼블확인용
 			let header_url = window.location.href.split('?')[1];
 			let header_url_2 = header_url !== undefined ? header_url.split('#')[0] : null;
+
+			if (header_url_2 === "popup_user_data") {
+				userDataPopup.popupShow();
+			} else if (header_url_2 === "popup_user_modify") {
+				userDataModfyPopup.popupShow();
+			}
 		</script>
 		<div class="api_middle_wrap">
 			<div class="api_middle_main_cols">
@@ -71,7 +239,7 @@
 					</div>
 					<div class="listdata_render_wrap">
 						<div class="listdata_render_data_cols">
-							<p class="ico_copy_parag"><span class="ico_copy_intext">병합을 원하는 Use-case를 선택해주세요.</span></p>
+							<p class="ico_copy_parag"><span class="ico_copy_intext"><strong>병합</strong>을 원하는 Use-case를 선택해주세요.</span></p>
 						</div>
 						<div class="listdata_render_control_cols">
 							<ul class="btn_listdata_control_list">
@@ -167,7 +335,7 @@
 						</div>
 						<div class="listdata_render_wrap">
 							<div class="listdata_render_data_cols">
-								<p class="ico_copy_parag"><span class="ico_copy_intext">병합을 원하는 Use-case를 선택해주세요.</span></p>
+								<p class="ico_copy_parag"><span class="ico_copy_intext"><strong>병합</strong>을 원하는 Use-case를 선택해주세요.</span></p>
 							</div>
 							<div class="listdata_render_control_cols">
 								<ul class="btn_listdata_control_list">

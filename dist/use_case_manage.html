@@ -18,17 +18,717 @@
 	<title></title>
 </head>
 
-<body class="front_body">
+<body class="front_body user_body">
 	<div class="page_wrap">
+		<header class="header_wrap">
+			<div class="hgroup_main_cols">
+				<h1 class="toplogo"><a href="#" class="toplogo_link"><span class="hdtext">교통관리 서비스 Traffic Management Service</span></a></h1>
+				<nav class="nav_list_wrap">
+					<ul class="nav_list">
+						<li id="one_depth_01">
+							<a href="#" class="nav_oneitem"><span class="nav_oneitem_text">Use-case 관리</span></a>
+						</li>
+						<li id="one_depth_02">
+							<a href="#" class="nav_oneitem"><span class="nav_oneitem_text">Simulation 목록 관리</span></a>
+						</li>
+					</ul>
+				</nav>
+			</div>
+			<div class="hgroup_sub_cols">
+				<ul class="hgroup_util_list">
+					<li>
+						<a href="#" class="util_text_item">
+							<span class="util_who_dom">Admin</span> <span class="util_sir_dom">님</span>
+						</a>
+					</li>
+					<li><a href="#" class="util_ico_menu"><span class="hdtext">로그아웃</span></a></li>
+				</ul>
+			</div>
+		</header>
 
+		<!-- popup -->
+		<div class="popup_wrap small" id="userDataPopup">
+			<div class="bg_dim"></div>
+			<div class="popup_item">
+				<div class="popup_title_low">
+					<h2 class="popup_title">사용자 정보</h2>
+					<a href="javascript:;" class="btn_popup_close"><span class="hdtext">팝업 닫기</span></a>
+				</div>
+				<div class="popup_content_low">
+					<div class="data_viewer_table_wrap">
+						<table class="data_viewer_table">
+							<tr>
+								<th><span class="data_viewer_key">이메일</span></th>
+								<td>
+									<div class="data_viewer_value">abc@abc.com</div>
+								</td>
+							</tr>
+							<tr>
+								<th><span class="data_viewer_key">이름</span></th>
+								<td>
+									<div class="data_viewer_value">김사용자</div>
+								</td>
+							</tr>
+							<tr>
+								<th><span class="data_viewer_key">전화번호</span></th>
+								<td>
+									<div class="data_viewer_value">01012341234</div>
+								</td>
+							</tr>
+							<tr>
+								<th><span class="data_viewer_key">소속</span></th>
+								<td>
+									<div class="data_viewer_value">엠큐닉</div>
+								</td>
+							</tr>
+						</table>
+					</div>
+					<div class="cform_btn_primary_row">
+						<a href="#" class="btn_formbox_submit primary"><span class="btn_formbox_submit_text">수정</span></a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- // popup -->
+
+		<!-- popup -->
+		<div class="popup_wrap small" id="userDataModfyPopup">
+			<div class="bg_dim"></div>
+			<div class="popup_item">
+				<div class="popup_title_low">
+					<h2 class="popup_title">사용자 정보 수정</h2>
+					<a href="javascript:;" class="btn_popup_close"><span class="hdtext">팝업 닫기</span></a>
+				</div>
+				<div class="popup_content_low">
+					<div class="cform_field_tb_wrap">
+						<table class="cform_field_tb">
+							<tr>
+								<th><span class="cform_field_label">아이디</span></th>
+								<td>
+									<div class="form_table_value">User</div>
+								</td>
+							</tr>
+							<tr>
+								<th><span class="cform_field_label">이메일</span></th>
+								<td>
+									<div class="form_table_value">abc@abc.com</div>
+								</td>
+							</tr>
+							<tr>
+								<th><span class="data_viewer_key imp">이름</span></th>
+								<td>
+									<div class="input_component_box">
+										<input type="text" class="input_origin_item" value="김사용자">
+										<span class="count_wrap">
+											<span class="count_text"><span class="emp">3</span>/40</span>
+										</span>
+										<button class="btn_form_reset"><span class="hdtext">리셋</span></button>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<th><span class="data_viewer_key imp">전화번호</span></th>
+								<td>
+									<div class="input_component_box">
+										<input type="text" class="input_origin_item" value="01012341234">
+										<span class="count_wrap">
+											<span class="count_text"><span class="emp">3</span>/40</span>
+										</span>
+										<button class="btn_form_reset"><span class="hdtext">리셋</span></button>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<th><span class="data_viewer_key imp">소속</span></th>
+								<td>
+									<div class="input_component_box">
+										<input type="text" class="input_origin_item" value="엠큐닉">
+										<span class="count_wrap">
+											<span class="count_text"><span class="emp">3</span>/40</span>
+										</span>
+										<button class="btn_form_reset"><span class="hdtext">리셋</span></button>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<th><span class="data_viewer_key imp">비밀번호</span></th>
+								<td>
+									<div class="input_component_box">
+										<input type="password" class="input_origin_item" placeholder="8~16자 / 영문+숫자+특수기호 조합">
+										<span class="count_wrap">
+											<span class="count_text"><span class="emp">3</span>/40</span>
+										</span>
+										<button class="btn_form_reset"><span class="hdtext">리셋</span></button>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<th><span class="data_viewer_key imp">비밀번호 확인</span></th>
+								<td>
+									<div class="input_component_box">
+										<input type="password" class="input_origin_item" placeholder="비밀번호 확인">
+										<span class="count_wrap">
+											<span class="count_text"><span class="emp">3</span>/40</span>
+										</span>
+										<button class="btn_form_reset"><span class="hdtext">리셋</span></button>
+									</div>
+								</td>
+							</tr>
+						</table>
+					</div>
+					<div class="cform_btn_primary_row">
+						<a href="#" class="btn_formbox_submit else"><span class="btn_formbox_submit_text">로그아웃</span></a>
+						<a href="#" class="btn_formbox_submit"><span class="btn_formbox_submit_text">저장</span></a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- // popup -->
 
 		<script>
+			// 선언
+			var userDataPopup = new DesignPopup({
+				selector: "#userDataPopup",
+				beforeCallback() {
+					console.log('beforeCallback');
+				},
+				callback() {
+					console.log('callback');
+				}
+			});
+			var userDataModfyPopup = new DesignPopup({
+				selector: "#userDataModfyPopup",
+				beforeCallback() {
+					console.log('beforeCallback');
+				},
+				callback() {
+					console.log('callback');
+				}
+			});
+
+
+
 			// 퍼블확인용
-			let url = window.location.href.split('?')[1];
-			let url_2 = url !== undefined ? url.split('#')[0] : null;
-			if (url_2 === "loading") {
-				document.querySelector(".loading_layer").classList.add("active");
+			let header_url = window.location.href.split('?')[1];
+			let header_url_2 = header_url !== undefined ? header_url.split('#')[0] : null;
+
+			if (header_url_2 === "popup_user_data") {
+				userDataPopup.popupShow();
+			} else if (header_url_2 === "popup_user_modify") {
+				userDataModfyPopup.popupShow();
 			}
+		</script>
+		<div class="api_middle_wrap">
+			<div class="api_middle_main_cols">
+				<div class="mid_short_row">
+					<div class="api_subvisual_box">
+						<div class="api_sv_img_cols">
+							<h2 class="api_sv_title">Use-case 관리</h2>
+						</div>
+						<div class="api_sv_else_cols">
+							<a href="#" class="btn_api_sv">
+								<i class="ico_inc"></i>
+								<span class="btn_api_sv_text"><strong>Use-case</strong> 등록</span>
+							</a>
+						</div>
+					</div>
+					<div class="list_data_search_wrap">
+						<!-- search -->
+						<div class="search_field_container">
+							<div class="search_field_cols">
+								<a href="#" class="btn_field_box" data-localpopup="#filter_layer" data-localParent=".screen_content_main_cols">
+									<i class="ico_field ico_filter"></i>
+									<span class="field_box_text">필터</span>
+								</a>
+							</div>
+							<div class="search_field_cols">
+								<div class="search_fitem_wrap">
+									<div class="serach_fitem_short_cols">
+										<select class="form_select medium">
+											<option>전체</option>
+										</select>
+									</div>
+									<div class="serach_fitem_long_cols">
+										<div class="search_field_wrap" name="search_form" data-rowCount="5">
+											<div class="input_component_box search_field" data-name="value_check">
+												<input type="text" class="input_origin_item" placeholder="검색어 입력">
+												<button type="button" class="btn_form_reset"><span class="hdtext">리셋</span></button>
+											</div>
+											<!-- layer -->
+											<div class="auto_word_layer">
+												<div class="auto_word_list_wrap">
+													<ul class="auto_word_list">
+														<li><a href="javascript:;" class="auto_word_item">자동완성옵션 01</a></li>
+														<li><a href="javascript:;" class="auto_word_item">자동완성옵션 02</a></li>
+														<li><a href="javascript:;" class="auto_word_item">자동완성옵션 03</a></li>
+														<li><a href="javascript:;" class="auto_word_item">자동완성옵션 04</a></li>
+														<li><a href="javascript:;" class="auto_word_item">자동완성옵션 05</a></li>
+													</ul>
+												</div>
+											</div>
+											<!-- // layer -->
+										</div>
+										<a href="#" class="btn_field_formbox">
+											<span class="hdtext">검색</span>
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- search -->
+					</div>
+					<!-- filter -->
+					<div class="local_layer" id="filter_layer">
+						<div class="local_layer_inner">
+							<table class="form_group_tb">
+								<colgroup>
+									<col style="width:100px;" />
+									<col />
+								</colgroup>
+								<tbody>
+									<tr>
+										<th><span class="form_group_label">기간</span></th>
+										<td>
+											<div class="fgroup_item_wrap">
+												<div class="fgroup_cols">
+													<div class="tui-datepicker-input">
+														<input type="text" id="datepicker-startinput" class="input_tui_calendar" placeholder="시작 일시 선택">
+														<span class="tui-ico-date"></span>
+													</div>
+													<div id="form_date_start_render" class="ui_picker_render" data-parent="#filter_layer"></div>
+												</div>
+												<div class="fgroup_cols">
+													<div class="tui-datepicker-input">
+														<input type="text" id="datepicker-endinput" class="input_tui_calendar" placeholder="종료 일시 선택">
+														<span class="tui-ico-date"></span>
+													</div>
+													<div id="form_date_end_render" class="ui_picker_render" data-parent="#filter_layer"></div>
+												</div>
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<th><span class="form_group_label">Type</span></th>
+										<td>
+											<ul class="props_form_item_list gap_type2">
+												<li>
+													<div class="props_form_item">
+														<input type="checkbox" class="props_form" id="type_check_01" checked>
+														<label for="type_check_01" class="props_label">All</label>
+													</div>
+												</li>
+												<li>
+													<div class="props_form_item">
+														<input type="checkbox" class="props_form" id="type_check_02">
+														<label for="type_check_02" class="props_label">일반적 상황</label>
+													</div>
+												</li>
+												<li>
+													<div class="props_form_item">
+														<input type="checkbox" class="props_form" id="type_check_03">
+														<label for="type_check_03" class="props_label">이벤트 상황</label>
+													</div>
+												</li>
+											</ul>
+										</td>
+									</tr>
+									<tr>
+										<th class="align_type2"><span class="form_group_label">카테고리</span></th>
+										<td>
+											<input type="text" id="treeInput" placeholder="카테고리 선택" class="input_tree" autocomplete="off" />
+										</td>
+									</tr>
+								</tbody>
+							</table>
+							<div class="field_footer_row">
+								<a href="#" class="btn_field_formbox small cloudy">
+									<span class="btn_field_formbox_text">초기화</span>
+								</a>
+								<a href="#" class="btn_field_formbox small primary">
+									<span class="btn_field_formbox_text">적용</span>
+								</a>
+							</div>
+						</div>
+					</div>
+
+					<script type="text/javascript">
+						var SampleJSONData = [{
+							id: '01',
+							title: '일반적 상황',
+							subs: [{
+									id: '01_01',
+									title: '기하구조적 특징',
+									subs: [{
+										id: '01_01_01',
+										title: '특징 A',
+										subs: [{
+												id: '01_01_01_01',
+												title: '10'
+											},
+											{
+												id: '01_01_01_02',
+												title: '20'
+											},
+											{
+												id: '01_01_01_03',
+												title: '30'
+											},
+											{
+												id: '01_01_01_04',
+												title: '40'
+											},
+										]
+									}, ]
+								},
+								{
+									id: '01_02',
+									title: '교통류 특징'
+								},
+								{
+									id: '01_03',
+									title: '자동차 혼재율'
+								}
+							]
+						}, {
+							id: '02',
+							title: '이벤트 상황',
+							subs: [{
+								id: '02_01',
+								title: '공사/사고',
+								subs: [{
+									id: '02_01_01',
+									title: '특징 A',
+									subs: [{
+											id: '02_01_01_01',
+											title: '10'
+										},
+										{
+											id: '02_01_01_02',
+											title: '20'
+										},
+										{
+											id: '02_01_01_03',
+											title: '30'
+										},
+										{
+											id: '02_01_01_04',
+											title: '40'
+										},
+									]
+								}, ]
+							}, ]
+						}];
+
+
+						var comboTree3;
+
+						$(function() {
+							comboTree3 = $('#treeInput').comboTree({
+								source: SampleJSONData,
+								isMultiple: true,
+								cascadeSelect: true,
+								collapse: false
+							});
+						});
+					</script>
+					<!-- // filter -->
+					<!-- listdata_render_wrap -->
+					<div class="listdata_render_wrap">
+						<div class="listdata_render_data_cols">
+							<p class="ico_copy_parag"><span class="ico_copy_intext"><strong>병합</strong>을 원하는 Use-case를 선택해주세요.</span></p>
+						</div>
+						<div class="listdata_render_control_cols">
+							<ul class="btn_listdata_control_list">
+								<li><a href="#" class="btn_onlytext">전체해제</a></li>
+								<li>
+									<a href="#" class="btn_field_formbox small">
+										<span class="btn_field_formbox_text">병합</span>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<!-- // listdata_render_wrap -->
+				</div>
+				<div class="mid_liquid_row">
+					<!-- list_table_render_wrap -->
+					<div class="list_table_render_wrap">
+						<div class="list_sort_row">
+							<div class="list_sort_cols">
+								<ul class="list_sortcase_item_list">
+									<li>
+										<select class="form_select">
+											<option>선택</option>
+											<option>ID</option>
+											<option>명칭</option>
+											<option>Type</option>
+											<option>수정 일자</option>
+											<option>생성자</option>
+										</select>
+									</li>
+									<li>
+										<select class="form_select">
+											<option>올림차순</option>
+											<option>내림차순</option>
+										</select>
+									</li>
+								</ul>
+							</div>
+							<div class="list_sort_cols">
+								<div class="list_count_wrap">
+									<span class="list_count_value">999</span>
+									<span class="list_count_unit">건</span>
+								</div>
+								<!-- Pagination -->
+								<div class="pagination_wrap">
+									<a href="javascript:;" class="btn_pagination_control prev_go disabled"><span class="hdtext">이전</span></a>
+									<ul class="pagination_number_list">
+										<li><a href="#" class="page_number active">1</a></li>
+										<li><a href="#" class="page_number">2</a></li>
+										<li><a href="#" class="page_number">3</a></li>
+										<li><a href="#" class="page_number">4</a></li>
+										<li><a href="#" class="page_number">5</a></li>
+										<li><a href="#" class="page_number">6</a></li>
+										<li><a href="#" class="page_number">7</a></li>
+										<li><a href="#" class="page_number">8</a></li>
+										<li><a href="#" class="page_number">9</a></li>
+										<li><a href="#" class="page_number">10</a></li>
+									</ul>
+									<a href="javascript:;" class="btn_pagination_control next_go"><span class="hdtext">다음</span></a>
+								</div>
+								<!-- // Pagination -->
+							</div>
+						</div>
+						<div class="list_table_row">
+							<div class="list_table_wrap">
+								<table class="list_table">
+									<colgroup>
+										<col style="width:16px;" />
+										<col style="width:15%" />
+										<col />
+										<col style="width:15%" />
+										<col style="width:20%" />
+										<col style="width:20%" />
+									</colgroup>
+									<thead>
+										<tr>
+											<th scope="col" class="has_check"></th>
+											<th scope="col"><span class="thtext">ID</span></th>
+											<th scope="col"><span class="thtext">명칭</span></th>
+											<th scope="col"><span class="thtext">Type</span></th>
+											<th scope="col"><span class="thtext">Simulation ID</span></th>
+											<th scope="col"><span class="thtext">Simulation 명칭</span></th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td class="has_check"><input type="checkbox" class="props_form"></td>
+											<td><span class="tdtext">uc_0000020</span></td>
+											<td><span class="tdtext">testID1</span></td>
+											<td class="type2"><span class="emp_current">일반적 상황</span></td>
+											<td>
+												<span class="tdtext">s_00000190000000</span>
+												<div class="data_count_box_wrap">
+													<span class="data_count_box">+2</span>
+												</div>
+											</td>
+											<td>
+												<span class="tdtext">test11112132131321321</span>
+												<div class="data_count_box_wrap">
+													<span class="data_count_box">+2</span>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td class="has_check"><input type="checkbox" class="props_form"></td>
+											<td><span class="tdtext">uc_0000020</span></td>
+											<td><span class="tdtext">testID1</span></td>
+											<td class="type2"><span class="emp_current">일반적 상황</span></td>
+											<td>
+												<span class="tdtext">s_00000190000000</span>
+												<div class="data_count_box_wrap">
+													<span class="data_count_box">+2</span>
+												</div>
+											</td>
+											<td>
+												<span class="tdtext">test11112132131321321</span>
+												<div class="data_count_box_wrap">
+													<span class="data_count_box">+2</span>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td class="has_check"><input type="checkbox" class="props_form"></td>
+											<td><span class="tdtext">uc_0000020</span></td>
+											<td><span class="tdtext">testID1</span></td>
+											<td class="type2"><span class="emp_current">일반적 상황</span></td>
+											<td>
+												<span class="tdtext">s_00000190000000</span>
+												<div class="data_count_box_wrap">
+													<span class="data_count_box">+2</span>
+												</div>
+											</td>
+											<td>
+												<span class="tdtext">test11112132131321321</span>
+												<div class="data_count_box_wrap">
+													<span class="data_count_box">+2</span>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td class="has_check"><input type="checkbox" class="props_form"></td>
+											<td><span class="tdtext">uc_0000020</span></td>
+											<td><span class="tdtext">testID1</span></td>
+											<td class="type2"><span class="emp_current">일반적 상황</span></td>
+											<td>
+												<span class="tdtext">s_00000190000000</span>
+												<div class="data_count_box_wrap">
+													<span class="data_count_box">+2</span>
+												</div>
+											</td>
+											<td>
+												<span class="tdtext">test11112132131321321</span>
+												<div class="data_count_box_wrap">
+													<span class="data_count_box">+2</span>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td class="has_check"><input type="checkbox" class="props_form"></td>
+											<td><span class="tdtext">uc_0000020</span></td>
+											<td><span class="tdtext">testID1</span></td>
+											<td class="type2"><span class="emp_current">일반적 상황</span></td>
+											<td>
+												<span class="tdtext">s_00000190000000</span>
+												<div class="data_count_box_wrap">
+													<span class="data_count_box">+2</span>
+												</div>
+											</td>
+											<td>
+												<span class="tdtext">test11112132131321321</span>
+												<div class="data_count_box_wrap">
+													<span class="data_count_box">+2</span>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td class="has_check"><input type="checkbox" class="props_form"></td>
+											<td><span class="tdtext">uc_0000020</span></td>
+											<td><span class="tdtext">testID1</span></td>
+											<td class="type2"><span class="emp_current">일반적 상황</span></td>
+											<td>
+												<span class="tdtext">s_00000190000000</span>
+												<div class="data_count_box_wrap">
+													<span class="data_count_box">+2</span>
+												</div>
+											</td>
+											<td>
+												<span class="tdtext">test11112132131321321</span>
+												<div class="data_count_box_wrap">
+													<span class="data_count_box">+2</span>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td class="has_check"><input type="checkbox" class="props_form"></td>
+											<td><span class="tdtext">uc_0000020</span></td>
+											<td><span class="tdtext">testID1</span></td>
+											<td class="type2"><span class="emp_current">일반적 상황</span></td>
+											<td>
+												<span class="tdtext">s_00000190000000</span>
+												<div class="data_count_box_wrap">
+													<span class="data_count_box">+2</span>
+												</div>
+											</td>
+											<td>
+												<span class="tdtext">test11112132131321321</span>
+												<div class="data_count_box_wrap">
+													<span class="data_count_box">+2</span>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td class="has_check"><input type="checkbox" class="props_form"></td>
+											<td><span class="tdtext">uc_0000020</span></td>
+											<td><span class="tdtext">testID1</span></td>
+											<td class="type2"><span class="emp_current">일반적 상황</span></td>
+											<td>
+												<span class="tdtext">s_00000190000000</span>
+												<div class="data_count_box_wrap">
+													<span class="data_count_box">+2</span>
+												</div>
+											</td>
+											<td>
+												<span class="tdtext">test11112132131321321</span>
+												<div class="data_count_box_wrap">
+													<span class="data_count_box">+2</span>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td class="has_check"><input type="checkbox" class="props_form"></td>
+											<td><span class="tdtext">uc_0000020</span></td>
+											<td><span class="tdtext">testID1</span></td>
+											<td class="type2"><span class="emp_current">일반적 상황</span></td>
+											<td>
+												<span class="tdtext">s_00000190000000</span>
+												<div class="data_count_box_wrap">
+													<span class="data_count_box">+2</span>
+												</div>
+											</td>
+											<td>
+												<span class="tdtext">test11112132131321321</span>
+												<div class="data_count_box_wrap">
+													<span class="data_count_box">+2</span>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td class="has_check"><input type="checkbox" class="props_form"></td>
+											<td><span class="tdtext">uc_0000020</span></td>
+											<td><span class="tdtext">testID1</span></td>
+											<td class="type2"><span class="emp_current">일반적 상황</span></td>
+											<td>
+												<span class="tdtext">s_00000190000000</span>
+												<div class="data_count_box_wrap">
+													<span class="data_count_box">+2</span>
+												</div>
+											</td>
+											<td>
+												<span class="tdtext">test11112132131321321</span>
+												<div class="data_count_box_wrap">
+													<span class="data_count_box">+2</span>
+												</div>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+					<!-- list_table_render_wrap -->
+				</div>
+			</div>
+			<div class="api_middle_sub_cols">
+				<div class="api_ready_item_wrap">
+					<div class="api_ready_item">
+						<div class="api_ready_img"><img src="./assets/images/img_select@2x.png" alt=""></div>
+						<div class="api_ready_ment">
+							<strong class="emp">Use-case</strong>를 선택해주세요
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script>
+			// 퍼블확인용
+			// let url = window.location.href.split('?')[1];
+			// let url_2 = url !== undefined ? url.split('#')[0] : null;
+			// if(url_2 === "loading"){
+			// 	document.querySelector(".loading_layer").classList.add("active");
+			// }
+
+			menuRock("#one_depth_01")
 		</script>
 	</div>
 </body>

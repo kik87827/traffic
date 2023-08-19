@@ -1,17 +1,366 @@
 <!DOCTYPE html>
 <html lang="ko">
 @@include('./include/_head.html')
-<body class="front_body">
+<body class="front_body user_body">
 	<div class="page_wrap">
-		
-
+		@@include('./include/_header.html')
+		<div class="api_middle_wrap">
+			<div class="api_middle_main_cols">
+				<div class="mid_short_row">
+					<div class="api_subvisual_box">
+						<div class="api_sv_img_cols"><h2 class="api_sv_title">Use-case 관리</h2></div>
+						<div class="api_sv_else_cols">
+							<a href="#" class="btn_api_sv">
+								<i class="ico_inc"></i>
+								<span class="btn_api_sv_text"><strong>Use-case</strong> 등록</span>
+							</a>
+						</div>
+					</div>
+					<div class="list_data_search_wrap">
+						<!-- search -->
+						<div class="search_field_container">
+							<div class="search_field_cols">
+								<a href="#" class="btn_field_box" data-localpopup="#filter_layer" data-localParent=".screen_content_main_cols">
+									<i class="ico_field ico_filter"></i>
+									<span class="field_box_text">필터</span>
+								</a>
+							</div>
+							<div class="search_field_cols">
+								<div class="search_fitem_wrap">
+									<div class="serach_fitem_short_cols">
+										<select class="form_select medium"><option>전체</option></select>
+									</div>
+									<div class="serach_fitem_long_cols">
+										<div class="search_field_wrap" name="search_form" data-rowCount="5">
+											<div class="input_component_box search_field" data-name="value_check">
+												<input type="text" class="input_origin_item" placeholder="검색어 입력">
+												<button type="button" class="btn_form_reset"><span class="hdtext">리셋</span></button>
+											</div>
+											<!-- layer -->
+											<div class="auto_word_layer">
+												<div class="auto_word_list_wrap">
+													<ul class="auto_word_list">
+														<li><a href="javascript:;" class="auto_word_item">자동완성옵션 01</a></li>
+														<li><a href="javascript:;" class="auto_word_item">자동완성옵션 02</a></li>
+														<li><a href="javascript:;" class="auto_word_item">자동완성옵션 03</a></li>
+														<li><a href="javascript:;" class="auto_word_item">자동완성옵션 04</a></li>
+														<li><a href="javascript:;" class="auto_word_item">자동완성옵션 05</a></li>
+													</ul>
+												</div>
+											</div>
+											<!-- // layer -->
+										</div>
+										<a href="#" class="btn_field_formbox">
+											<span class="hdtext">검색</span>
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- search -->
+					</div>
+					<!-- filter -->
+					@@include('./include/_filter.html', { 
+						toggleText : "카테고리 선택"
+					})
+					<!-- // filter -->
+					<!-- listdata_render_wrap -->
+					<div class="listdata_render_wrap">
+						<div class="listdata_render_data_cols">
+							<p class="ico_copy_parag"><span class="ico_copy_intext"><strong>병합</strong>을 원하는 Use-case를 선택해주세요.</span></p>
+						</div>
+						<div class="listdata_render_control_cols">
+							<ul class="btn_listdata_control_list">
+								<li><a href="#" class="btn_onlytext">전체해제</a></li>
+								<li>
+									<a href="#" class="btn_field_formbox small">
+										<span class="btn_field_formbox_text">병합</span>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<!-- // listdata_render_wrap -->
+				</div>
+				<div class="mid_liquid_row">
+					<!-- list_table_render_wrap -->
+					<div class="list_table_render_wrap">
+						<div class="list_sort_row">
+							<div class="list_sort_cols">
+								<ul class="list_sortcase_item_list">
+									<li>
+										<select class="form_select">
+											<option>선택</option>
+											<option>ID</option>
+											<option>명칭</option>
+											<option>Type</option>
+											<option>수정 일자</option>
+											<option>생성자</option>
+										</select>
+									</li>
+									<li>
+										<select class="form_select">
+											<option>올림차순</option>
+											<option>내림차순</option>
+										</select>
+									</li>
+								</ul>
+							</div>
+							<div class="list_sort_cols">
+								<div class="list_count_wrap">
+									<span class="list_count_value">999</span>
+									<span class="list_count_unit">건</span>
+								</div>
+								<!-- Pagination -->
+								<div class="pagination_wrap">
+									<a href="javascript:;" class="btn_pagination_control prev_go disabled"><span class="hdtext">이전</span></a>
+									<ul class="pagination_number_list">
+										<li><a href="#" class="page_number active">1</a></li>
+										<li><a href="#" class="page_number">2</a></li>
+										<li><a href="#" class="page_number">3</a></li>
+										<li><a href="#" class="page_number">4</a></li>
+										<li><a href="#" class="page_number">5</a></li>
+										<li><a href="#" class="page_number">6</a></li>
+										<li><a href="#" class="page_number">7</a></li>
+										<li><a href="#" class="page_number">8</a></li>
+										<li><a href="#" class="page_number">9</a></li>
+										<li><a href="#" class="page_number">10</a></li>
+									</ul>
+									<a href="javascript:;" class="btn_pagination_control next_go"><span class="hdtext">다음</span></a>
+								</div>
+								<!-- // Pagination -->
+							</div>
+						</div>
+						<div class="list_table_row">
+							<div class="list_table_wrap">
+								<table class="list_table">
+									<colgroup>
+										<col style="width:16px;" />
+										<col style="width:15%" />
+										<col />
+										<col style="width:15%" />
+										<col style="width:20%" />
+										<col style="width:20%" />
+									</colgroup>
+									<thead>
+										<tr>
+											<th scope="col" class="has_check"></th>
+											<th scope="col"><span class="thtext">ID</span></th>
+											<th scope="col"><span class="thtext">명칭</span></th>
+											<th scope="col"><span class="thtext">Type</span></th>
+											<th scope="col"><span class="thtext">Simulation ID</span></th>
+											<th scope="col"><span class="thtext">Simulation 명칭</span></th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td class="has_check"><input type="checkbox" class="props_form"></td>
+											<td><span class="tdtext">uc_0000020</span></td>
+											<td><span class="tdtext">testID1</span></td>
+											<td class="type2"><span class="emp_current">일반적 상황</span></td>
+											<td>
+												<span class="tdtext">s_00000190000000</span>
+												<div class="data_count_box_wrap">
+													<span class="data_count_box">+2</span>
+												</div>
+											</td>
+											<td>
+												<span class="tdtext">test11112132131321321</span>
+												<div class="data_count_box_wrap">
+													<span class="data_count_box">+2</span>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td class="has_check"><input type="checkbox" class="props_form"></td>
+											<td><span class="tdtext">uc_0000020</span></td>
+											<td><span class="tdtext">testID1</span></td>
+											<td class="type2"><span class="emp_current">일반적 상황</span></td>
+											<td>
+												<span class="tdtext">s_00000190000000</span>
+												<div class="data_count_box_wrap">
+													<span class="data_count_box">+2</span>
+												</div>
+											</td>
+											<td>
+												<span class="tdtext">test11112132131321321</span>
+												<div class="data_count_box_wrap">
+													<span class="data_count_box">+2</span>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td class="has_check"><input type="checkbox" class="props_form"></td>
+											<td><span class="tdtext">uc_0000020</span></td>
+											<td><span class="tdtext">testID1</span></td>
+											<td class="type2"><span class="emp_current">일반적 상황</span></td>
+											<td>
+												<span class="tdtext">s_00000190000000</span>
+												<div class="data_count_box_wrap">
+													<span class="data_count_box">+2</span>
+												</div>
+											</td>
+											<td>
+												<span class="tdtext">test11112132131321321</span>
+												<div class="data_count_box_wrap">
+													<span class="data_count_box">+2</span>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td class="has_check"><input type="checkbox" class="props_form"></td>
+											<td><span class="tdtext">uc_0000020</span></td>
+											<td><span class="tdtext">testID1</span></td>
+											<td class="type2"><span class="emp_current">일반적 상황</span></td>
+											<td>
+												<span class="tdtext">s_00000190000000</span>
+												<div class="data_count_box_wrap">
+													<span class="data_count_box">+2</span>
+												</div>
+											</td>
+											<td>
+												<span class="tdtext">test11112132131321321</span>
+												<div class="data_count_box_wrap">
+													<span class="data_count_box">+2</span>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td class="has_check"><input type="checkbox" class="props_form"></td>
+											<td><span class="tdtext">uc_0000020</span></td>
+											<td><span class="tdtext">testID1</span></td>
+											<td class="type2"><span class="emp_current">일반적 상황</span></td>
+											<td>
+												<span class="tdtext">s_00000190000000</span>
+												<div class="data_count_box_wrap">
+													<span class="data_count_box">+2</span>
+												</div>
+											</td>
+											<td>
+												<span class="tdtext">test11112132131321321</span>
+												<div class="data_count_box_wrap">
+													<span class="data_count_box">+2</span>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td class="has_check"><input type="checkbox" class="props_form"></td>
+											<td><span class="tdtext">uc_0000020</span></td>
+											<td><span class="tdtext">testID1</span></td>
+											<td class="type2"><span class="emp_current">일반적 상황</span></td>
+											<td>
+												<span class="tdtext">s_00000190000000</span>
+												<div class="data_count_box_wrap">
+													<span class="data_count_box">+2</span>
+												</div>
+											</td>
+											<td>
+												<span class="tdtext">test11112132131321321</span>
+												<div class="data_count_box_wrap">
+													<span class="data_count_box">+2</span>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td class="has_check"><input type="checkbox" class="props_form"></td>
+											<td><span class="tdtext">uc_0000020</span></td>
+											<td><span class="tdtext">testID1</span></td>
+											<td class="type2"><span class="emp_current">일반적 상황</span></td>
+											<td>
+												<span class="tdtext">s_00000190000000</span>
+												<div class="data_count_box_wrap">
+													<span class="data_count_box">+2</span>
+												</div>
+											</td>
+											<td>
+												<span class="tdtext">test11112132131321321</span>
+												<div class="data_count_box_wrap">
+													<span class="data_count_box">+2</span>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td class="has_check"><input type="checkbox" class="props_form"></td>
+											<td><span class="tdtext">uc_0000020</span></td>
+											<td><span class="tdtext">testID1</span></td>
+											<td class="type2"><span class="emp_current">일반적 상황</span></td>
+											<td>
+												<span class="tdtext">s_00000190000000</span>
+												<div class="data_count_box_wrap">
+													<span class="data_count_box">+2</span>
+												</div>
+											</td>
+											<td>
+												<span class="tdtext">test11112132131321321</span>
+												<div class="data_count_box_wrap">
+													<span class="data_count_box">+2</span>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td class="has_check"><input type="checkbox" class="props_form"></td>
+											<td><span class="tdtext">uc_0000020</span></td>
+											<td><span class="tdtext">testID1</span></td>
+											<td class="type2"><span class="emp_current">일반적 상황</span></td>
+											<td>
+												<span class="tdtext">s_00000190000000</span>
+												<div class="data_count_box_wrap">
+													<span class="data_count_box">+2</span>
+												</div>
+											</td>
+											<td>
+												<span class="tdtext">test11112132131321321</span>
+												<div class="data_count_box_wrap">
+													<span class="data_count_box">+2</span>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td class="has_check"><input type="checkbox" class="props_form"></td>
+											<td><span class="tdtext">uc_0000020</span></td>
+											<td><span class="tdtext">testID1</span></td>
+											<td class="type2"><span class="emp_current">일반적 상황</span></td>
+											<td>
+												<span class="tdtext">s_00000190000000</span>
+												<div class="data_count_box_wrap">
+													<span class="data_count_box">+2</span>
+												</div>
+											</td>
+											<td>
+												<span class="tdtext">test11112132131321321</span>
+												<div class="data_count_box_wrap">
+													<span class="data_count_box">+2</span>
+												</div>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+					<!-- list_table_render_wrap -->
+				</div>
+			</div>
+			<div class="api_middle_sub_cols">
+				<div class="api_ready_item_wrap">
+					<div class="api_ready_item">
+						<div class="api_ready_img"><img src="./assets/images/img_select@2x.png" alt=""></div>
+						<div class="api_ready_ment">
+							<strong class="emp">Use-case</strong>를 선택해주세요
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 		<script>
 			// 퍼블확인용
-			let url = window.location.href.split('?')[1];
-			let url_2 = url !== undefined ? url.split('#')[0] : null;
-			if(url_2 === "loading"){
-				document.querySelector(".loading_layer").classList.add("active");
-			}
+			// let url = window.location.href.split('?')[1];
+			// let url_2 = url !== undefined ? url.split('#')[0] : null;
+			// if(url_2 === "loading"){
+			// 	document.querySelector(".loading_layer").classList.add("active");
+			// }
+
+			menuRock("#one_depth_01")
 		</script>
 	</div>
 </body>

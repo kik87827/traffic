@@ -20,9 +20,433 @@
 
 <body class="front_body">
 	<div class="page_wrap">
+		<!-- popup -->
+		<div class="popup_wrap" id="mappingPopup">
+			<div class="bg_dim"></div>
+			<div class="popup_item">
+				<div class="popup_title_low">
+					<h2 class="popup_title">Use-case 매핑</h2>
+					<a href="javascript:;" class="btn_popup_close"><span class="hdtext">팝업 닫기</span></a>
+				</div>
+				<div class="popup_content_low type2">
+					<div class="mid_short_row">
+						<div class="list_data_search_wrap">
+							<!-- search -->
+							<div class="search_field_container">
+								<div class="search_field_cols">
+									<a href="#" class="btn_field_box" data-localpopup="#filter_layer" data-localParent=".screen_content_main_cols">
+										<i class="ico_field ico_filter"></i>
+										<span class="field_box_text">필터</span>
+									</a>
+								</div>
+								<div class="search_field_cols">
+									<div class="search_fitem_wrap">
+										<div class="serach_fitem_short_cols">
+											<select class="form_select medium">
+												<option>전체</option>
+											</select>
+										</div>
+										<div class="serach_fitem_long_cols">
+											<div class="search_field_wrap" name="search_form" data-rowCount="5">
+												<div class="input_component_box search_field" data-name="value_check">
+													<input type="text" class="input_origin_item" placeholder="검색어 입력">
+													<button type="button" class="btn_form_reset"><span class="hdtext">리셋</span></button>
+												</div>
+												<!-- layer -->
+												<div class="auto_word_layer">
+													<div class="auto_word_list_wrap">
+														<ul class="auto_word_list">
+															<li><a href="javascript:;" class="auto_word_item">자동완성옵션 01</a></li>
+															<li><a href="javascript:;" class="auto_word_item">자동완성옵션 02</a></li>
+															<li><a href="javascript:;" class="auto_word_item">자동완성옵션 03</a></li>
+															<li><a href="javascript:;" class="auto_word_item">자동완성옵션 04</a></li>
+															<li><a href="javascript:;" class="auto_word_item">자동완성옵션 05</a></li>
+														</ul>
+													</div>
+												</div>
+												<!-- // layer -->
+											</div>
+											<a href="#" class="btn_field_formbox">
+												<span class="hdtext">검색</span>
+											</a>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- search -->
+						</div>
+						<!-- filter -->
+						<div class="local_layer" id="filter_layer">
+							<div class="local_layer_inner">
+								<table class="form_group_tb">
+									<colgroup>
+										<col style="width:100px;" />
+										<col />
+									</colgroup>
+									<tbody>
+										<tr>
+											<th><span class="form_group_label">기간</span></th>
+											<td>
+												<div class="fgroup_item_wrap">
+													<div class="fgroup_cols">
+														<div class="tui-datepicker-input">
+															<input type="text" id="datepicker-startinput" class="input_tui_calendar" placeholder="시작 일시 선택">
+															<span class="tui-ico-date"></span>
+														</div>
+														<div id="form_date_start_render" class="ui_picker_render" data-parent="#filter_layer"></div>
+													</div>
+													<div class="fgroup_cols">
+														<div class="tui-datepicker-input">
+															<input type="text" id="datepicker-endinput" class="input_tui_calendar" placeholder="종료 일시 선택">
+															<span class="tui-ico-date"></span>
+														</div>
+														<div id="form_date_end_render" class="ui_picker_render" data-parent="#filter_layer"></div>
+													</div>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<th><span class="form_group_label">Type</span></th>
+											<td>
+												<ul class="props_form_item_list gap_type2">
+													<li>
+														<div class="props_form_item">
+															<input type="checkbox" class="props_form" id="type_check_01" checked>
+															<label for="type_check_01" class="props_label">All</label>
+														</div>
+													</li>
+													<li>
+														<div class="props_form_item">
+															<input type="checkbox" class="props_form" id="type_check_02">
+															<label for="type_check_02" class="props_label">일반적 상황</label>
+														</div>
+													</li>
+													<li>
+														<div class="props_form_item">
+															<input type="checkbox" class="props_form" id="type_check_03">
+															<label for="type_check_03" class="props_label">이벤트 상황</label>
+														</div>
+													</li>
+												</ul>
+											</td>
+										</tr>
+										<tr>
+											<th class="align_type2"><span class="form_group_label">카테고리</span></th>
+											<td>
+												<input type="text" id="treeInput" placeholder="카테고리 선택" class="input_tree" autocomplete="off" />
+											</td>
+										</tr>
+									</tbody>
+								</table>
+								<div class="field_footer_row">
+									<a href="#" class="btn_field_formbox small cloudy">
+										<span class="btn_field_formbox_text">초기화</span>
+									</a>
+									<a href="#" class="btn_field_formbox small primary">
+										<span class="btn_field_formbox_text">적용</span>
+									</a>
+								</div>
+							</div>
+						</div>
 
+						<script type="text/javascript">
+							var SampleJSONData = [{
+								id: '01',
+								title: '일반적 상황',
+								subs: [{
+										id: '01_01',
+										title: '기하구조적 특징',
+										subs: [{
+											id: '01_01_01',
+											title: '특징 A',
+											subs: [{
+													id: '01_01_01_01',
+													title: '10'
+												},
+												{
+													id: '01_01_01_02',
+													title: '20'
+												},
+												{
+													id: '01_01_01_03',
+													title: '30'
+												},
+												{
+													id: '01_01_01_04',
+													title: '40'
+												},
+											]
+										}, ]
+									},
+									{
+										id: '01_02',
+										title: '교통류 특징'
+									},
+									{
+										id: '01_03',
+										title: '자동차 혼재율'
+									}
+								]
+							}, {
+								id: '02',
+								title: '이벤트 상황',
+								subs: [{
+									id: '02_01',
+									title: '공사/사고',
+									subs: [{
+										id: '02_01_01',
+										title: '특징 A',
+										subs: [{
+												id: '02_01_01_01',
+												title: '10'
+											},
+											{
+												id: '02_01_01_02',
+												title: '20'
+											},
+											{
+												id: '02_01_01_03',
+												title: '30'
+											},
+											{
+												id: '02_01_01_04',
+												title: '40'
+											},
+										]
+									}, ]
+								}, ]
+							}];
+
+
+							var comboTree3;
+
+							$(function() {
+								comboTree3 = $('#treeInput').comboTree({
+									source: SampleJSONData,
+									isMultiple: true,
+									cascadeSelect: true,
+									collapse: false
+								});
+							});
+						</script>
+						<!-- // filter -->
+						<div class="listdata_render_wrap">
+							<div class="listdata_render_data_cols">
+								<p class="ico_copy_parag"><span class="ico_copy_intext"><strong>매핑</strong>을 원하는 Use-case를 선택해주세요.</span></p>
+							</div>
+							<div class="listdata_render_control_cols">
+								<ul class="btn_listdata_control_list">
+									<li><a href="#" class="btn_onlytext">전체해제</a></li>
+									<li>
+										<a href="#" class="btn_field_formbox small">
+											<span class="btn_field_formbox_text">병합</span>
+										</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="mid_liquid_row">
+						<!-- list_table_render_wrap -->
+						<div class="list_table_render_wrap">
+							<div class="list_sort_row">
+								<div class="list_sort_cols">
+									<ul class="list_sortcase_item_list">
+										<li>
+											<select class="form_select">
+												<option>선택</option>
+												<option>ID</option>
+												<option>명칭</option>
+												<option>Type</option>
+												<option>수정 일자</option>
+												<option>생성자</option>
+											</select>
+										</li>
+										<li>
+											<select class="form_select">
+												<option>올림차순</option>
+												<option>내림차순</option>
+											</select>
+										</li>
+									</ul>
+								</div>
+								<div class="list_sort_cols">
+									<div class="list_count_wrap">
+										<span class="list_count_value">999</span>
+										<span class="list_count_unit">건</span>
+									</div>
+									<!-- Pagination -->
+									<div class="pagination_wrap">
+										<a href="javascript:;" class="btn_pagination_control prev_go disabled"><span class="hdtext">이전</span></a>
+										<ul class="pagination_number_list">
+											<li><a href="#" class="page_number active">1</a></li>
+											<li><a href="#" class="page_number">2</a></li>
+											<li><a href="#" class="page_number">3</a></li>
+											<li><a href="#" class="page_number">4</a></li>
+											<li><a href="#" class="page_number">5</a></li>
+											<li><a href="#" class="page_number">6</a></li>
+											<li><a href="#" class="page_number">7</a></li>
+											<li><a href="#" class="page_number">8</a></li>
+											<li><a href="#" class="page_number">9</a></li>
+											<li><a href="#" class="page_number">10</a></li>
+										</ul>
+										<a href="javascript:;" class="btn_pagination_control next_go"><span class="hdtext">다음</span></a>
+									</div>
+									<!-- // Pagination -->
+								</div>
+							</div>
+							<style>
+								/* colgroup */
+								/* // colgroup */
+							</style>
+							<div class="divide_table_zone" id="list_zone" data-rowCount="8">
+								<div class="divide_thead_wrap">
+									<table class="list_table">
+										<thead>
+											<tr>
+												<th class="has_check"></th>
+												<th class="cols_01"><span class="thtext">ID</span></th>
+												<th class="cols_02"><span class="thtext">명칭</span></th>
+												<th class="cols_03"><span class="thtext">Type</span></th>
+												<th class="cols_04"><span class="thtext">수정 일자</span></th>
+												<th class="cols_05"><span class="thtext">생성자</span></th>
+											</tr>
+										</thead>
+									</table>
+								</div>
+								<div class="divide_tbody_wrap">
+									<table class="list_table">
+										<tbody>
+											<tr>
+												<td class="has_check"><input type="checkbox" class="props_form"></td>
+												<td><span class="tdtext">uc_0000020</span></td>
+												<td><span class="tdtext">testID1</span></td>
+												<td class="type2"><span class="emp_current">이벤트 상황</span></td>
+												<td><span class="tdtext">2023/06/28 10:00</span></td>
+												<td><span class="tdtext">User</span></td>
+											</tr>
+											<tr>
+												<td class="has_check"><input type="checkbox" class="props_form"></td>
+												<td><span class="tdtext">uc_0000020</span></td>
+												<td><span class="tdtext">testID1testID1testID1testID1</span></td>
+												<td class="type2"><span class="emp_current type2">일반적 상황</span></td>
+												<td><span class="tdtext">2023/06/28 10:00</span></td>
+												<td><span class="tdtext">User</span></td>
+											</tr>
+											<tr>
+												<td class="has_check"><input type="checkbox" class="props_form"></td>
+												<td><span class="tdtext">uc_0000020</span></td>
+												<td><span class="tdtext">testID1</span></td>
+												<td class="type2"><span class="emp_current">이벤트 상황</span></td>
+												<td><span class="tdtext">2023/06/28 10:00</span></td>
+												<td><span class="tdtext">User</span></td>
+											</tr>
+											<tr>
+												<td class="has_check"><input type="checkbox" class="props_form"></td>
+												<td><span class="tdtext">uc_0000020</span></td>
+												<td><span class="tdtext">testID1</span></td>
+												<td class="type2"><span class="emp_current">이벤트 상황</span></td>
+												<td><span class="tdtext">2023/06/28 10:00</span></td>
+												<td><span class="tdtext">User</span></td>
+											</tr>
+											<tr>
+												<td class="has_check"><input type="checkbox" class="props_form"></td>
+												<td><span class="tdtext">uc_0000020</span></td>
+												<td><span class="tdtext">testID1</span></td>
+												<td class="type2"><span class="emp_current">이벤트 상황</span></td>
+												<td><span class="tdtext">2023/06/28 10:00</span></td>
+												<td><span class="tdtext">User</span></td>
+											</tr>
+											<tr>
+												<td class="has_check"><input type="checkbox" class="props_form"></td>
+												<td><span class="tdtext">uc_0000020</span></td>
+												<td><span class="tdtext">testID1</span></td>
+												<td class="type2"><span class="emp_current">이벤트 상황</span></td>
+												<td><span class="tdtext">2023/06/28 10:00</span></td>
+												<td><span class="tdtext">User</span></td>
+											</tr>
+											<tr>
+												<td class="has_check"><input type="checkbox" class="props_form"></td>
+												<td><span class="tdtext">uc_0000020</span></td>
+												<td><span class="tdtext">testID1</span></td>
+												<td class="type2"><span class="emp_current">이벤트 상황</span></td>
+												<td><span class="tdtext">2023/06/28 10:00</span></td>
+												<td><span class="tdtext">User</span></td>
+											</tr>
+											<tr>
+												<td class="has_check"><input type="checkbox" class="props_form"></td>
+												<td><span class="tdtext">uc_0000020</span></td>
+												<td><span class="tdtext">testID1</span></td>
+												<td class="type2"><span class="emp_current">이벤트 상황</span></td>
+												<td><span class="tdtext">2023/06/28 10:00</span></td>
+												<td><span class="tdtext">User</span></td>
+											</tr>
+											<tr>
+												<td class="has_check"><input type="checkbox" class="props_form"></td>
+												<td><span class="tdtext">uc_0000020</span></td>
+												<td><span class="tdtext">testID1</span></td>
+												<td class="type2"><span class="emp_current">이벤트 상황</span></td>
+												<td><span class="tdtext">2023/06/28 10:00</span></td>
+												<td><span class="tdtext">User</span></td>
+											</tr>
+											<tr>
+												<td class="has_check"><input type="checkbox" class="props_form"></td>
+												<td><span class="tdtext">uc_0000020</span></td>
+												<td><span class="tdtext">testID1</span></td>
+												<td class="type2"><span class="emp_current">이벤트 상황</span></td>
+												<td><span class="tdtext">2023/06/28 10:00</span></td>
+												<td><span class="tdtext">User</span></td>
+											</tr>
+											<tr>
+												<td class="has_check"><input type="checkbox" class="props_form"></td>
+												<td><span class="tdtext">uc_0000020</span></td>
+												<td><span class="tdtext">testID1</span></td>
+												<td class="type2"><span class="emp_current">이벤트 상황</span></td>
+												<td><span class="tdtext">2023/06/28 10:00</span></td>
+												<td><span class="tdtext">User</span></td>
+											</tr>
+											<tr>
+												<td class="has_check"><input type="checkbox" class="props_form"></td>
+												<td><span class="tdtext">uc_0000020</span></td>
+												<td><span class="tdtext">testID1</span></td>
+												<td class="type2"><span class="emp_current">이벤트 상황</span></td>
+												<td><span class="tdtext">2023/06/28 10:00</span></td>
+												<td><span class="tdtext">User</span></td>
+											</tr>
+											<tr>
+												<td class="has_check"><input type="checkbox" class="props_form"></td>
+												<td><span class="tdtext">uc_0000020</span></td>
+												<td><span class="tdtext">testID1</span></td>
+												<td class="type2"><span class="emp_current">이벤트 상황</span></td>
+												<td><span class="tdtext">2023/06/28 10:00</span></td>
+												<td><span class="tdtext">User</span></td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+						<!-- list_table_render_wrap -->
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- // popup -->
 
 		<script>
+			// 선언
+			var mappingPoppup = new DesignPopup({
+				selector: "#mappingPopup",
+				beforeCallback() {
+					console.log('beforeCallback');
+				},
+				callback() {
+					console.log('callback');
+				}
+			});
+			// show 호출
+			mappingPoppup.popupShow();
+
 			// 퍼블확인용
 			let url = window.location.href.split('?')[1];
 			let url_2 = url !== undefined ? url.split('#')[0] : null;
