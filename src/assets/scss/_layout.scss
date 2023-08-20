@@ -143,9 +143,14 @@ html:not(.touchmode) {
 .api_middle_main_cols,
 .api_middle_sub_cols{flex:1;}
 .api_middle_main_cols{display:flex;flex-direction: column;position:relative;}
-.api_middle_sub_cols{background:#fff;}
+.api_middle_sub_cols{background:#fff;border-radius:4px;}
 .mid_short_row{flex:0 0 0;position:relative;}
-.mid_liquid_row{flex:1;min-height: 0;position:relative;overflow: overlay;background-color: #fff;}
+.mid_liquid_row{flex:1;min-height: 0;position:relative;overflow-y:auto;background-color: #fff;padding:7px 20px 0;
+    &.skin2{
+       padding:7px 8px 0 20px; 
+    }
+    &.type2{border-radius:4px;margin-top:8px;}
+}
 
 .api_subvisual_box{min-height:70px;display:flex;position:relative;border-radius:4px;overflow:hidden;}
 .api_sv_img_cols{flex:1;display:flex;align-items: center;padding:20px 60px;background:url("../images/img_banner@2x.png") no-repeat 0 0/cover;}
@@ -257,7 +262,7 @@ html:not(.touchmode) {
 .popup_content_low{
     flex:1;min-height:0;position:relative;overflow:hidden;overflow-y:overlay;padding:0 30px 30px;
     &.type2{
-        overflow: hidden;display:flex;flex-direction: column;
+        display:flex;flex-direction: column;
     }
 }
 

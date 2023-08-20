@@ -1,6 +1,7 @@
 window.addEventListener("DOMContentLoaded",()=>{
   commonInit();
   formItemFunc();
+  contentSkin();
 });
 window.addEventListener("load",()=>{
   layoutFunc();
@@ -157,6 +158,8 @@ DesignPopup.prototype.popupShow = function () {
   
 
   this.dimCheck();
+
+  contentSkin();
 
   // this.layer_wrap_parent
 
@@ -819,5 +822,42 @@ function uiPickerRender(){
       render.style.left = `${child_caller_left - parent_contlow_left}px`;
       render.style.width = `${ caller.getBoundingClientRect().width }px`;
     }
+  }
+}
+
+
+function contentSkin(){
+  const mid_liquid_row = document.querySelector(".mid_liquid_row");
+  skinChange();
+  window.addEventListener("resize",()=>{
+    skinChange();
+  
+  });
+
+  function skinChange(){
+    if(!mid_liquid_row){return;}
+    mid_liquid_row.classList.remove("skin2");
+    if(mid_liquid_row.offsetWidth !== mid_liquid_row.scrollWidth){
+      mid_liquid_row.classList.add("skin2");
+    }
+  }
+}
+
+
+function tbodyScroll(target){
+  const dataDiv = document.querySelectorAll(target);
+  if(!!dataDiv){
+    dataDiv.forEach((item)=>{
+      const thisZone = item;
+      let thisCount = Number(thisZone.dataset.tbody);
+      const thisThead = thisZone.querySelector(".divide_thead_wrap");
+      const thisTbody = thisZone.querySelector(".divide_tbody_wrap");
+      const thisTbodyTargetTr = thisTbody.querySelectorAll("tr")[thisCount];
+
+      if(!!thisTbodyTargetTr){
+        thisTbody.style.maxHeight = thisTbodyTargetTr.offsetTop+"px";
+        thisThead.style.paddingRight = '12px';
+      }
+    });
   }
 }
