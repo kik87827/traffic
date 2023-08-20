@@ -20,7 +20,7 @@
 						<!-- search -->
 						<div class="search_field_container">
 							<div class="search_field_cols">
-								<a href="#" class="btn_field_box" data-localpopup="#filter_layer" data-localParent=".screen_content_main_cols">
+								<a href="#" class="btn_field_box" data-localpopup="#filter_layer" data-localParent=".list_data_search_wrap">
 									<i class="ico_field ico_filter"></i>
 									<span class="field_box_text">필터</span>
 								</a>
@@ -29,12 +29,12 @@
 								<div class="search_fitem_wrap">
 									<div class="serach_fitem_short_cols">
 										<select class="form_select medium"><option>전체</option></select>
+										<!-- <select class="form_select medium warn"><option>전체</option></select> -->
 									</div>
 									<div class="serach_fitem_long_cols">
 										<div class="search_field_wrap" name="search_form" data-rowCount="5">
 											<div class="input_component_box search_field" data-name="value_check">
 												<input type="text" class="input_origin_item" placeholder="검색어 입력">
-												<button type="button" class="btn_form_reset"><span class="hdtext">리셋</span></button>
 											</div>
 											<!-- layer -->
 											<div class="auto_word_layer">
@@ -50,7 +50,7 @@
 											</div>
 											<!-- // layer -->
 										</div>
-										<a href="#" class="btn_field_formbox">
+										<a href="#" class="btn_search_submit">
 											<span class="hdtext">검색</span>
 										</a>
 									</div>
@@ -81,7 +81,7 @@
 							<ul class="btn_listdata_control_list">
 								<li><a href="#" class="btn_onlytext">전체해제</a></li>
 								<li>
-									<a href="#" class="btn_field_formbox small">
+									<a href="#" class="btn_field_formbox dtype2 type2">
 										<span class="btn_field_formbox_text">병합</span>
 									</a>
 								</li>
@@ -361,13 +361,33 @@
 			</div>
 		</div>
 		<script>
-			// 퍼블확인용
-			// let url = window.location.href.split('?')[1];
-			// let url_2 = url !== undefined ? url.split('#')[0] : null;
-			// if(url_2 === "loading"){
-			// 	document.querySelector(".loading_layer").classList.add("active");
-			// }
-			menuRock("#one_depth_01")
+			searchForm();
+
+			var datepicker_start = new tui.DatePicker('#form_date_start_render', {
+				//date: new Date(),
+				language: 'ko',
+				input: {
+					element: '#datepicker-startinput',
+					format: 'yyyy-MM-dd HH:mm A'
+				},
+				timePicker: true
+			});
+
+			var datepicker_end = new tui.DatePicker('#form_date_end_render', {
+				//date: new Date(),
+				language: 'ko',
+				input: {
+					element: '#datepicker-endinput',
+					format: 'yyyy-MM-dd HH:mm A'
+				},
+				timePicker: true
+			});
+
+			menuRock("#one_depth_01");
+
+			localLayer(()=>{
+				// callback
+			});
 		</script>
 	</div>
 </body>

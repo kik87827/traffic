@@ -99,7 +99,7 @@
  
  .tui-calendar .tui-calendar-title-today:hover {
      color: #333;
-     background-color: #f7f5ff;
+     background-color: #f0fefb;
      cursor: pointer;
  }
  
@@ -367,7 +367,7 @@
 //      background-position: -17px -14px
 //  }
 
- .tui-ico-date{display:inline-block;width:16px;height:16px;background:url("../images/ic_date@2x.png") no-repeat 50% 50%/100% auto;}
+ .tui-ico-date{display:inline-block;width:20px;height:20px;background:url("../images/ic_calendar@2x.png") no-repeat 50% 50%/100% auto;}
  
  .tui-datepicker-selector-button.tui-is-checked .tui-ico-time {
      background-position: 0 -44px
@@ -436,12 +436,12 @@
  }
  
  .tui-datepicker .tui-is-selectable:hover {
-     background-color: rgba(123, 84, 255, 0.1);
+     background-color: #f0fefb;
      cursor: pointer;
  }
  
  .tui-datepicker .tui-is-selectable.tui-is-selected, .tui-datepicker.tui-rangepicker .tui-is-selectable.tui-is-selected {
-     background-color: #7b54ff;
+     background-color: #007e67;
      color: #fff
  }
  

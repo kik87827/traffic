@@ -1,8 +1,10 @@
 window.addEventListener("DOMContentLoaded",()=>{
   commonInit();
+  formItemFunc();
 });
 window.addEventListener("load",()=>{
   layoutFunc();
+  uiPickerRender();
 });
 
 /**
@@ -355,8 +357,8 @@ function hformLayerFunc(target){
   const otherDom = document.querySelectorAll(".hform_layer_wrap");
   const targetDom = document.querySelector(target);
   const layerCloseItem = document.querySelectorAll(".btn_hform_layer_close");
-  console.log(target)
-
+  
+  const cformLabel = document.querySelectorAll(".cform_field_tb_item .cform_field_label");
 
   if(!!otherDom){
     otherDom.forEach((item)=>{
@@ -366,6 +368,9 @@ function hformLayerFunc(target){
   if(!!targetDom){
     targetDom.classList.add("active");
     setTimeout(()=>{
+      if(!!cformLabel){
+        maxWidthFunc(".cform_field_tb_item .cform_field_label");
+      }
       targetDom.classList.add("motion");
     },30);
   }
@@ -384,3 +389,435 @@ function hformLayerFunc(target){
   }
 }
 /* // hform_layer */
+
+
+
+
+/* input */
+function formItemFunc(){
+  const input_component_box = document.querySelectorAll(".input_component_box");
+  if(!!input_component_box){
+    input_component_box.forEach((item)=>{
+      if(item.classList.contains('disabled')){
+        item.querySelector(".input_origin_item").disabled = true;
+      }
+    });
+  }
+
+  addDynamicEventListener(document.body, 'focusin', '.input_component_box .input_origin_item', function(e) {
+    const thisTarget = e.target;
+    const thisTargetParent = thisTarget.closest(".input_component_box");
+    thisTargetParent.classList.add("focus");
+    // if(thisTargetParent.classList.contains("filled")){
+    // }
+  });
+  addDynamicEventListener(document.body, 'keyup', '.input_component_box .input_origin_item', function(e) {
+    const thisTarget = e.target;
+    const thisTargetParent = thisTarget.closest(".input_component_box");
+    if(thisTarget.value.length){
+      thisTargetParent.classList.add("filled");
+    }else{
+      thisTargetParent.classList.remove("filled");
+    }
+  });
+  addDynamicEventListener(document.body, 'focusout', '.input_component_box .input_origin_item', function(e) {
+    const thisTarget = e.target;
+    const thisTargetParent = thisTarget.closest(".input_component_box");
+    thisTargetParent.classList.remove("focus");
+    if(thisTarget.value.length ===0){
+      thisTargetParent.classList.remove("filled");
+    }
+  });
+  addDynamicEventListener(document.body, 'mousedown','.btn_form_reset', function(e) {
+    const thisTarget = e.target;
+    const thisTargetParent = thisTarget.closest(".input_component_box");
+    const thisTargetInput = thisTargetParent.querySelector(".input_origin_item");
+    const thisTargetSearchParent = thisTarget.closest(".search_field_wrap");
+    thisTargetInput.value = '';
+    thisTargetParent.classList.remove("focus");
+    thisTargetParent.classList.remove("filled");
+    thisTargetParent.classList.remove("warn");
+
+    if(!!thisTargetSearchParent){
+      thisTargetSearchParent.classList.remove("value_true");
+      document.querySelector(`[data-autoLayer='${thisTargetSearchParent.getAttribute("id")}']`).classList.remove("auto_mode");
+    }
+  });
+
+  //textarea
+  addDynamicEventListener(document.body, 'focusin', '.form_textarea_box .form_textarea', function(e) {
+    const thisTarget = e.target;
+    const thisTargetParent = thisTarget.closest(".form_textarea_box");
+    if(thisTargetParent.classList.contains("filled")){
+      thisTargetParent.classList.add("focus");
+    }
+  });
+  addDynamicEventListener(document.body, 'input', '.form_textarea_box .form_textarea', function(e) {
+    const thisTarget = e.target;
+    const thisTargetParent = thisTarget.closest(".form_textarea_box");
+    if(thisTarget.value.length){
+      thisTargetParent.classList.add("filled");
+    }else{
+      thisTargetParent.classList.remove("filled");
+    }
+  });
+  addDynamicEventListener(document.body, 'focusout', '.form_textarea_box .form_textarea', function(e) {
+    const thisTarget = e.target;
+    const thisTargetParent = thisTarget.closest(".form_textarea_box");
+    thisTargetParent.classList.remove("focus");
+    if(thisTarget.value.length ===0){
+      thisTargetParent.classList.remove("filled");
+    }
+   
+  });
+}
+
+
+
+
+/* search  */
+function searchForm() {
+  const auto_word_layer = document.querySelectorAll(".auto_word_layer");
+  const auto_word_item = document.querySelectorAll(".auto_word_item");
+  const searchFieldWrap = document.querySelectorAll(".search_field_wrap");
+  const searchInput = document.querySelectorAll(".search_field_wrap .input_origin_item");
+  let appendLayer = null;
+  const appBody = document.querySelector(".page_wrap");
+  if (searchInput.length) {
+    searchInput.forEach((element, index) => {
+      const eachElement = element;
+      const eachElementParent = element.closest(".search_field_wrap");
+      const eachElementReset = eachElementParent.querySelector(".btn_form_reset");
+      const eachElementField = element.closest(".search_field");
+      const eachElementLayer = eachElementParent.querySelector(".auto_word_layer");
+
+      eachElement.addEventListener("focus", (e) => {
+        searchFieldWrap.forEach((item) => {
+          resetLayer(item);
+        });
+        if (eachElementLayer !== null) {
+          autoLayerInit(eachElementParent, eachElementLayer, index);
+          autoLayerPos(eachElementParent);
+        }
+        if (eachElementField !== null) {
+          eachElementField.classList.add("active");
+        }
+      });
+      eachElement.addEventListener("input", (e) => {
+        let thisEventObj = e.currentTarget;
+
+
+
+        eachElementField.classList.add("typing");
+        valueCheck(thisEventObj, eachElementParent);
+      });
+      eachElement.addEventListener("focusout", (e) => {
+        let thisEventObj = e.currentTarget;
+        eachElementField.classList.remove("typing");
+        if (!!eachElementField) {
+          eachElementField.classList.remove("active");
+        }
+        //valueCheck(thisEventObj, eachElementParent);
+        //resetLayer(eachElementParent);
+      });
+
+      // eachElementReset.addEventListener("click", (e) => {
+      //   let thisEventInputObj = eachElementParent.querySelector(".input_origin_item");
+      //   thisEventInputObj.value = "";
+      //   eachElementParent.classList.remove("value_true");
+      //   document.querySelector(`[data-autoLayer='${eachElementParent.getAttribute("id")}']`).classList.remove("auto_mode");
+      // });
+    });
+
+    if (auto_word_item.length) {
+      auto_word_item.forEach((element) => {
+        element.addEventListener("click", (e) => {
+          let thisEventObj = e.currentTarget;
+          let thisEventParentLayer = thisEventObj.closest(".auto_word_layer");
+          let thisEventParentCall = document.querySelector(`[id='${thisEventParentLayer.getAttribute("data-autolayer")}']`);
+          let thisEventParentCallInput = thisEventParentCall.querySelector(".input_origin_item");
+
+          if (thisEventObj.classList.contains("disabled")) {
+            return;
+          }
+          thisEventParentCallInput.value = thisEventObj.textContent;
+          thisEventParentLayer.classList.remove("auto_mode");
+        });
+      });
+    }
+
+    document.body.addEventListener("click", (e) => {
+      if (e.target.closest(".search_field_wrap") !== null || e.target.closest(".auto_word_layer") !== null) {
+        return;
+      }
+      auto_word_layer.forEach((element) => {
+        element.classList.remove("auto_mode");
+      });
+    });
+
+    window.addEventListener("resize", () => {
+      resizePos();
+    });
+
+
+    function autoLayerInit(target, layer, index) {
+      let thisElement = target;
+      let auto_word_layer = layer;
+
+      if (thisElement.getAttribute("id") === null) {
+        thisElement.setAttribute("id", 'search_item_' + index);
+        auto_word_layer.setAttribute("data-autoLayer", 'search_item_' + index);
+      } else {
+        auto_word_layer.setAttribute("data-autoLayer", thisElement.getAttribute("id"));
+      }
+      // if (thisElement.closest(".popup_content_low") !== null) {
+      //   thisElement.closest(".popup_content_low").appendChild(auto_word_layer);
+      // } else {
+      //   appBody.appendChild(auto_word_layer);
+      // }
+
+      if (!!thisElement.closest(".popup_content_low")) {
+        thisElement.closest(".popup_content_low").appendChild(auto_word_layer);
+      } else if (!!thisElement.closest(".api_middle_main_cols")) {
+        thisElement.closest(".api_middle_main_cols").appendChild(auto_word_layer);
+      } else if (!!thisElement.closest(".api_middle_sub_cols")) {
+        thisElement.closest(".api_middle_sub_cols").appendChild(auto_word_layer);
+      } else {
+        appBody.appendChild(auto_word_layer);
+      }
+    }
+
+    function autoLayerPos(target) {
+      const thisElement = target;
+      appendLayer = document.querySelector(`[data-autoLayer='${thisElement.getAttribute("id")}']`);
+      if (appendLayer === null) {
+        return;
+      }
+      if (thisElement.closest(".popup_content_low") !== null) {
+        // const popupContentLow = thisElement.closest(".popup_content_low");
+        // const popupContentLowTop = popupContentLow.getBoundingClientRect().top;
+        // const autolayerInTop = popupContentLow.scrollTop + thisElement.getBoundingClientRect().top;
+        // appendLayer.style.top = `${(autolayerInTop - popupContentLowTop) + thisElement.getBoundingClientRect().height}px`;
+        // appendLayer.style.left = `${thisElement.getBoundingClientRect().left - thisElement.closest(".popup_content_low").getBoundingClientRect().left}px`;
+        // appendLayer.style.width = `${thisElement.scrollWidth}px`;
+        posItem(".popup_content_low");
+      } else if (!!thisElement.closest(".api_middle_main_cols")) {
+        posItem(".api_middle_main_cols");
+      } else if (!!thisElement.closest(".api_middle_sub_cols")) {
+        posItem(".api_middle_sub_cols");
+      } else {
+        appendLayer.style.top = `${window.scrollY + thisElement.getBoundingClientRect().top + thisElement.getBoundingClientRect().height}px`;
+        appendLayer.style.left = `${thisElement.getBoundingClientRect().left}px`;
+        appendLayer.style.width = `${thisElement.scrollWidth + 31}px`;
+      }
+
+      function posItem(item) {
+        const parentContentLow = thisElement.closest(item);
+        const parentContentLowTop = parentContentLow.getBoundingClientRect().top;
+        const parentInTop = parentContentLow.scrollTop + thisElement.getBoundingClientRect().top;
+        appendLayer.style.top = `${(parentInTop - parentContentLowTop) + thisElement.getBoundingClientRect().height}px`;
+        appendLayer.style.left = `${thisElement.getBoundingClientRect().left - parentContentLow.getBoundingClientRect().left}px`;
+        appendLayer.style.width = `${thisElement.scrollWidth + 31}px`;
+      }
+    }
+
+
+    function resizePos() {
+      searchFieldWrap.forEach((element, index) => {
+        autoLayerPos(element);
+      })
+    }
+
+
+
+  }
+
+  function valueCheck(target, parent) {
+    const thisElement = target;
+    const thisElementParent = parent;
+    if (appendLayer === null) {
+      return;
+    }
+    appendLayer = document.querySelector(`[data-autoLayer='${thisElementParent.getAttribute("id")}']`);
+    let auto_word_list_wrap = appendLayer.querySelector(".auto_word_list_wrap");
+    let autoLayerCountOption = thisElementParent.getAttribute("data-rowCount") !== undefined ? thisElementParent.getAttribute("data-rowCount") : 3;
+    if (thisElement.value.length) {
+      thisElementParent.classList.add("value_true");
+      appendLayer.classList.add("auto_mode");
+      if (!!appendLayer.querySelectorAll("li")[autoLayerCountOption]) {
+        auto_word_list_wrap.style.maxHeight = `${appendLayer.querySelectorAll("li")[autoLayerCountOption].offsetTop}px`;
+      }
+      appendLayer.classList.add("auto_scroll_show");
+    } else {
+      resetLayer(thisElementParent);
+    }
+  }
+
+  function resetLayer(parent) {
+    parent.classList.remove("value_true");
+    parent.classList.remove("typing");
+    if (!!appendLayer) {
+      appendLayer.classList.remove("auto_mode");
+      appendLayer.classList.remove("auto_scroll_show");
+    }
+  }
+}
+
+
+
+
+/* local layer */
+
+function localLayer(callback){
+  const localTarget = document.querySelectorAll("[data-localpopup]");
+  let activeLayer = document.querySelector(".local_layer.active");
+
+  if(!!localTarget){
+    localTarget.forEach((item)=>{
+      item.addEventListener("click",(e)=>{
+        e.preventDefault();
+        const thisCall = e.currentTarget;
+
+        const thisTarget = document.querySelector(thisCall.getAttribute("data-localpopup")) ?? null;
+        const thisTargetParent = document.querySelector(thisCall.getAttribute("data-localParent")) ?? null;
+        
+        if(!!thisTarget){
+          thisTarget.style.top = thisCall.offsetTop+thisCall.getBoundingClientRect().height+8 + 'px';
+         thisTarget.classList.toggle("active");
+         if(thisTarget.classList.contains("active")){
+          window.dispatchEvent(new Event('resize'));
+          activeLayer = thisTarget;
+          if(callback){
+            callback();
+          }
+         }
+        }
+      });
+    });
+
+    addDynamicEventListener(document.body, 'click', '.page_wrap', function(e) {
+      if(e.target.closest(".local_layer") || e.target.getAttribute("data-localpopup") || e.target.closest("[data-localpopup]") || e.target.closest(".ui_picker_render") || e.target.closest(".tui-datepicker") || e.target.classList.contains(".tui-calendar-btn")){
+        return;
+      }
+      if(!!activeLayer){
+        activeLayer.classList.remove("active");
+      }
+    });
+
+    addDynamicEventListener(document.body, 'click', '.tui-calendar-btn , .tui-calendar-title , .tui-calendar-date', function(e) {
+      if(!!activeLayer){
+        activeLayer.classList.add("active");
+      }
+    });
+  }
+}
+
+
+
+function maxWidthFunc(target){
+  const targetItem = document.querySelectorAll(target);
+  let maxArray = [];
+  if(!!targetItem){
+    targetItem.forEach((item)=>{
+      if(item.getAttribute("data-maxelse") == null){
+        maxArray.push(item.getBoundingClientRect().width)
+      } 
+    })
+    console.log(maxArray);
+    targetItem.forEach((item)=>{
+      if(item.getAttribute("data-maxelse") == null){
+        item.style.width = Math.max.apply(null,maxArray)+"px";
+      }
+    })
+  }
+}
+
+
+
+/* ui_picker_render */
+function uiPickerRender(){
+  const ui_picker_render = document.querySelectorAll(".ui_picker_render");
+  const appBody = document.querySelector(".page_wrap");
+  if(!ui_picker_render){return}
+
+  init();
+
+  actionPos();
+  window.addEventListener("resize",()=>{
+    actionPos()
+  });
+
+  function init(){
+    ui_picker_render.forEach((render)=>{
+      if(render.classList.contains("reverse_render")){
+        return;
+      }
+      const thisSiblings = siblings(render);
+      if(!render.classList.contains("reverse_render")){
+        thisSiblings.forEach((callItem)=>{
+          if(callItem.classList.contains("tui-datepicker-input")){
+            callItem.setAttribute("data-calendarcall",render.getAttribute("id"));
+          }
+        });
+      }
+
+      if (!!render.closest(".popup_content_low")) {
+        render.closest(".popup_content_low").appendChild(render);
+      } else if(!!render.closest(".api_middle_main_cols")){
+        render.closest(".api_middle_main_cols").appendChild(render);
+      } else if(!!render.closest(".api_middle_sub_cols")){
+        render.closest(".api_middle_sub_cols").appendChild(render);
+      } else {
+        appBody.appendChild(render);
+      }
+
+      // if (render.closest(".popup_content_low") !== null) {
+      //   render.closest(".popup_content_low").appendChild(render);
+      // } else {
+      //   appBody.appendChild(render);
+      // }
+    });
+  }
+
+  function actionPos(){
+    ui_picker_render.forEach((render)=>{
+      if(render.classList.contains("reverse_render")){
+        return;
+      }
+      const renderLayerParent = render.closest(".popup_content_low");
+      const calendarCall = document.querySelector(`[data-calendarcall='${render.getAttribute("id")}']`);
+      let calendarCallLayerParentScrollTop = !!renderLayerParent ? renderLayerParent.scrollTop : 0;
+
+      let call_top = window.scrollY + calendarCall.getBoundingClientRect().top + calendarCall.getBoundingClientRect().height;
+      let calendar_layer_top = calendarCallLayerParentScrollTop + calendarCall.getBoundingClientRect().top;
+      
+      let calendar_left = calendarCall.getBoundingClientRect().left;
+
+      if (!!render.closest(".popup_content_low")) {
+        posItem(render,calendarCall,".popup_content_low");
+      }else if(!!render.closest(".api_middle_main_cols")){
+        posItem(render,calendarCall,".api_middle_main_cols");
+      }else if(!!render.closest(".api_middle_sub_cols")){
+        posItem(render,calendarCall,".api_middle_sub_cols");
+      } else {
+        render.style.top = `${call_top}px`;
+        render.style.left = `${calendar_left}px`;
+        render.style.width = `${calendarCall.getBoundingClientRect().width}px`;
+      }
+     
+    });
+
+
+    function posItem(render,caller,parent){
+      let renderLayerParent = !!render.closest(parent) ? render.closest(parent) : null;
+      let parent_contlow_top = renderLayerParent.getBoundingClientRect().top;
+      let parent_contlow_left = renderLayerParent.getBoundingClientRect().left;
+      let child_caller_top = !!renderLayerParent ? renderLayerParent.scrollTop + caller.getBoundingClientRect().top : 0;
+      let child_caller_left = caller.getBoundingClientRect().left;
+
+      render.style.top = `${(child_caller_top - parent_contlow_top) + caller.getBoundingClientRect().height - 1}px`;
+      render.style.left = `${child_caller_left - parent_contlow_left}px`;
+      render.style.width = `${ caller.getBoundingClientRect().width }px`;
+    }
+  }
+}

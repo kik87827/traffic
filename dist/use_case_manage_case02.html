@@ -236,7 +236,7 @@
 						<!-- search -->
 						<div class="search_field_container">
 							<div class="search_field_cols">
-								<a href="#" class="btn_field_box" data-localpopup="#filter_layer" data-localParent=".screen_content_main_cols">
+								<a href="#" class="btn_field_box" data-localpopup="#filter_layer" data-localParent=".list_data_search_wrap">
 									<i class="ico_field ico_filter"></i>
 									<span class="field_box_text">필터</span>
 								</a>
@@ -247,12 +247,12 @@
 										<select class="form_select medium">
 											<option>전체</option>
 										</select>
+										<!-- <select class="form_select medium warn"><option>전체</option></select> -->
 									</div>
 									<div class="serach_fitem_long_cols">
 										<div class="search_field_wrap" name="search_form" data-rowCount="5">
 											<div class="input_component_box search_field" data-name="value_check">
 												<input type="text" class="input_origin_item" placeholder="검색어 입력">
-												<button type="button" class="btn_form_reset"><span class="hdtext">리셋</span></button>
 											</div>
 											<!-- layer -->
 											<div class="auto_word_layer">
@@ -268,7 +268,7 @@
 											</div>
 											<!-- // layer -->
 										</div>
-										<a href="#" class="btn_field_formbox">
+										<a href="#" class="btn_search_submit">
 											<span class="hdtext">검색</span>
 										</a>
 									</div>
@@ -280,71 +280,72 @@
 					<!-- filter -->
 					<div class="local_layer" id="filter_layer">
 						<div class="local_layer_inner">
-							<table class="form_group_tb">
-								<colgroup>
-									<col style="width:100px;" />
-									<col />
-								</colgroup>
-								<tbody>
-									<tr>
-										<th><span class="form_group_label">기간</span></th>
-										<td>
-											<div class="fgroup_item_wrap">
-												<div class="fgroup_cols">
-													<div class="tui-datepicker-input">
-														<input type="text" id="datepicker-startinput" class="input_tui_calendar" placeholder="시작 일시 선택">
-														<span class="tui-ico-date"></span>
-													</div>
-													<div id="form_date_start_render" class="ui_picker_render" data-parent="#filter_layer"></div>
+							<div class="form_block_field">
+								<div class="form_block_row">
+									<div class="form_block_title_row">
+										<p class="form_block_title">기간</p>
+									</div>
+									<div class="form_block_content_row">
+										<div class="fgroup_item_wrap nogap">
+											<div class="fgroup_cols">
+												<div class="tui-datepicker-input">
+													<input type="text" id="datepicker-startinput" class="input_tui_calendar" placeholder="시작 일시 선택">
+													<span class="tui-ico-date"></span>
 												</div>
-												<div class="fgroup_cols">
-													<div class="tui-datepicker-input">
-														<input type="text" id="datepicker-endinput" class="input_tui_calendar" placeholder="종료 일시 선택">
-														<span class="tui-ico-date"></span>
-													</div>
-													<div id="form_date_end_render" class="ui_picker_render" data-parent="#filter_layer"></div>
-												</div>
+												<div id="form_date_start_render" class="ui_picker_render" data-parent="#filter_layer"></div>
 											</div>
-										</td>
-									</tr>
-									<tr>
-										<th><span class="form_group_label">Type</span></th>
-										<td>
-											<ul class="props_form_item_list gap_type2">
-												<li>
-													<div class="props_form_item">
-														<input type="checkbox" class="props_form" id="type_check_01" checked>
-														<label for="type_check_01" class="props_label">All</label>
-													</div>
-												</li>
-												<li>
-													<div class="props_form_item">
-														<input type="checkbox" class="props_form" id="type_check_02">
-														<label for="type_check_02" class="props_label">일반적 상황</label>
-													</div>
-												</li>
-												<li>
-													<div class="props_form_item">
-														<input type="checkbox" class="props_form" id="type_check_03">
-														<label for="type_check_03" class="props_label">이벤트 상황</label>
-													</div>
-												</li>
-											</ul>
-										</td>
-									</tr>
-									<tr>
-										<th class="align_type2"><span class="form_group_label">카테고리</span></th>
-										<td>
-											<input type="text" id="treeInput" placeholder="카테고리 선택" class="input_tree" autocomplete="off" />
-										</td>
-									</tr>
-								</tbody>
-							</table>
+											<div class="fgroup_cols else"><span class="fgroup_elsetext">~</span></div>
+											<div class="fgroup_cols">
+												<div class="tui-datepicker-input">
+													<input type="text" id="datepicker-endinput" class="input_tui_calendar" placeholder="종료 일시 선택">
+													<span class="tui-ico-date"></span>
+												</div>
+												<div id="form_date_end_render" class="ui_picker_render" data-parent="#filter_layer"></div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="form_block_row">
+									<div class="form_block_title_row">
+										<p class="form_block_title">Type</p>
+									</div>
+									<div class="form_block_content_row">
+										<ul class="props_form_item_list gap_type2">
+											<li>
+												<div class="props_form_item">
+													<input type="checkbox" class="props_form" id="type_check_01" checked>
+													<label for="type_check_01" class="props_label">All</label>
+												</div>
+											</li>
+											<li>
+												<div class="props_form_item">
+													<input type="checkbox" class="props_form" id="type_check_02">
+													<label for="type_check_02" class="props_label">일반적 상황</label>
+												</div>
+											</li>
+											<li>
+												<div class="props_form_item">
+													<input type="checkbox" class="props_form" id="type_check_03">
+													<label for="type_check_03" class="props_label">이벤트 상황</label>
+												</div>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<div class="form_block_row">
+									<div class="form_block_title_row">
+										<p class="form_block_title">카테고리</p>
+									</div>
+									<div class="form_block_content_row">
+										<input type="text" id="treeInput" placeholder="카테고리 선택" class="input_tree" autocomplete="off" />
+									</div>
+								</div>
+							</div>
 							<div class="field_footer_row">
-								<a href="#" class="btn_field_formbox small cloudy">
+								<a href="#" class="btn_field_formbox type2">
 									<span class="btn_field_formbox_text">초기화</span>
 								</a>
-								<a href="#" class="btn_field_formbox small primary">
+								<a href="#" class="btn_field_formbox">
 									<span class="btn_field_formbox_text">적용</span>
 								</a>
 							</div>
@@ -449,7 +450,7 @@
 							<ul class="btn_listdata_control_list">
 								<li><a href="#" class="btn_onlytext">전체해제</a></li>
 								<li>
-									<a href="#" class="btn_field_formbox small">
+									<a href="#" class="btn_field_formbox dtype2 type2">
 										<span class="btn_field_formbox_text">병합</span>
 									</a>
 								</li>
@@ -729,13 +730,33 @@
 			</div>
 		</div>
 		<script>
-			// 퍼블확인용
-			// let url = window.location.href.split('?')[1];
-			// let url_2 = url !== undefined ? url.split('#')[0] : null;
-			// if(url_2 === "loading"){
-			// 	document.querySelector(".loading_layer").classList.add("active");
-			// }
-			menuRock("#one_depth_01")
+			searchForm();
+
+			var datepicker_start = new tui.DatePicker('#form_date_start_render', {
+				//date: new Date(),
+				language: 'ko',
+				input: {
+					element: '#datepicker-startinput',
+					format: 'yyyy-MM-dd HH:mm A'
+				},
+				timePicker: true
+			});
+
+			var datepicker_end = new tui.DatePicker('#form_date_end_render', {
+				//date: new Date(),
+				language: 'ko',
+				input: {
+					element: '#datepicker-endinput',
+					format: 'yyyy-MM-dd HH:mm A'
+				},
+				timePicker: true
+			});
+
+			menuRock("#one_depth_01");
+
+			localLayer(() => {
+				// callback
+			});
 		</script>
 	</div>
 </body>

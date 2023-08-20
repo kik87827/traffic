@@ -2,12 +2,10 @@
 @use "sass:math";
 
 $primary : #00b191;
-$primary_hover : #6243cc;
+$primary_hover : #007e67;
 
-$second : #4363ff;
-$primary_hover : #6243cc;
 
-$warn : #e84854;
+$warn : #ff002e;
 
 
 @function rem($value) {
