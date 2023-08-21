@@ -57,7 +57,7 @@
 					@@include('./include/_filter_sim.html')
 					<!-- // filter -->
 				</div>
-				<div class="mid_liquid_row">
+				<div class="mid_liquid_row type2">
 					<!-- list_table_render_wrap -->
 					<div class="list_table_render_wrap">
 						<div class="list_sort_row">
@@ -539,7 +539,7 @@
 													<td>
 														<div class="tditem_group">
 															<span class="tdtext">차량</span>
-															<button type="button" class="btn_imp_item" data-tooltip="#tooltip_layer02"></button>
+															<button type="button" class="btn_imp_item" data-tooltip="#tooltip_layer01"></button>
 														</div>
 													</td>
 												</tr>
@@ -549,7 +549,7 @@
 													<td>
 														<div class="tditem_group">
 															<span class="tdtext">사람</span>
-															<button type="button" class="btn_imp_item" data-tooltip="#tooltip_layer02"></button>
+															<button type="button" class="btn_imp_item" data-tooltip="#tooltip_layer01"></button>
 														</div>
 													</td>
 												</tr>
@@ -575,7 +575,7 @@
 													<td>
 														<div class="tditem_group">
 															<span class="tdtext">차량</span>
-															<button type="button" class="btn_imp_item" data-tooltip="#tooltip_layer02"></button>
+															<button type="button" class="btn_imp_item" data-tooltip="#tooltip_layer01"></button>
 														</div>
 													</td>
 												</tr>
@@ -585,7 +585,7 @@
 													<td>
 														<div class="tditem_group">
 															<span class="tdtext">사람</span>
-															<button type="button" class="btn_imp_item" data-tooltip="#tooltip_layer02"></button>
+															<button type="button" class="btn_imp_item" data-tooltip="#tooltip_layer01"></button>
 														</div>
 													</td>
 												</tr>
@@ -611,7 +611,7 @@
 													<td>
 														<div class="tditem_group">
 															<span class="tdtext">차량</span>
-															<button type="button" class="btn_imp_item" data-tooltip="#tooltip_layer02"></button>
+															<button type="button" class="btn_imp_item" data-tooltip="#tooltip_layer01"></button>
 														</div>
 													</td>
 												</tr>
@@ -621,7 +621,7 @@
 													<td>
 														<div class="tditem_group">
 															<span class="tdtext">사람</span>
-															<button type="button" class="btn_imp_item" data-tooltip="#tooltip_layer02"></button>
+															<button type="button" class="btn_imp_item" data-tooltip="#tooltip_layer01"></button>
 														</div>
 													</td>
 												</tr>
@@ -651,8 +651,8 @@
 		<div class="tooltip_wrap" id="tooltip_layer01">
 			<ul class="caption_detail_list">
 				<li>
-					<div class="caption_detail_thcols"><span class="caption_detail_label">위치</span></div>
-					<div class="caption_detail_tdcols">
+					<div class="caption_detail_label_row"><span class="caption_detail_label">위치</span></div>
+					<div class="caption_detail_value_row">
 						<div class="caption_detail_value">
 							X : 201.07080078125<br>
 							Y : 201.07080078125<br>
@@ -661,30 +661,8 @@
 					</div>
 				</li>
 				<li>
-					<div class="caption_detail_thcols"><span class="caption_detail_label">속도</span></div>
-					<div class="caption_detail_tdcols">
-						<div class="caption_detail_value">
-							Ve0
-						</div>
-					</div>
-				</li>
-			</ul>
-		</div>
-		<div class="tooltip_wrap" id="tooltip_layer02">
-			<ul class="caption_detail_list">
-				<li>
-					<div class="caption_detail_thcols"><span class="caption_detail_label">위치</span></div>
-					<div class="caption_detail_tdcols">
-						<div class="caption_detail_value">
-							X : 201.07080078125<br>
-							Y : 201.07080078125<br>
-							Z : 201.07080078125
-						</div>
-					</div>
-				</li>
-				<li>
-					<div class="caption_detail_thcols"><span class="caption_detail_label">속도</span></div>
-					<div class="caption_detail_tdcols">
+					<div class="caption_detail_label_row"><span class="caption_detail_label">속도</span></div>
+					<div class="caption_detail_value_row">
 						<div class="caption_detail_value">
 							Ve0
 						</div>
@@ -701,7 +679,35 @@
 			// 	document.querySelector(".loading_layer").classList.add("active");
 			// }
 
-			menuRock("#one_depth_02")
+			tooltipFunc();
+
+			var datepicker_start = new tui.DatePicker('#form_date_start_render', {
+				//date: new Date(),
+				language: 'ko',
+				input: {
+					element: '#datepicker-startinput',
+					format: 'yyyy-MM-dd HH:mm A'
+				},
+				timePicker: true
+			});
+		
+			var datepicker_end = new tui.DatePicker('#form_date_end_render', {
+				//date: new Date(),
+				language: 'ko',
+				input: {
+					element: '#datepicker-endinput',
+					format: 'yyyy-MM-dd HH:mm A'
+				},
+				timePicker: true
+			});
+
+			menuRock("#one_depth_02");
+
+			localLayer(()=>{
+				// callback
+			});
+
+			searchForm();
 		</script>
 	</div>
 </body>

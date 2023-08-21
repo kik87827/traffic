@@ -53,23 +53,8 @@
 						</div>
 						<!-- search -->
 					</div>
-					<div class="listdata_render_wrap">
-						<div class="listdata_render_data_cols">
-							<p class="ico_copy_parag"><span class="ico_copy_intext"><strong>병합</strong>을 원하는 Use-case를 선택해주세요.</span></p>
-						</div>
-						<div class="listdata_render_control_cols">
-							<ul class="btn_listdata_control_list">
-								<li><a href="#" class="btn_onlytext">전체해제</a></li>
-								<li>
-									<a href="#" class="btn_field_formbox dtype2 type2">
-										<span class="btn_field_formbox_text">병합</span>
-									</a>
-								</li>
-							</ul>
-						</div>
-					</div>
 				</div>
-				<div class="mid_liquid_row">
+				<div class="mid_liquid_row type2">
 					<!-- list_table_render_wrap -->
 					<div class="list_table_render_wrap">
 						<div class="list_sort_row">
@@ -81,7 +66,7 @@
 											<option>ID</option>
 											<option>명칭</option>
 											<option>Type</option>
-											<option>수정 일자</option>
+											<option selected>수정 일자</option>
 											<option>생성자</option>
 										</select>
 									</li>
@@ -205,74 +190,77 @@
 				</div>
 			</div>
 			<div class="api_middle_sub_cols">
-				<div class="screen_subtitle_row">
-					<h3 class="screen_subtitle">사용자 정보</h3>
-				</div>
-				<div class="screen_subcontent_row">
-					<div class="user_data_both">
-						<div class="user_data_card_cols">
-							<div class="user_data_card_img"><img src="./assets/images/img_user@2x.png" alt=""></div>
-							<div class="user_data_card_spec">
-								<p class="user_data_card_main">User0123</p>
-								<p class="user_data_card_sub">abc@abc.com</p>
+				<div class="screen_subcontent_wrap">
+					<div class="screen_subtitle_row">
+						<h3 class="screen_subtitle">사용자 정보</h3>
+					</div>
+					<div class="screen_subcontent_row">
+						<div class="user_data_both">
+							<div class="user_data_card_cols">
+								<div class="user_data_card_img"><img src="./assets/images/img_user@2x.png" alt=""></div>
+								<div class="user_data_card_spec">
+									<p class="user_data_card_main">User0123</p>
+									<p class="user_data_card_sub">abc@abc.com</p>
+								</div>
+							</div>
+							<div class="user_data_data_cols">
+								<table class="cform_field_tb type3">
+									<tr>
+										<th><span class="cform_field_label">이름</span></th>
+										<td>
+											<div class="cform_data">김사용자</div>
+										</td>
+									</tr>
+									<tr>
+										<th><span class="cform_field_label">전화번호</span></th>
+										<td>
+											<div class="cform_data">01012341234</div>
+										</td>
+									</tr>
+									<tr>
+										<th><span class="cform_field_label">소속</span></th>
+										<td>
+											<div class="cform_data">엠큐닉</div>
+										</td>
+									</tr>
+									<tr>
+										<th><span class="cform_field_label imp">권한</span></th>
+										<td>
+											<ul class="props_form_item_list type3">
+												<li>
+													<div class="props_form_item">
+														<input type="radio" name="user_choice" class="props_form" id="user_choice_01" checked>
+														<label for="user_choice_01" class="props_label">사용자</label>
+													</div>
+												</li>
+												<li>
+													<div class="props_form_item">
+														<input type="radio" name="user_choice" class="props_form" id="user_choice_02">
+														<label for="user_choice_02" class="props_label">관리자</label>
+													</div>
+												</li>
+											</ul>
+										</td>
+									</tr>
+								</table>
 							</div>
 						</div>
-						<div class="user_data_data_cols">
-							<table class="cform_field_tb">
-								<tr>
-									<th><span class="cform_field_label">이름</span></th>
-									<td>
-										<div class="cform_data">김사용자</div>
-									</td>
-								</tr>
-								<tr>
-									<th><span class="cform_field_label">전화번호</span></th>
-									<td>
-										<div class="cform_data">01012341234</div>
-									</td>
-								</tr>
-								<tr>
-									<th><span class="cform_field_label">소속</span></th>
-									<td>
-										<div class="cform_data">엠큐닉</div>
-									</td>
-								</tr>
-								<tr>
-									<th><span class="cform_field_label imp">권한</span></th>
-									<td>
-										<ul class="props_form_item_list">
-											<li>
-												<div class="props_form_item">
-													<input type="radio" name="user_choice" class="props_form" id="user_choice_01" checked>
-													<label for="user_choice_01" class="props_label">사용자</label>
-												</div>
-											</li>
-											<li>
-												<div class="props_form_item">
-													<input type="radio" name="user_choice" class="props_form" id="user_choice_02" checked>
-													<label for="user_choice_02" class="props_label">관리자</label>
-												</div>
-											</li>
-										</ul>
-									</td>
-								</tr>
-							</table>
-						</div>
 					</div>
-				</div>
-				<div class="field_footer_row">
-					<a href="#" class="btn_field_formbox">
-						<span class="btn_field_formbox_text">삭제</span>
-						<i class="ico_field_formbox ico_trash"></i>
-					</a>
-					<a href="#" class="btn_field_formbox">
-						<span class="btn_field_formbox_text">수정</span>
-						<i class="ico_field_formbox ico_pencil primary"></i>
-					</a>
+					<div class="screen_subbtn_row">
+						<a href="#" class="btn_field_submit">
+							<span class="btn_field_submit_text">삭제</span>
+							<i class="ico_field_submit ico_delete"></i>
+						</a>
+						<a href="#" class="btn_field_submit">
+							<span class="btn_field_submit_text">수정</span>
+							<i class="ico_field_submit ico_pencil primary"></i>
+						</a>
+					</div>
 				</div>
 			</div>
 		</div>
 		<script>
+			searchForm();
 		</script>
 	</div>
 </body>

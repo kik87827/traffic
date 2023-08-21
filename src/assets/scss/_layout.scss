@@ -81,11 +81,11 @@ html:not(.touchmode) {
 }
 
 .btn_hform_layer_close{
-    display:block;width:36px;height:36px;position:absolute;top:50px;right:50px;outline:1px solid red;
+    display:block;width:36px;height:36px;position:absolute;top:50px;right:50px;
     background:url("../images/ic_close@2x.png") no-repeat 50% 50%/100% auto;
 }
 
-.hform_layer_inner_container{display:flex;align-items:center;height:100%;width:545px;margin:0 auto;box-sizing:border-box;padding:50px;outline:1px solid red;}
+.hform_layer_inner_container{display:flex;align-items:center;height:100%;width:545px;margin:0 auto;box-sizing:border-box;padding:50px;}
 .hform_layer_inner_row{width:100%;}
 
 .hform_layer_in_title{font-size: 22px;

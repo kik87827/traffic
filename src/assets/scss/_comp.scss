@@ -18,7 +18,7 @@
     .count_text{font-size:12px;color: #898e96;
         .emp{color:$primary}
     }
-    .btn_form_reset{display:none;width:28px;height:28px;background:url("../images/ic_delete_text@2x.png") no-repeat 0 0/100% auto;margin-right:15px;}
+    .btn_form_reset{display:none;width:28px;height:28px;background:url("../images/ic_delete_text@2x.png") no-repeat 0 0/100% auto;}
     &.warn{
         border-color:$warn;
         .ico_input{}
@@ -114,8 +114,10 @@ input.input_origin_item{
 .btn_onlytext{
     font-size: 12px;
     line-height: 1.4;
-    display:inline-block; text-decoration: underline;
+    display:inline-block; text-decoration: underline !important;
     color: #3f4247;
+
+    &:hover{color:#007e67}
 }
 
 
