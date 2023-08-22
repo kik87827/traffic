@@ -37,7 +37,7 @@ html:not(.touchmode) {
     border-radius:15px 0 0 15px; 
     display:flex;flex-direction: column;overflow-x:hidden;
 }
-.hform_long_row{flex:1;min-height: 0;display:flex;align-items: center;}
+.hform_long_row{flex:1;display:flex;align-items: center;}
 .hform_inner_field{width:350px;margin:0 auto;padding:100px 0;}
 .hform_inner_logo{
     max-width:324px;margin:0 auto;

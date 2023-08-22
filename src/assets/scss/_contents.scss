@@ -171,7 +171,7 @@
     margin-bottom:50px;
     &:last-of-type{margin-bottom:0;}
 }
-.subform_title_row{margin-bottom:13px;}
+.subform_title_row{margin-bottom:13px;display:flex;justify-content: space-between;align-items: center;}
 .subform_title{display:flex;align-items: center;gap:5px;}
 .subform_ico{
     display:block;width:28px;height:28px;background-repeat:no-repeat;background-size:100% auto;background-position:0 0;

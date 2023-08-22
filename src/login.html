@@ -89,16 +89,17 @@
 				hformLayerFunc("#password_layer");
 			}else if(url_2 === "password_modify"){
 				hformLayerFunc("#password_modify_layer");
-			}
+			}	
 
-
-			if(url_2.indexOf('message') !== -1){
-				document.querySelectorAll(".warn_message,.form_each_message_group").forEach((item)=>{
-					item.classList.add("active");
-				});
-				document.querySelectorAll(".input_component_box").forEach((item)=>{
-					item.classList.add("warn");
-				});
+			if(url_2 !== null){
+				if(url_2.indexOf('message') !== -1){
+					document.querySelectorAll(".warn_message,.form_each_message_group").forEach((item)=>{
+						item.classList.add("active");
+					});
+					document.querySelectorAll(".input_component_box").forEach((item)=>{
+						item.classList.add("warn");
+					});
+				}
 			}
 		</script>
 	</div>

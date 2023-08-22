@@ -13,7 +13,7 @@
 }
 
 body {
-  font-family: "Pretendard", Dotum, verdana, sans-serif;
+  font-family: "Spoqa", Dotum, verdana, sans-serif;
   font-size: 16px;
   font-weight: 400;
 }
@@ -40,7 +40,7 @@ table th, table td {
   text-align: center;
   vertical-align: middle;
   font-weight: normal;
-  font-family: "Pretendard";
+  font-family: "Spoqa";
 }
 
 ol, ul, li {
@@ -61,16 +61,16 @@ button {
   background: none;
   cursor: pointer;
   padding: 0;
-  font-family: "Pretendard";
+  font-family: "Spoqa";
 }
 
 button span {
   position: relative;
-  font-family: "Pretendard";
+  font-family: "Spoqa";
 }
 
 select {
-  font-family: "Pretendard";
+  font-family: "Spoqa";
 }
 
 strong {
@@ -110,7 +110,7 @@ audio, canvas, progress, video {
 }
 
 input[type=text], input[type=password] {
-  font-family: "Pretendard";
+  font-family: "Spoqa";
   color: #000;
   border: 1px solid #c8c8c8;
   -webkit-appearance: none;
@@ -124,7 +124,7 @@ input[type=tel],
 input[type=number],
 input[type=password] {
   border-radius: 0;
-  font-family: "Pretendard";
+  font-family: "Spoqa";
   color: #5d5d5d;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -146,7 +146,7 @@ table caption {
 }
 
 textarea {
-  font-family: "Pretendard";
+  font-family: "Spoqa";
   color: #000;
   border: 1px solid #c8c8c8;
   -webkit-appearance: none;
@@ -156,27 +156,27 @@ textarea {
 
 ::-webkit-input-placeholder {
   color: #898e96;
-  font-family: "Pretendard";
+  font-family: "Spoqa";
 }
 
 ::-moz-input-placeholder {
   color: #898e96;
-  font-family: "Pretendard";
+  font-family: "Spoqa";
 }
 
 :-ms-input-placeholder {
   color: #898e96;
-  font-family: "Pretendard";
+  font-family: "Spoqa";
 }
 
 ::-ms-input-placeholder {
   color: #898e96;
-  font-family: "Pretendard";
+  font-family: "Spoqa";
 }
 
 ::input-placeholder {
   color: #898e96;
-  font-family: "Pretendard";
+  font-family: "Spoqa";
 }
 
 ::-webkit-inner-spin-button {
@@ -1820,7 +1820,6 @@ html:not(.touchmode) ::-webkit-scrollbar-track {
 
 .hform_long_row {
   flex: 1;
-  min-height: 0;
   display: flex;
   align-items: center;
 }
@@ -3039,6 +3038,9 @@ input.input_origin_item {
 
 .subform_title_row {
   margin-bottom: 13px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .subform_title {

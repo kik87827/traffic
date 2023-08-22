@@ -92,7 +92,6 @@ function DesignPopup(option) {
   this.bg_design_popup = null;
   this.scrollValue = 0;
 
-  this.btn_closeTrigger = null;
   this.btn_close = null;
 
   const popupGroupCreate = document.createElement("div");
@@ -196,15 +195,15 @@ DesignPopup.prototype.popupHide = function() {
 DesignPopup.prototype.bindEvent = function() {
   this.btn_close = this.selector.querySelectorAll(".btn_popup_close");
   this.bg_design_popup = this.selector.querySelector(".bg_dim");
+  this.btn_closeTrigger = this.selector.querySelector(".close_trigger");
   var closeItemArray = [...this.btn_close];
 
   // this.selector.querySelector(".popup_content_low").addEventListener("scroll",(e)=>{
   //   console.log(this.selector.querySelector(".popup_content_low").scrollTop)
   // });
-
+  console.log();
   if (!!this.btn_closeTrigger) {
-    this.btn_closeTrigger = this.selector.querySelectorAll(".close_trigger");
-    closeItemArray.push(...this.btn_closeTrigger)
+    closeItemArray.push(this.btn_closeTrigger);
   }
   if (!!this.bg_design_popup) {
     closeItemArray.push(this.bg_design_popup);
