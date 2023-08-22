@@ -472,6 +472,35 @@ function formItemFunc() {
     }
 
   });
+
+  //select
+  addDynamicEventListener(document.body, 'click', '.form_select', function(e) {
+    const thisTarget = e.target;
+    selectReset();
+    thisTarget.classList.add("focus");
+  });
+  addDynamicEventListener(document.body, 'change', '.form_select', function(e) {
+    const thisTarget = e.target;
+
+    setTimeout(() => {
+      thisTarget.classList.remove("focus");
+    }, 10);
+  });
+  document.querySelector("body").addEventListener("click", (e) => {
+    if (e.target.classList.contains("form_select")) {
+      return;
+    }
+    selectReset();
+  });
+
+  function selectReset() {
+    const selectDom = document.querySelectorAll(".form_select");
+    if (!!selectDom) {
+      selectDom.forEach((item) => {
+        item.classList.remove("focus");
+      });
+    }
+  }
 }
 
 

@@ -661,8 +661,6 @@ html.smooth {
   height: 30px;
   vertical-align: top;
   padding: 0;
-  border-radius: 4px;
-  border: solid 1px #ddd;
   background-color: #fff;
 }
 
@@ -671,19 +669,24 @@ html.smooth {
 }
 
 .tui-datepicker-input > input {
+  border-radius: 4px;
   width: 100%;
   height: 100%;
   padding: 6px 27px 6px 10px;
   font-size: 12px;
   line-height: 14px;
   vertical-align: top;
-  border: 0;
+  border: solid 1px #ddd;
   color: #5f637a;
+  box-sizing: border-box;
   line-height: 1;
   position: relative;
   background: transparent;
   z-index: 2;
   cursor: pointer;
+}
+.tui-datepicker-input > input:focus {
+  border-color: #00b191;
 }
 
 .tui-datepicker-input > .tui-ico-date {
@@ -2005,7 +2008,7 @@ html:not(.touchmode) ::-webkit-scrollbar-track {
   display: inline-block;
   font-size: 14px;
   font-weight: 700;
-  line-height: 1.3;
+  line-height: 1.2;
   color: #27292c;
   white-space: nowrap;
   position: relative;
@@ -2170,7 +2173,7 @@ html:not(.touchmode) ::-webkit-scrollbar-track {
 }
 
 .screen_subcontent_wrap {
-  padding: 30px 20px 20px;
+  padding: 30px 20px 30px;
 }
 
 .screen_subtitle_row {
@@ -2621,9 +2624,6 @@ html:not(.touchmode) ::-webkit-scrollbar-track {
   white-space: nowrap;
   line-height: 1;
 }
-.input_component_box .count_wrap + .btn_form_reset {
-  margin-left: 4px;
-}
 .input_component_box .count_text {
   font-size: 12px;
   color: #898e96;
@@ -2636,6 +2636,9 @@ html:not(.touchmode) ::-webkit-scrollbar-track {
   width: 28px;
   height: 28px;
   background: url("../images/ic_delete_text@2x.png") no-repeat 0 0/100% auto;
+}
+.input_component_box .btn_form_reset + .count_wrap {
+  margin-left: 15px;
 }
 .input_component_box.warn {
   border-color: #ff002e;
@@ -2705,6 +2708,17 @@ input.input_origin_item {
 .btn_field_formbox.type2 .btn_formbox_submit_text {
   color: #007e67;
 }
+.btn_field_formbox.mintype {
+  min-width: 80px;
+  text-align: center;
+}
+.btn_field_formbox.inactive {
+  background: #898e96 !important;
+  border-color: #898e96 !important;
+}
+.btn_field_formbox.inactive .btn_field_formbox_text {
+  color: #fff;
+}
 .btn_field_formbox .btn_field_formbox_text {
   color: #fff;
 }
@@ -2731,7 +2745,7 @@ input.input_origin_item {
 .btn_field_formbox_text {
   font-size: 13px;
   display: inline-block;
-  font-weight: bold;
+  font-weight: 500;
   line-height: 1;
   text-align: center;
   color: #fff;
@@ -3069,6 +3083,21 @@ input.input_origin_item {
 .subform_ico.ico_explain {
   background-image: url("../images/ic_comment@2x.png");
 }
+.subform_ico.ico_ca {
+  background-image: url("../images/ic_category@2x.png");
+}
+.subform_ico.ico_history {
+  background-image: url("../images/ic_history@2x.png");
+}
+.subform_ico.ico_3d_list {
+  background-image: url("../images/ic_simulation@2x.png");
+}
+.subform_ico.ico_user_list {
+  background-image: url("../images/ic_usecase@2x.png");
+}
+.subform_ico.ico_parameter {
+  background-image: url("../images/ic_parameter@2x.png");
+}
 
 .subform_title_text {
   font-size: 14px;
@@ -3079,6 +3108,122 @@ input.input_origin_item {
   content: "*";
   color: #ff002e;
   margin-left: 3px;
+}
+
+.subc_form_item {
+  padding: 15px;
+  border-radius: 4px;
+  border: solid 1px #dadcde;
+  margin-bottom: 30px;
+}
+.subc_form_item:last-of-type {
+  margin-bottom: 0;
+}
+
+.subc_form_item_title_row {
+  margin-bottom: 13px;
+}
+
+.subc_form_title {
+  font-size: 13px;
+  line-height: 1.3;
+  text-align: left;
+  color: #575b62;
+  position: relative;
+  padding-left: 10px;
+}
+.subc_form_title:before {
+  display: block;
+  content: "";
+  width: 5px;
+  height: 5px;
+  background: #6f757d;
+  border-radius: 100%;
+  position: absolute;
+  top: 6px;
+  left: 0;
+}
+
+.subc_form_tb {
+  width: 100%;
+}
+.subc_form_tb th {
+  width: 1px;
+  padding-right: 10px;
+}
+.subc_form_tb th, .subc_form_tb td {
+  padding-bottom: 8px;
+}
+.subc_form_tb td {
+  padding-right: 20px;
+}
+.subc_form_tb td.has_control {
+  width: 35px;
+}
+.subc_form_tb td .form_select {
+  width: 100%;
+}
+.subc_form_tb td:last-of-type {
+  padding-right: 0;
+}
+.subc_form_tb tr:last-of-type th, .subc_form_tb tr:last-of-type td {
+  padding-bottom: 0;
+}
+
+.btn_control_box {
+  width: 35px;
+  height: 35px;
+  flex-grow: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  background-color: #575b62;
+}
+.btn_control_box:hover {
+  background-color: #3a3e45;
+}
+.btn_control_box:after {
+  display: block;
+  content: "";
+  width: 20.5px;
+  height: 20.5px;
+  background: url("../images/ic_regist@2x.png") no-repeat 0 0/100% auto;
+}
+.btn_control_box.ico_decrease:after {
+  background-image: url("../images/ic_delete_list@2x.png");
+}
+.btn_control_box.primary {
+  background-color: #00b191;
+}
+.btn_control_box.primary:hover {
+  background-color: #007e67;
+}
+
+.screen_subtitle_else_row {
+  margin-bottom: 10px;
+}
+
+.subc_form_title_else_group {
+  display: flex;
+  gap: 10px;
+}
+
+.list_combosort_wrap {
+  margin-bottom: 20px;
+}
+.list_combosort_wrap .form_select {
+  width: 100%;
+}
+
+.subform_render_data {
+  font-size: 14px;
+  display: inline-block;
+  font-weight: 700;
+  line-height: 1;
+  text-align: right;
+  color: #3f4247;
 }
 
 /* form */
@@ -3206,7 +3351,7 @@ input.props_form[type=radio]:checked {
 }
 .fgroup_item_wrap .tui-datepicker-input {
   min-width: 167px;
-  width: auto;
+  width: 100%;
 }
 
 .fgroup_cols {
@@ -3242,6 +3387,74 @@ input.props_form[type=radio]:checked {
   z-index: 10;
   height: 0;
   margin-top: 1px;
+}
+
+.form_textarea_box {
+  position: relative;
+}
+.form_textarea_box .count_wrap {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  text-align: right;
+  color: #6f757d;
+  font-size: 12px;
+  text-align: right;
+  color: #6f757d;
+}
+
+textarea.form_textarea {
+  width: 100%;
+  box-sizing: border-box;
+  vertical-align: top;
+  height: 120px;
+  padding: 15px 15px 35px 15px;
+  border-radius: 4px;
+  border: solid 1px #dadcde;
+  background-color: #fff;
+  resize: none;
+}
+textarea.form_textarea.warn {
+  border-color: #ff002e;
+}
+textarea.form_textarea:focus {
+  border-color: #00b191;
+}
+
+.table_data_block {
+  margin-bottom: 30px;
+}
+.table_data_block:last-of-type {
+  margin-bottom: 0;
+}
+
+.table_top_row {
+  margin-bottom: 10px;
+}
+
+.tb_box_wrap .list_table_wrap {
+  border-radius: 4px;
+  border: 1px solid #dadcde;
+}
+.tb_box_wrap .list_table {
+  border-top: 0;
+}
+.tb_box_wrap .list_table th {
+  padding: 4px 5px 5px;
+}
+.tb_box_wrap .list_table th .thtext {
+  color: #6f757d;
+}
+.tb_box_wrap .list_table td {
+  padding: 4px 5px 5px;
+  font-weight: 300;
+}
+.tb_box_wrap .list_table td.has_check {
+  padding: 0 20px;
+}
+.tb_box_wrap .list_table td .tdtext {
+  color: #3f4247;
+  font-weight: 300;
 }
 
 /* board */
@@ -3329,11 +3542,20 @@ select.form_select {
   color: #27292c;
   cursor: pointer;
 }
-select.form_select:hover {
-  border-color: #00b191;
+select.form_select.focus {
+  border-color: #00b191 !important;
 }
 select.form_select.warn {
   border-color: #ff002e;
+}
+select.form_select.medium2 {
+  height: 30px;
+  font-size: 13px;
+  color: #898e96;
+  background-image: url("../images/ico_select_medium.png");
+  background-size: 24px auto;
+  padding-right: 36px;
+  padding-left: 12px;
 }
 select.form_select.medium {
   height: 35px;
@@ -3344,11 +3566,17 @@ select.form_select.medium {
   padding-right: 36px;
   padding-left: 12px;
 }
+select.form_select.dtype2 {
+  border: 1px solid #dadcde;
+}
 
 .list_sort_row {
   display: flex;
   justify-content: space-between;
   margin: 0 0 8px;
+}
+.list_sort_row.type2 {
+  justify-content: flex-end;
 }
 
 .list_sortcase_item_list {
@@ -3468,13 +3696,25 @@ select.form_select.medium {
   line-height: 20px;
   color: #575b62;
   text-align: center;
+  font-weight: 300;
 }
 .page_number:hover {
   color: #007e67;
 }
 .page_number.active {
   color: #007e67;
-  font-weight: 600;
+  font-weight: 500;
+}
+
+.subc_form_label {
+  font-size: 13px;
+  display: inline-block;
+  white-space: nowrap;
+  position: relative;
+  top: -1px;
+  line-height: 1;
+  letter-spacing: normal;
+  color: #3f4247;
 }
 
 /* 검색바 */
@@ -3768,6 +4008,13 @@ select.form_select.medium {
   align-items: center;
 }
 
+.subform_viewer_data {
+  font-size: 13px;
+  line-height: 1.3;
+  text-align: left;
+  color: #575b62;
+}
+
 /* local layer */
 .popup_content_low .local_layer {
   left: 0;
@@ -3841,6 +4088,7 @@ select.form_select.medium {
 .tdtext {
   display: inline-block;
   font-size: 13px;
+  font-weight: 300;
   line-height: 1.3;
   letter-spacing: normal;
   text-align: center;

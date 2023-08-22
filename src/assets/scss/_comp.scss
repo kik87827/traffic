@@ -13,12 +13,14 @@
     }
     .count_wrap{
         display:none;white-space:nowrap;line-height:1;
-        & + .btn_form_reset{margin-left:4px;}
+        // & + .btn_form_reset{margin-left:4px;}
     }
     .count_text{font-size:12px;color: #898e96;
         .emp{color:$primary}
     }
-    .btn_form_reset{display:none;width:28px;height:28px;background:url("../images/ic_delete_text@2x.png") no-repeat 0 0/100% auto;}
+    .btn_form_reset{display:none;width:28px;height:28px;background:url("../images/ic_delete_text@2x.png") no-repeat 0 0/100% auto;
+        & + .count_wrap{margin-left:15px;}
+    }
     &.warn{
         border-color:$warn;
         .ico_input{}
@@ -90,6 +92,12 @@ input.input_origin_item{
         border-color:$primary; background:#fff;
         .btn_formbox_submit_text{color:$primary_hover}
     }
+    &.mintype{min-width:80px;text-align: center;}
+    &.inactive{
+        background:#898e96 !important;
+        .btn_field_formbox_text{color:#fff;}
+        border-color:#898e96 !important;
+    }
     &.small{}
     .btn_field_formbox_text{color:#fff;}
     &.dtype2{border-radius:100px; padding:0 10px;
@@ -105,7 +113,7 @@ input.input_origin_item{
 }
 .btn_field_formbox_text{
     font-size: 13px; display:inline-block;
-    font-weight: bold;
+    font-weight: 500;
     line-height: 1;
     text-align: center;
     color: #fff;

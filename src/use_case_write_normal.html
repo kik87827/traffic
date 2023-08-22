@@ -381,10 +381,10 @@
 							<div class="subform_content_row">
 								<div class="input_component_box">
 									<input type="text" class="input_origin_item" placeholder="Use-case 명칭 입력">
+									<button class="btn_form_reset"><span class="hdtext">리셋</span></button>
 									<span class="count_wrap">
 										<span class="count_text"><span class="emp">0</span>/0</span>
 									</span>
-									<button class="btn_form_reset"><span class="hdtext">리셋</span></button>
 								</div>
 							</div>
 						</div>
@@ -409,7 +409,7 @@
 											<tr>
 												<th><span class="subc_form_label">항목</span></th>
 												<td>
-													<select class="form_select medium">
+													<select class="form_select medium dtype2">
 														<option>항목 선택</option>
 														<option>항목 선택 01</option>
 														<option>항목 선택 02</option>
@@ -420,7 +420,7 @@
 												</td>
 												<th><span class="subc_form_label">입력값</span></th>
 												<td>
-													<select class="form_select medium">
+													<select class="form_select medium dtype2">
 														<option>항목 선택</option>
 														<option>항목 선택 01</option>
 														<option>항목 선택 02</option>
@@ -434,7 +434,7 @@
 											<tr>
 												<th><span class="subc_form_label">항목</span></th>
 												<td>
-													<select class="form_select medium">
+													<select class="form_select medium dtype2">
 														<option>항목 선택</option>
 														<option>항목 선택 01</option>
 														<option>항목 선택 02</option>
@@ -445,7 +445,7 @@
 												</td>
 												<th><span class="subc_form_label">입력값</span></th>
 												<td>
-													<select class="form_select medium">
+													<select class="form_select medium dtype2">
 														<option>항목 선택</option>
 														<option>항목 선택 01</option>
 														<option>항목 선택 02</option>
@@ -470,7 +470,7 @@
 											<tr>
 												<th><span class="subc_form_label">항목</span></th>
 												<td>
-													<select class="form_select medium">
+													<select class="form_select medium dtype2">
 														<option>항목 선택</option>
 														<option>항목 선택 01</option>
 														<option>항목 선택 02</option>
@@ -481,7 +481,7 @@
 												</td>
 												<th><span class="subc_form_label">입력값</span></th>
 												<td>
-													<select class="form_select medium">
+													<select class="form_select medium dtype2">
 														<option>항목 선택</option>
 														<option>항목 선택 01</option>
 														<option>항목 선택 02</option>
@@ -506,7 +506,7 @@
 											<tr>
 												<th><span class="subc_form_label">항목</span></th>
 												<td>
-													<select class="form_select medium">
+													<select class="form_select medium dtype2">
 														<option>항목 선택</option>
 														<option>항목 선택 01</option>
 														<option>항목 선택 02</option>
@@ -517,7 +517,7 @@
 												</td>
 												<th><span class="subc_form_label">입력값</span></th>
 												<td>
-													<select class="form_select medium">
+													<select class="form_select medium dtype2">
 														<option>항목 선택</option>
 														<option>항목 선택 01</option>
 														<option>항목 선택 02</option>
@@ -571,7 +571,33 @@
 			// if(url_2 === "loading"){
 			// }
 
-			menuRock("#one_depth_01")
+			menuRock("#one_depth_01");
+
+			searchForm();
+
+			var datepicker_start = new tui.DatePicker('#form_date_start_render', {
+				//date: new Date(),
+				language: 'ko',
+				input: {
+					element: '#datepicker-startinput',
+					format: 'yyyy-MM-dd HH:mm A'
+				},
+				timePicker: true
+			});
+		
+			var datepicker_end = new tui.DatePicker('#form_date_end_render', {
+				//date: new Date(),
+				language: 'ko',
+				input: {
+					element: '#datepicker-endinput',
+					format: 'yyyy-MM-dd HH:mm A'
+				},
+				timePicker: true
+			});
+
+			localLayer(()=>{
+				// callback
+			});
 		</script>
 	</div>
 </body>
