@@ -451,8 +451,8 @@ function formItemFunc(){
     const thisTarget = e.target;
     const thisTargetParent = thisTarget.closest(".form_textarea_box");
     if(thisTargetParent.classList.contains("filled")){
-      thisTargetParent.classList.add("focus");
     }
+    thisTargetParent.classList.add("focus");
   });
   addDynamicEventListener(document.body, 'input', '.form_textarea_box .form_textarea', function(e) {
     const thisTarget = e.target;
