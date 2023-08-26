@@ -48,7 +48,7 @@ html:not(.touchmode) {
     flex:0; text-align: center;padding:0 0 40px 0;
 }
 .hform_bottom_logo_list{
-    display:flex;flex-wrap:wrap;gap:5px; justify-content: center;max-width:500px;margin:0 auto;
+    display:flex;flex-wrap:wrap;gap:5px 0; justify-content: center;max-width:410px;margin:0 auto;font-size:0;line-height:0;
     > li{}
 }
 .hform_bottom_logo{
@@ -284,7 +284,7 @@ html:not(.touchmode) {
     &:before{display:block;content:'';width:100%;height:100%;position:fixed;top:0;left:0;background:#1f1f23;opacity:.5;}
     &.active{display:block;}
 }
-.loading_item_wrap{position:fixed;top:0;left:0;width:100%;height:100%;display:flex;align-items: center;justify-content: center;}
+.loading_item_wrap{position:fixed;top:0;left:0;width:100%;height:100%;display:flex;align-items: center;justify-content: center;backdrop-filter : blur(80px);}
 
 /**
   * Scaling dots

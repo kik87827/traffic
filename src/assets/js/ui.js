@@ -482,6 +482,13 @@ function formItemFunc(){
   addDynamicEventListener(document.body, 'change', '.form_select', function(e) {
     const thisTarget = e.target;
 
+    if(thisTarget.value !== "0"){
+      console.log(thisTarget.value);
+      thisTarget.classList.add("filled");
+    }else{
+      thisTarget.classList.remove("filled");
+    }
+
     setTimeout(()=>{
       thisTarget.classList.remove("focus");
     },10);
@@ -502,7 +509,18 @@ function formItemFunc(){
     }
   }
 }
-
+function formSelectInit(){
+  const form_select= document.querySelectorAll(".form_select");
+  if(!!form_select){
+    form_select.forEach((item)=>{
+      if(item.value !== "0"){
+        item.classList.add("filled");
+      }else{
+        item.classList.remove("filled");
+      }
+    })
+  }
+}
 
 
 
@@ -1012,4 +1030,19 @@ function getScrollBarWidth() {
   let width = el.offsetWidth - el.clientWidth;
   el.remove();
   return width;
+}
+
+/* subc_form_tb */
+function subcFormTb(){
+  const subc_form_tb = document.querySelectorAll(".subc_form_tb");
+  if(!!subc_form_tb){
+    subc_form_tb.forEach((thisTable)=>{
+      const thisTb = thisTable;
+      const thisTbLabel = thisTb.querySelectorAll(".subc_form_label");
+
+      thisTbLabel.forEach((item)=>{
+        item.closest("th").style.width = item.getBoundingClientRect().width+'px';
+      })
+    })
+  }
 }

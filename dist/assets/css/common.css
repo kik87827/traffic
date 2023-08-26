@@ -1850,10 +1850,12 @@ html:not(.touchmode) ::-webkit-scrollbar-track {
 .hform_bottom_logo_list {
   display: flex;
   flex-wrap: wrap;
-  gap: 5px;
+  gap: 5px 0;
   justify-content: center;
-  max-width: 500px;
+  max-width: 410px;
   margin: 0 auto;
+  font-size: 0;
+  line-height: 0;
 }
 .hform_bottom_logo {
   display: block;
@@ -2340,6 +2342,8 @@ html:not(.touchmode) ::-webkit-scrollbar-track {
   display: flex;
   align-items: center;
   justify-content: center;
+  -webkit-backdrop-filter: blur(80px);
+          backdrop-filter: blur(80px);
 }
 
 /**
@@ -2601,6 +2605,9 @@ html:not(.touchmode) ::-webkit-scrollbar-track {
   border: 1px solid #dadcde;
   background-color: #fff;
 }
+.input_component_box.size2 {
+  height: 35px;
+}
 .input_component_box .ico_input {
   display: block;
   width: 28px;
@@ -2623,6 +2630,7 @@ html:not(.touchmode) ::-webkit-scrollbar-track {
   display: none;
   white-space: nowrap;
   line-height: 1;
+  flex: 0;
 }
 .input_component_box .count_text {
   font-size: 12px;
@@ -2636,6 +2644,7 @@ html:not(.touchmode) ::-webkit-scrollbar-track {
   width: 28px;
   height: 28px;
   background: url("../images/ic_delete_text@2x.png") no-repeat 0 0/100% auto;
+  flex: 0 0 28px;
 }
 .input_component_box .btn_form_reset + .count_wrap {
   margin-left: 15px;
@@ -2671,6 +2680,7 @@ input.input_origin_item {
   border: 0;
   width: 100%;
   flex: 1;
+  min-width: 0;
   line-height: 1;
   font-size: 13px;
   height: 38px;
@@ -3146,10 +3156,14 @@ input.input_origin_item {
 
 .subc_form_tb {
   width: 100%;
+  table-layout: fixed;
 }
 .subc_form_tb th {
-  width: 1px;
+  width: 24px;
   padding-right: 10px;
+}
+.subc_form_tb th:nth-of-type(2) {
+  width: 36px;
 }
 .subc_form_tb th, .subc_form_tb td {
   padding-bottom: 8px;
@@ -3168,6 +3182,12 @@ input.input_origin_item {
 }
 .subc_form_tb tr:last-of-type th, .subc_form_tb tr:last-of-type td {
   padding-bottom: 0;
+}
+.subc_form_tb select.form_select {
+  padding-left: 20px !important;
+}
+.subc_form_tb .input_component_box {
+  height: 35px;
 }
 
 .btn_control_box {
@@ -3542,6 +3562,9 @@ select.form_select {
   color: #27292c;
   cursor: pointer;
 }
+select.form_select.filled {
+  color: #3F4247 !important;
+}
 select.form_select.focus {
   border-color: #00b191 !important;
 }
@@ -3554,7 +3577,7 @@ select.form_select.medium2 {
   color: #898e96;
   background-image: url("../images/ico_select_medium.png");
   background-size: 24px auto;
-  padding-right: 36px;
+  padding-right: 42px;
   padding-left: 12px;
 }
 select.form_select.medium {
@@ -3563,7 +3586,7 @@ select.form_select.medium {
   color: #898e96;
   background-image: url("../images/ico_select_medium.png");
   background-size: 24px auto;
-  padding-right: 36px;
+  padding-right: 42px;
   padding-left: 12px;
 }
 select.form_select.dtype2 {

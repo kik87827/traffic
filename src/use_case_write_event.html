@@ -28,7 +28,10 @@
 							<div class="search_field_cols">
 								<div class="search_fitem_wrap">
 									<div class="serach_fitem_short_cols">
-										<select class="form_select medium"><option>전체</option></select>
+										<select class="form_select medium">
+											<option value="0">선택</option>
+											<option value="1" selected>전체</option>
+										</select>
 									</div>
 									<div class="serach_fitem_long_cols">
 										<div class="search_field_wrap" name="search_form" data-rowCount="5">
@@ -90,18 +93,19 @@
 								<ul class="list_sortcase_item_list">
 									<li>
 										<select class="form_select">
-											<option>선택</option>
-											<option>ID</option>
-											<option>명칭</option>
-											<option>Type</option>
-											<option>수정 일자</option>
-											<option>생성자</option>
+											<option value="0">선택</option>
+											<option value="1">ID</option>
+											<option value="2">명칭</option>
+											<option value="3">Type</option>
+											<option value="4" selected>수정 일자</option>
+											<option value="5">생성자</option>
 										</select>
 									</li>
 									<li>
 										<select class="form_select">
-											<option>올림차순</option>
-											<option>내림차순</option>
+											<option value="0">선택</option>
+											<option value="1" selected>올림차순</option>
+											<option value="2">내림차순</option>
 										</select>
 									</li>
 								</ul>
@@ -355,7 +359,7 @@
 								</div>
 							</div>
 							<div class="subform_content_row">
-								<ul class="props_form_item_list">
+								<ul class="props_form_item_list type3">
 									<li>
 										<div class="props_form_item">
 											<input type="radio" name="radio_group_01" class="props_form" id="radio_group_01_01">
@@ -410,24 +414,23 @@
 												<th><span class="subc_form_label">항목</span></th>
 												<td>
 													<select class="form_select medium dtype2">
-														<option>항목 선택</option>
-														<option>항목 선택 01</option>
-														<option>항목 선택 02</option>
-														<option>항목 선택 03</option>
-														<option>항목 선택 04</option>
-														<option>항목 선택 05</option>
+														<option value="0">항목 선택</option>
+														<option value="1">항목 선택 01</option>
+														<option value="2">항목 선택 02</option>
+														<option value="3">항목 선택 03</option>
+														<option value="4">항목 선택 04</option>
+														<option value="5">항목 선택 05</option>
 													</select>
 												</td>
 												<th><span class="subc_form_label">입력값</span></th>
 												<td>
-													<select class="form_select medium dtype2">
-														<option>항목 선택</option>
-														<option>항목 선택 01</option>
-														<option>항목 선택 02</option>
-														<option>항목 선택 03</option>
-														<option>항목 선택 04</option>
-														<option>항목 선택 05</option>
-													</select>
+													<div class="input_component_box">
+														<input type="text" class="input_origin_item" placeholder="입력">
+														<button class="btn_form_reset"><span class="hdtext">리셋</span></button>
+														<span class="count_wrap">
+															<span class="count_text"><span class="emp">0</span>/0</span>
+														</span>
+													</div>
 												</td>
 												<td class="has_control"><button type="button" class="btn_control_box primary ico_increase"><span class="hdtext">증가</span></button></td>
 											</tr>
@@ -502,6 +505,11 @@
 			localLayer(()=>{
 				// callback
 			});
+
+			/* 20230826 추가 */
+			subcFormTb();
+			formSelectInit();
+			/* // 20230826 추가 */
 		</script>
 	</div>
 </body>
