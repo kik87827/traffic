@@ -99,7 +99,7 @@ html:not(.touchmode) {
 
 .hform_layer_in_content{margin-top:30px;}
 
-.header_wrap{height:80px;flex:0 0 80px;padding:0 40px;display:flex;justify-content: space-between;}
+.header_wrap{height:80px;flex:0 0 80px;padding:0 40px;display:flex;justify-content: space-between;z-index:20;}
 .hgroup_main_cols{display:flex;/* gap:100px; */}
 .toplogo{
    padding-top:20px;
@@ -137,16 +137,39 @@ html:not(.touchmode) {
     display:flex;align-items: center;gap:15px;
     > li{}
 }
+.util_text_item_wrap{display:inline-block;position:relative;
+    &.active{
+        .util_user_list_wrap{display:block;}
+    }
+}
 .util_text_item{display:inline-block;
     font-size: 14px;
     font-weight: 700;
     line-height: 1.2;
     color: #27292c;
     white-space: nowrap;
-    position:relative;top:-2px;
+    position:relative;top:-3px;
     border-bottom:1px solid #27292c;
 }
 .util_ico_menu{display:inline-block;width:34px;height:34px;background:#d6e3f0 url("../images/ic_login@2x.png") no-repeat 50% 50%/20px auto; border-radius:100%;}
+.util_user_list_wrap{display:none;position:absolute;top:calc(100% + 8px);right:0;width:120px;background:#fff;padding:10px 0;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.15);border-radius:4px;}
+.util_user_list{
+    // > li{
+    //     margin-bottom:10px;
+    //     &:last-of-type{margin-bottom:0;}
+    // }
+}
+.util_user{
+    font-size: 14px;
+    line-height: 1;
+    text-align: left;
+    display:flex;
+    min-height:37px;box-sizing: border-box;padding:5px 15px;
+    align-items: center;
+    color: #27292c;
+
+    &:hover{color:#007e67;font-weight:500;}
+}
 
 .api_middle_wrap{flex:1;min-height:0;display:flex;gap:20px;margin:0 40px;padding-bottom:40px;}
 
@@ -259,7 +282,7 @@ html:not(.touchmode) {
   }
   
   
-  .bg_dim {display: block;width: 100%;height: 100%;position: fixed;top: 0;left: 0;z-index: 0;background : rgba(45, 53, 71, 0.50);
+  .bg_dim {display: block;width: 100%;height: 100%;position: fixed;top: 0;left: 0;z-index: 0;background : rgba(45, 53, 71, 0.50); transition:.4;
     backdrop-filter : blur(60px);
 
   }

@@ -40,7 +40,24 @@ function commonInit() {
  * 레이아웃
  */
 function layoutFunc() {
-
+  const util_text_item = document.querySelectorAll(".util_text_item");
+  const util_text_item_wrap = document.querySelectorAll(".util_text_item_wrap");
+  if (!!util_text_item) {
+    util_text_item.forEach((item) => {
+      item.addEventListener("click", (e) => {
+        const thisTarget = e.currentTarget;
+        thisTarget.closest(".util_text_item_wrap").classList.toggle("active");
+      })
+    })
+  }
+  document.querySelector("body").addEventListener("click", (e) => {
+    if (!!e.target.closest(".util_text_item_wrap")) {
+      return;
+    }
+    util_text_item_wrap.forEach((item) => {
+      item.classList.remove("active");
+    });
+  })
 }
 
 /**
@@ -131,7 +148,7 @@ DesignPopup.prototype.popupShow = function() {
   if (this.selector == null) {
     return;
   }
-  // this.domHtml.classList.add("touchDis");
+  this.domHtml.classList.add("touchDis");
 
   this.selector.classList.add("active");
   setTimeout(() => {
@@ -186,9 +203,9 @@ DesignPopup.prototype.popupHide = function() {
     if ("closeCallback" in this.option) {
       this.option.closeCallback();
     }
-    //  if (this.design_popup_wrap_active.length == 0) {
-    //    this.domHtml.classList.remove("touchDis");
-    //  }
+    if (this.design_popup_wrap_active.length == 1) {
+      this.domHtml.classList.remove("touchDis");
+    }
   }
 }
 
@@ -205,9 +222,9 @@ DesignPopup.prototype.bindEvent = function() {
   if (!!this.btn_closeTrigger) {
     closeItemArray.push(this.btn_closeTrigger);
   }
-  if (!!this.bg_design_popup) {
-    closeItemArray.push(this.bg_design_popup);
-  }
+  // if (!!this.bg_design_popup) {
+  //   closeItemArray.push(this.bg_design_popup);
+  // }
   if (closeItemArray.length) {
     closeItemArray.forEach((element) => {
       element.addEventListener("click", (e) => {
@@ -413,7 +430,7 @@ function formItemFunc() {
     // if(thisTargetParent.classList.contains("filled")){
     // }
   });
-  addDynamicEventListener(document.body, 'keyup', '.input_component_box .input_origin_item', function(e) {
+  addDynamicEventListener(document.body, 'input', '.input_component_box .input_origin_item', function(e) {
     const thisTarget = e.target;
     const thisTargetParent = thisTarget.closest(".input_component_box");
     if (thisTarget.value.length) {
@@ -745,7 +762,7 @@ function localLayer(callback) {
     });
 
     addDynamicEventListener(document.body, 'click', '.page_wrap', function(e) {
-      if (e.target.closest(".local_layer") || e.target.getAttribute("data-localpopup") || e.target.closest("[data-localpopup]") || e.target.closest(".ui_picker_render") || e.target.closest(".tui-datepicker") || e.target.classList.contains(".tui-calendar-btn")) {
+      if (e.target.closest(".local_layer") || e.target.getAttribute("data-localpopup") || e.target.closest("[data-localpopup]") || e.target.closest(".ui_picker_render") || e.target.closest(".tui-datepicker") || e.target.classList.contains("tui-calendar-btn") || e.target.classList.contains(".tui-calendar-title") || e.target.classList.contains("tui-calendar-month")) {
         return;
       }
       if (!!activeLayer) {

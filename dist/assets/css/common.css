@@ -1944,6 +1944,7 @@ html:not(.touchmode) ::-webkit-scrollbar-track {
   padding: 0 40px;
   display: flex;
   justify-content: space-between;
+  z-index: 20;
 }
 
 .hgroup_main_cols {
@@ -2022,6 +2023,14 @@ html:not(.touchmode) ::-webkit-scrollbar-track {
   align-items: center;
   gap: 15px;
 }
+.util_text_item_wrap {
+  display: inline-block;
+  position: relative;
+}
+.util_text_item_wrap.active .util_user_list_wrap {
+  display: block;
+}
+
 .util_text_item {
   display: inline-block;
   font-size: 14px;
@@ -2030,7 +2039,7 @@ html:not(.touchmode) ::-webkit-scrollbar-track {
   color: #27292c;
   white-space: nowrap;
   position: relative;
-  top: -2px;
+  top: -3px;
   border-bottom: 1px solid #27292c;
 }
 
@@ -2040,6 +2049,34 @@ html:not(.touchmode) ::-webkit-scrollbar-track {
   height: 34px;
   background: #d6e3f0 url("../images/ic_login@2x.png") no-repeat 50% 50%/20px auto;
   border-radius: 100%;
+}
+
+.util_user_list_wrap {
+  display: none;
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  width: 120px;
+  background: #fff;
+  padding: 10px 0;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+}
+
+.util_user {
+  font-size: 14px;
+  line-height: 1;
+  text-align: left;
+  display: flex;
+  min-height: 37px;
+  box-sizing: border-box;
+  padding: 5px 15px;
+  align-items: center;
+  color: #27292c;
+}
+.util_user:hover {
+  color: #007e67;
+  font-weight: 500;
 }
 
 .api_middle_wrap {
@@ -2290,6 +2327,7 @@ html:not(.touchmode) ::-webkit-scrollbar-track {
   left: 0;
   z-index: 0;
   background: rgba(45, 53, 71, 0.5);
+  transition: 0.4;
   -webkit-backdrop-filter: blur(60px);
           backdrop-filter: blur(60px);
 }
@@ -2685,10 +2723,10 @@ html:not(.touchmode) ::-webkit-scrollbar-track {
 .input_component_box.focus {
   border-color: #00b191;
 }
-.input_component_box.filled.focus .count_wrap {
+.input_component_box.filled .count_wrap {
   display: block;
 }
-.input_component_box.filled.focus .btn_form_reset {
+.input_component_box.filled .btn_form_reset {
   display: block;
 }
 .input_component_box.small {
@@ -4375,6 +4413,19 @@ select.form_select.dtype2 {
   --ct-padding: 8px;
 }
 
+.tree_nodata_wrap {
+  display: none;
+  font-size: 12px;
+}
+
+.tree_nodata {
+  padding: 10px 5px;
+  line-height: 1.3;
+  text-align: left;
+  color: #6f757d;
+  display: block;
+}
+
 .comboTreeWrapper {
   position: relative;
   text-align: left !important;
@@ -4399,19 +4450,28 @@ select.form_select.dtype2 {
 .comboTreeDropDownContainer {
   display: none;
   background: var(--ct-bg);
-  border: 1px solid var(--ct-border-color);
   z-index: 999;
-  overflow: hidden;
 }
 
 .comboTreeDropDownContainer > ul {
   padding: 0px;
   margin: 0;
-  max-height: 285px;
+  max-height: 227px;
   overflow-y: auto;
+  border: 1px solid #dadcde;
+  position: relative;
+  top: -1px;
+  border-radius: 0 0 4px 4px;
+  background: #fff;
 }
 .comboTreeDropDownContainer > ul > li {
   padding-left: 5px;
+}
+.comboTreeDropDownContainer > ul > li > .comboTreeParentPlus {
+  top: 5px;
+}
+.popup_item .comboTreeDropDownContainer > ul {
+  max-height: 171px;
 }
 
 .comboTreeDropDownContainer li {
@@ -4455,6 +4515,7 @@ span.comboTreeItemTitle, .comboTreeDropDownContainer .selectAll {
 .comboTreeParentPlus {
   position: relative;
   z-index: 2;
+  top: 6px;
 }
 
 .comboTreeItemTitle {
@@ -4518,7 +4579,7 @@ span.comboTreeItemTitle, .comboTreeDropDownContainer .selectAll {
 .comboTreeParentPlus {
   position: relative;
   left: -2px;
-  top: 4px;
+  top: 6px;
   width: 20px;
   height: 20px;
   float: left;
@@ -4568,8 +4629,9 @@ input.multiplesFilter {
   height: 30px;
   background: #fff;
   box-sizing: border-box;
-  border: 0;
-  border-bottom: 1px solid #dadcde;
+  border: 1px solid #dadcde;
+  position: relative;
+  z-index: 2;
 }
 input.multiplesFilter:focus {
   border: 1px solid #00b191;

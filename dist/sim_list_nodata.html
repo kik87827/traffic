@@ -37,9 +37,16 @@
 			<div class="hgroup_sub_cols">
 				<ul class="hgroup_util_list">
 					<li>
-						<a href="#" class="util_text_item">
-							<span class="util_who_dom">Admin</span> <span class="util_sir_dom">님</span>
-						</a>
+						<div class="util_text_item_wrap">
+							<a href="#" class="util_text_item">
+								<span class="util_who_dom">User</span> <span class="util_sir_dom">님</span>
+							</a>
+							<div class="util_user_list_wrap">
+								<ul class="util_user_list">
+									<li><a href="#" class="util_user">내정보</a></li>
+								</ul>
+							</div>
+						</div>
 					</li>
 					<li><a href="#" class="util_ico_menu"><span class="hdtext">로그아웃</span></a></li>
 				</ul>
@@ -281,17 +288,18 @@
 										<p class="form_block_title">기간</p>
 									</div>
 									<div class="form_block_content_row">
-										<div class="fgroup_item_wrap">
+										<div class="fgroup_item_wrap nogap">
 											<div class="fgroup_cols">
 												<div class="tui-datepicker-input">
-													<input type="text" id="datepicker-startinput" class="input_tui_calendar" placeholder="시작 일시 선택">
+													<input type="text" id="datepicker-startinput" class="input_tui_calendar" autocomplete="off" placeholder="시작 일시 선택">
 													<span class="tui-ico-date"></span>
 												</div>
 												<div id="form_date_start_render" class="ui_picker_render" data-parent="#filter_layer"></div>
 											</div>
+											<div class="fgroup_cols else"><span class="fgroup_elsetext">~</span></div>
 											<div class="fgroup_cols">
 												<div class="tui-datepicker-input">
-													<input type="text" id="datepicker-endinput" class="input_tui_calendar" placeholder="종료 일시 선택">
+													<input type="text" id="datepicker-endinput" class="input_tui_calendar" autocomplete="off" placeholder="종료 일시 선택">
 													<span class="tui-ico-date"></span>
 												</div>
 												<div id="form_date_end_render" class="ui_picker_render" data-parent="#filter_layer"></div>

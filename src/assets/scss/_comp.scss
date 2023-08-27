@@ -64,9 +64,9 @@
     }
     &.filled{
         
+        .count_wrap{display:block;}
+        .btn_form_reset{display:block;}
         &.focus{
-            .count_wrap{display:block;}
-            .btn_form_reset{display:block;}
         }
     }
     &.skin2{

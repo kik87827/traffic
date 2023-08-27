@@ -88,7 +88,7 @@
 											<div class="fgroup_item_wrap nogap">
 												<div class="fgroup_cols">
 													<div class="tui-datepicker-input">
-														<input type="text" id="datepicker-startinput" class="input_tui_calendar" placeholder="시작 일시 선택">
+														<input type="text" id="datepicker-startinput" class="input_tui_calendar" autocomplete="off" placeholder="시작 일시 선택">
 														<span class="tui-ico-date"></span>
 													</div>
 													<div id="form_date_start_render" class="ui_picker_render" data-parent="#filter_layer"></div>
@@ -96,7 +96,7 @@
 												<div class="fgroup_cols else"><span class="fgroup_elsetext">~</span></div>
 												<div class="fgroup_cols">
 													<div class="tui-datepicker-input">
-														<input type="text" id="datepicker-endinput" class="input_tui_calendar" placeholder="종료 일시 선택">
+														<input type="text" id="datepicker-endinput" class="input_tui_calendar" autocomplete="off" placeholder="종료 일시 선택">
 														<span class="tui-ico-date"></span>
 													</div>
 													<div id="form_date_end_render" class="ui_picker_render" data-parent="#filter_layer"></div>
@@ -290,6 +290,7 @@
 									</div>
 									<!-- Pagination -->
 									<div class="pagination_wrap">
+										<a href="javascript:;" class="btn_pagination_control first_go disabled"><span class="hdtext">처음</span></a>
 										<a href="javascript:;" class="btn_pagination_control prev_go disabled"><span class="hdtext">이전</span></a>
 										<ul class="pagination_number_list">
 											<li><a href="#" class="page_number active">1</a></li>
@@ -304,6 +305,7 @@
 											<li><a href="#" class="page_number">10</a></li>
 										</ul>
 										<a href="javascript:;" class="btn_pagination_control next_go"><span class="hdtext">다음</span></a>
+										<a href="javascript:;" class="btn_pagination_control end_go"><span class="hdtext">끝</span></a>
 									</div>
 									<!-- // Pagination -->
 								</div>

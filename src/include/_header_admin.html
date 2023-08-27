@@ -1,36 +1,13 @@
 <header class="header_wrap">
    <div class="hgroup_main_cols">
-        <h1 class="toplogo"><a href="#" class="toplogo_link"><span class="hdtext">의사교통지원 TOOL</span></a></h1>
+        <h1 class="toplogo"><a href="#" class="toplogo_link"><span class="hdtext">교통관리 서비스 Traffic Management Service</span></a></h1>
         <nav class="nav_list_wrap">
             <ul class="nav_list">
                 <li id="one_depth_01">
-                    <a href="#" class="nav_oneitem"><span class="nav_oneitem_text">정책 및 제도 분석 서비스</span></a>
-                    <div class="nav_twoitem_list_wrap">
-                        <ul class="nav_twoitem_list">
-                            <li><a href="#" class="nav_twoitem">자율차 서비스 차로 조회</a></li>
-                            <li><a href="#" class="nav_twoitem">공유 모빌리티 운행 정보 조회</a></li>
-                        </ul>
-                    </div>
+                    <a href="#" class="nav_oneitem"><span class="nav_oneitem_text">Use-case 관리</span></a>
                 </li>
                 <li id="one_depth_02">
-                    <a href="#" class="nav_oneitem"><span class="nav_oneitem_text">교통현황 모니터링</span></a>
-                    <div class="nav_twoitem_list_wrap">
-                        <ul class="nav_twoitem_list">
-                            <li><a href="#" class="nav_twoitem">지표 표출</a></li>
-                            <li><a href="#" class="nav_twoitem">모니터링 정보 분석</a></li>
-                        </ul>
-                    </div>
-                </li>
-                <li id="one_depth_03">
-                    <a href="#" class="nav_oneitem"><span class="nav_oneitem_text">혼재기 교통상황 예측</span></a>
-                    <div class="nav_twoitem_list_wrap">
-                        <ul class="nav_twoitem_list">
-                            <li><a href="#" class="nav_twoitem">지표 표출</a></li>
-                            <li><a href="#" class="nav_twoitem">모니터링 정보 분석</a></li>
-                            <li><a href="#" class="nav_twoitem">Use-case 관리</a></li>
-                            <li><a href="#" class="nav_twoitem">Simulation 목록 관리</a></li>
-                        </ul>
-                    </div>
+                    <a href="#" class="nav_oneitem"><span class="nav_oneitem_text">Simulation 목록 관리</span></a>
                 </li>
             </ul>
         </nav>
@@ -38,22 +15,14 @@
    <div class="hgroup_sub_cols">
         <ul class="hgroup_util_list">
             <li>
-                <div class="hgroup_util_item_wrap">
-                    <a href="#" class="hgroup_util_item type2">admin</a>
-                    <div class="hgroup_util_menu_list_wrap">
-                        <ul class="hgroup_util_menu_list">
-                            <li>
-                                <a href="javascript:;" class="hgroup_util_menu">
-                                    <i class="hgroup_util_ico ico_edit"></i>
-                                    <span class="hgroup_util_text">정보수정</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="hgroup_util_menu">
-                                    <i class="hgroup_util_ico ico_manage"></i>
-                                    <span class="hgroup_util_text">사용자 관리</span>
-                                </a>
-                            </li>
+                <div class="util_text_item_wrap">
+                    <a href="#" class="util_text_item">
+                        <span class="util_who_dom">Admin</span> <span class="util_sir_dom">님</span>
+                    </a>
+                    <div class="util_user_list_wrap">
+                        <ul class="util_user_list">
+                            <li><a href="#" class="util_user">내정보</a></li>
+                            <li><a href="#" class="util_user">사용자 관리</a></li>
                         </ul>
                     </div>
                 </div>
@@ -61,5 +30,165 @@
             <li><a href="#" class="util_ico_menu"><span class="hdtext">로그아웃</span></a></li>
         </ul>
    </div>
-   <div class="bg_twonav"></div>
 </header>
+
+<!-- popup -->
+<div class="popup_wrap small" id="userDataPopup">
+    <div class="bg_dim"></div>
+    <div class="popup_item">
+        <div class="popup_title_low">
+            <h2 class="popup_title">사용자 정보</h2>
+            <a href="javascript:;" class="btn_popup_close"><span class="hdtext">팝업 닫기</span></a>
+        </div>
+        <div class="popup_content_low">
+            <div class="data_viewer_table_wrap">
+                <table class="data_viewer_table">
+                    <tr>
+                        <th><span class="cform_field_label">이메일</span></th>
+                        <td><div class="data_viewer_value">abc@abc.com</div></td>
+                    </tr>
+                    <tr>
+                        <th><span class="cform_field_label">이름</span></th>
+                        <td><div class="data_viewer_value">김사용자</div></td>
+                    </tr>
+                    <tr>
+                        <th><span class="cform_field_label">전화번호</span></th>
+                        <td><div class="data_viewer_value">01012341234</div></td>
+                    </tr>
+                    <tr>
+                        <th><span class="cform_field_label">소속</span></th>
+                        <td><div class="data_viewer_value">엠큐닉</div></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="cform_btn_primary_row">
+                <a href="#" class="btn_formbox_submit primary close_trigger"><span class="btn_formbox_submit_text">수정</span></a><!-- close_trigger 자동닫힘 -->
+            </div>
+        </div>
+    </div>
+</div>
+<!-- // popup -->
+
+<!-- popup -->
+<div class="popup_wrap small" id="userDataModfyPopup">
+    <div class="bg_dim"></div>
+    <div class="popup_item">
+        <div class="popup_title_low">
+            <h2 class="popup_title">사용자 정보 수정</h2>
+            <a href="javascript:;" class="btn_popup_close"><span class="hdtext">팝업 닫기</span></a>
+        </div>
+        <div class="popup_content_low">
+            <div class="cform_field_tb_wrap">
+                <table class="cform_field_tb">
+                    <tr>
+                        <th><span class="cform_field_label">아이디</span></th>
+                        <td><div class="form_table_value">User</div></td>
+                    </tr>
+                    <tr>
+                        <th><span class="cform_field_label">이메일</span></th>
+                        <td><div class="form_table_value">abc@abc.com</div></td>
+                    </tr>
+                    <tr>
+                        <th><span class="cform_field_label imp">이름</span></th>
+                        <td>
+                            <div class="input_component_box">
+                                <input type="text" class="input_origin_item" value="김사용자" placeholder="2~16자 / 국문, 영문">
+                                <button class="btn_form_reset"><span class="hdtext">리셋</span></button>
+                                <span class="count_wrap">
+                                    <span class="count_text"><span class="emp">3</span>/40</span>
+                                </span>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th><span class="cform_field_label imp">전화번호</span></th>
+                        <td>
+                            <div class="input_component_box">
+                                <input type="text" class="input_origin_item" value="01012341234" placeholder="9~11자 / ‘-’없이 입력">
+                                <button class="btn_form_reset"><span class="hdtext">리셋</span></button>
+                                <span class="count_wrap">
+                                    <span class="count_text"><span class="emp">3</span>/40</span>
+                                </span>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th><span class="cform_field_label imp">소속</span></th>
+                        <td>
+                            <div class="input_component_box">
+                                <input type="text" class="input_origin_item" value="엠큐닉" placeholder="소속업체명">
+                                <button class="btn_form_reset"><span class="hdtext">리셋</span></button>
+                                <span class="count_wrap">
+                                    <span class="count_text"><span class="emp">3</span>/40</span>
+                                </span>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th><span class="cform_field_label imp">비밀번호</span></th>
+                        <td>
+                            <div class="input_component_box">
+                                <input type="password" class="input_origin_item" placeholder="8~16자 / 영문+숫자+특수기호 조합">
+                                <button class="btn_form_reset"><span class="hdtext">리셋</span></button>
+                                <span class="count_wrap">
+                                    <span class="count_text"><span class="emp">3</span>/40</span>
+                                </span>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th><span class="cform_field_label imp">비밀번호 확인</span></th>
+                        <td>
+                            <div class="input_component_box">
+                                <input type="password" class="input_origin_item" placeholder="비밀번호 확인">
+                                <button class="btn_form_reset"><span class="hdtext">리셋</span></button>
+                                <span class="count_wrap">
+                                    <span class="count_text"><span class="emp">3</span>/40</span>
+                                </span>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="cform_btn_primary_row">
+                <a href="#" class="btn_formbox_submit type2 close_trigger"><span class="btn_formbox_submit_text">로그아웃</span></a><!-- close_trigger 자동닫힘 -->
+                <a href="#" class="btn_formbox_submit close_trigger"><span class="btn_formbox_submit_text">저장</span></a><!-- close_trigger 자동닫힘 -->
+            </div>
+        </div>
+    </div>
+</div>
+<!-- // popup -->
+
+<script>
+    // 선언
+    var userDataPopup = new DesignPopup({
+        selector: "#userDataPopup",
+        beforeCallback(){
+            console.log('beforeCallback');
+        },
+        callback(){
+            console.log('callback');
+        }
+    });
+    var userDataModfyPopup = new DesignPopup({
+        selector: "#userDataModfyPopup",
+        beforeCallback(){
+            console.log('beforeCallback');
+        },
+        callback(){
+            console.log('callback');
+        }
+    });
+    
+
+   
+    // 퍼블확인용
+    let header_url = window.location.href.split('?')[1];
+    let header_url_2 = header_url !== undefined ? header_url.split('#')[0] : null;
+    
+    if(header_url_2 === "popup_user_data"){
+        userDataPopup.popupShow();
+    }else if(header_url_2 === "popup_user_modify"){
+        userDataModfyPopup.popupShow();
+    }
+</script>
