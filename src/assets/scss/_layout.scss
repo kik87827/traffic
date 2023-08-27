@@ -16,10 +16,13 @@ html:not(.touchmode) {
         }
     }
     &.user_body{
-        overflow:hidden;
+        // overflow:hidden;
         .page_wrap{
             height:100vh; position:relative; background:#eef1f4; 
             flex-direction: column;
+        }
+        &.else_case{
+            .page_wrap{height:auto;min-height:100vh;}
         }
     }
     .page_wrap{display:flex;
@@ -97,7 +100,7 @@ html:not(.touchmode) {
 .hform_layer_in_content{margin-top:30px;}
 
 .header_wrap{height:80px;flex:0 0 80px;padding:0 40px;display:flex;justify-content: space-between;}
-.hgroup_main_cols{display:flex;gap:100px;}
+.hgroup_main_cols{display:flex;/* gap:100px; */}
 .toplogo{
    padding-top:20px;
 }
@@ -105,7 +108,9 @@ html:not(.touchmode) {
    width:160px;height:40px;background:url("../images/logo@2x.png") no-repeat 0 0/100% auto;
 }
 
-.nav_list_wrap{padding-top:30px;}
+.nav_list_wrap{padding-top:25px;padding-left:100px;position:relative;
+    &:after{display:block;content:'';width:1px;height:40px;background:#d9d9d9;position:absolute;top:18px;left:50px;}
+}
 .nav_list{
     display:flex;gap:40px;
     > li{}
@@ -121,6 +126,9 @@ html:not(.touchmode) {
     &.active{
         font-weight:500;
         &:after{opacity:1;}
+    }
+    &:hover{
+        .nav_oneitem_text{color:#007e67;}
     }
 }
 
@@ -143,7 +151,7 @@ html:not(.touchmode) {
 .api_middle_wrap{flex:1;min-height:0;display:flex;gap:20px;margin:0 40px;padding-bottom:40px;}
 
 .api_middle_main_cols,
-.api_middle_sub_cols{flex:1; min-height:0; min-width:0;
+.api_middle_sub_cols{flex:1; min-height:0; min-width:0; border-radius:4px;
     overflow: hidden;
     overflow-y: auto;
     position: relative;
@@ -152,9 +160,9 @@ html:not(.touchmode) {
 .api_middle_sub_cols{background:#fff;border-radius:4px;
 }
 .mid_short_row{flex:0 0 0;position:relative;}
-.mid_liquid_row{flex:1;min-height: 0;position:relative;overflow-y:auto;background-color: #fff;padding:7px 20px 0;
+.mid_liquid_row{flex:1;min-height: 0;position:relative;overflow-y:auto;background-color: #fff;padding:7px 20px 40px;
     &.skin2{
-       padding:7px 8px 0 20px; 
+       padding:7px 8px 40px 20px; 
     }
     &.type2{border-radius:4px;margin-top:8px;}
 }
@@ -176,7 +184,7 @@ html:not(.touchmode) {
     display:flex;align-items: center;justify-content: center;
 }
 .btn_api_sv{
-    display:flex;gap:6px; align-items: center;
+    display:flex;gap:6px; align-items: center;height:100%;width:100%;justify-content:center;
     .ico_inc{display:block;border-radius:100%;width:20px;height:20px;flex:0 0 20px;background:#fff url("../images/ic_regist_usecase@2x.png") no-repeat 50% 50%/100% auto;}
     .btn_api_sv_text{ font-size: 15px; display:inline-block;
         font-weight: 500;
@@ -185,6 +193,7 @@ html:not(.touchmode) {
         color: #fff;
         strong{font-weight: 700;}
     }
+    &:hover{background-color: #003dc6;}
 }
 .list_data_search_wrap{margin-top:8px;}
 .listdata_render_wrap{margin-top:8px;background:#fff;border-radius:4px 4px 0 0;}
@@ -195,7 +204,7 @@ html:not(.touchmode) {
     img{vertical-align: top;}
 }
 .api_ready_ment{font-size: 20px; margin-top:34px;
-    
+    color:#575b62;
     line-height:1;
     letter-spacing: normal;
     text-align: center;
@@ -250,7 +259,9 @@ html:not(.touchmode) {
   }
   
   
-  .bg_dim {display: block;width: 100%;height: 100%;position: fixed;top: 0;left: 0;z-index: 0;background: #222;opacity:.6;
+  .bg_dim {display: block;width: 100%;height: 100%;position: fixed;top: 0;left: 0;z-index: 0;background : rgba(45, 53, 71, 0.50);
+    backdrop-filter : blur(60px);
+
   }
   
   .popup_title_low {flex: 0;padding: 38px 80px 35px;

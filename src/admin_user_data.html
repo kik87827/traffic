@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ko">
 @@include('./include/_head.html')
-<body class="front_body user_body">
+<body class="front_body user_body else_case">
 	<div class="page_wrap">
 		@@include('./include/_header.html')
 		<div class="api_middle_wrap">
@@ -228,19 +228,12 @@
 										</td>
 									</tr>
 									<tr>
-										<th><span class="cform_field_label imp">권한</span></th>
+										<th><span class="cform_field_label">권한</span></th>
 										<td>
 											<ul class="props_form_item_list type3">
 												<li>
 													<div class="props_form_item">
-														<input type="radio" name="user_choice" class="props_form" id="user_choice_01" checked>
-														<label for="user_choice_01" class="props_label">사용자</label>
-													</div>
-												</li>
-												<li>
-													<div class="props_form_item">
-														<input type="radio" name="user_choice" class="props_form" id="user_choice_02">
-														<label for="user_choice_02" class="props_label">관리자</label>
+														<span class="props_label">관리자</span>
 													</div>
 												</li>
 											</ul>
