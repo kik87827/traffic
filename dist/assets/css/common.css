@@ -715,8 +715,8 @@ html.smooth {
 }
 
 .tui-datepicker .tui-is-selectable:hover {
-  background-color: #007E67;
-  color: #fff;
+  background-color: #F0FEFB;
+  color: #007E67;
   cursor: pointer;
 }
 
@@ -2825,7 +2825,7 @@ input.input_origin_item {
   font-size: 13px;
   display: inline-block;
   font-weight: 500;
-  line-height: 1;
+  line-height: 2.2;
   text-align: center;
   color: #fff;
 }
@@ -3486,8 +3486,7 @@ input.props_form[type=radio]:checked {
 }
 .form_textarea_box .count_wrap { /* position:absolute;bottom:12px;right:12px; */
   color: #6f757d;
-  display: block;
-  margin-top: 10px;
+  display: block; /* margin-top:10px; */
   font-size: 12px;
   text-align: right;
   color: #6f757d;
@@ -3499,7 +3498,7 @@ textarea.form_textarea {
   width: 100%;
   box-sizing: border-box;
   vertical-align: top;
-  height: 63px;
+  height: 71px;
   border: 0;
   background-color: #fff;
   resize: none;
@@ -3557,10 +3556,10 @@ textarea.form_textarea.warn {
   min-height: 35px;
   padding: 0 17px;
 }
-.btn_field_box:hover .ico_field, .btn_field_box:active .ico_field {
+.btn_field_box:hover .ico_field, .btn_field_box.active .ico_field {
   background-position: 0 100%;
 }
-.btn_field_box:hover .field_box_text, .btn_field_box:active .field_box_text {
+.btn_field_box:hover .field_box_text, .btn_field_box.active .field_box_text {
   color: #007e67;
 }
 .btn_field_box .ico_field {
@@ -4150,10 +4149,10 @@ select.form_select.dtype2 {
   width: 16px;
   padding: 8px 20px;
 }
-.list_table tr:hover td {
+.list_table tr:hover td, .list_table tr.active td {
   background-color: #f0fefb;
 }
-.list_table tr:hover td .tdtext {
+.list_table tr:hover td .tdtext, .list_table tr.active td .tdtext {
   color: #007e67;
 }
 .list_table th, .list_table td {
@@ -4161,7 +4160,7 @@ select.form_select.dtype2 {
 }
 .list_table th {
   background: #f5f5f6;
-  padding: 7px;
+  padding: 3px;
 }
 .list_table td {
   padding: 8px 10px;

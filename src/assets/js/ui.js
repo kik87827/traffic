@@ -2,6 +2,7 @@ window.addEventListener("DOMContentLoaded",()=>{
   commonInit();
   formItemFunc();
   contentSkin();
+  listTableFunc();
 });
 window.addEventListener("load",()=>{
   layoutFunc();
@@ -735,6 +736,7 @@ function searchForm() {
 function localLayer(callback){
   const localTarget = document.querySelectorAll("[data-localpopup]");
   let activeLayer = document.querySelector(".local_layer.active");
+  let localTargetActive = document.querySelectorAll("[data-localpopup]");
 
   if(!!localTarget){
     localTarget.forEach((item)=>{
@@ -747,6 +749,7 @@ function localLayer(callback){
         
         if(!!thisTarget){
           thisTarget.style.top = thisCall.offsetTop+thisCall.getBoundingClientRect().height+8 + 'px';
+          thisCall.classList.toggle("active");
          thisTarget.classList.toggle("active");
          if(thisTarget.classList.contains("active")){
           window.dispatchEvent(new Event('resize'));
@@ -765,6 +768,11 @@ function localLayer(callback){
       }
       if(!!activeLayer){
         activeLayer.classList.remove("active");
+        if(!!localTargetActive){
+          localTargetActive.forEach((item)=>{
+            item.classList.remove("active");
+          })
+        }
       }
     });
 
@@ -1060,4 +1068,31 @@ function subcFormTb(){
       })
     })
   }
+}
+
+
+/* list control */
+
+function listTableFunc(){
+  addDynamicEventListener(document.body, 'click', '.list_table tbody td', function(e) {
+   const thisTd = e.target;
+   const api_middle_sub_cols = thisTd.closest(".api_middle_sub_cols");
+   const thisTr = thisTd.closest("tr");
+   const thisTrSiblings = siblings(thisTr);
+   const thisTrChk = thisTr.querySelector(".has_check .props_form");
+   if(thisTd.closest(".else_case") || !!api_middle_sub_cols){return;}
+
+   thisTrSiblings.forEach((item)=>{
+    const thisTrLoopChk = item.querySelector(".has_check .props_form");
+    if(!!thisTrLoopChk){
+      thisTrLoopChk.checked = false;
+    }
+    item.classList.remove("active");
+   })
+
+   thisTr.classList.toggle("active");
+   if(!!thisTrChk){
+     thisTrChk.checked = thisTr.classList.contains("active");
+   }
+  });
 }

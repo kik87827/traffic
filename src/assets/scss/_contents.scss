@@ -362,7 +362,7 @@ input.props_form {
 .form_textarea_box{
     position:relative;border: solid 1px #dadcde; padding:15px;
     border-radius: 4px;
-    .count_wrap{/* position:absolute;bottom:12px;right:12px; */color:#6f757d;display:block;margin-top:10px;
+    .count_wrap{/* position:absolute;bottom:12px;right:12px; */color:#6f757d;display:block;/* margin-top:10px; */
         font-size: 12px;
         text-align: right;
         color: #6f757d;
@@ -378,7 +378,7 @@ textarea.form_textarea{
     width: 100%;
     box-sizing: border-box;
     vertical-align: top;
-    height: 63px;
+    height: 71px;
     // padding: 15px 15px 35px 15px;
     border: 0;
     background-color: #fff;
@@ -411,7 +411,7 @@ textarea.form_textarea{
   display:inline-flex;align-items: center; gap:2px; flex-direction: row-reverse;
   min-height:35px; padding:0 17px;
 
-  &:hover,&:active{
+  &:hover,&.active{
     .ico_field{background-position:0 100%;}
     .field_box_text{color:#007e67;}
   }
@@ -691,14 +691,14 @@ select.form_select{
 .list_table{
     width:100%;border-top:1px solid #dadcde; white-space: nowrap;
     .has_check{width:16px;padding:8px 20px;}
-    tr:hover{
+    tr:hover,tr.active{
         td{
             background-color: #f0fefb;
             .tdtext{color:#007e67;}
         }
     }
     th,td{border-bottom: solid 1px #f5f5f6;}
-    th{background:#f5f5f6;padding:7px;}
+    th{background:#f5f5f6;padding:3px;}
     td{
         padding:8px 10px;
         &.type2{padding:6px;}

@@ -999,11 +999,12 @@
 							</div>
 							<div class="subform_content_row">
 								<div class="list_combosort_wrap">
-									<select class="form_select medium2 dtype2">
+									<!-- <select class="form_select medium2 dtype2">
 										<option value="0">파라미터 선택</option>
 										<option value="1">옵션 01</option>
 										<option value="2">옵션 02</option>
-									</select>
+									</select> -->
+									<input type="text" id="treeInput2" placeholder="파라미터 선택" class="input_tree" autocomplete="off" />
 								</div>
 								<!-- list_table_render_wrap -->
 								<div class="list_table_render_wrap">
@@ -1243,6 +1244,17 @@
 			});
 
 			formSelectInit();
+
+			var comboTree4;
+
+			$(function() {
+				comboTree4 = $('#treeInput2').comboTree({
+					source: SampleJSONData,
+					isMultiple: true,
+					cascadeSelect: true,
+					collapse: false
+				});
+			});
 
 			searchForm();
 		</script>
