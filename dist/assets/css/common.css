@@ -4236,6 +4236,8 @@ select.form_select.dtype2 {
   border-bottom: 1px solid #dadcde;
   background: #f5f5f6;
   border-top: 1px solid #dadcde;
+  overflow-x: auto;
+  position: relative;
 }
 .divide_thead_wrap .list_table {
   border-top: 0;

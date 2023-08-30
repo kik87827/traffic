@@ -729,9 +729,11 @@ select.form_select{
     text-align: center;
     color: #27292c;}
 
-.divide_table_zone{}
+.divide_table_zone{
+    .list_table{}
+}
 .divide_thead_wrap{
-    border-bottom:1px solid #dadcde;background:#f5f5f6;border-top:1px solid #dadcde;
+    border-bottom:1px solid #dadcde;background:#f5f5f6;border-top:1px solid #dadcde; overflow-x:auto; position:relative;
     .list_table{border-top:0}
 }
 .divide_tbody_wrap{position:relative;overflow-y:auto;
