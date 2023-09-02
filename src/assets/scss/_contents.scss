@@ -253,8 +253,9 @@
 .subc_form_title_else_group{display:flex;gap:10px;}
 
 .list_combosort_wrap{
-    margin-bottom:20px;
+    margin-bottom:20px; position:relative;height:30px;z-index:2;
     .form_select{width:100%;}
+    .comboTreeWrapper{position:absolute;top:0;left:0;width:100%;}
 }
 
 .subform_title_else_g{}

@@ -3301,8 +3301,17 @@ input.input_origin_item {
 
 .list_combosort_wrap {
   margin-bottom: 20px;
+  position: relative;
+  height: 30px;
+  z-index: 2;
 }
 .list_combosort_wrap .form_select {
+  width: 100%;
+}
+.list_combosort_wrap .comboTreeWrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
 }
 
