@@ -700,10 +700,33 @@ select.form_select{
     th,td{border-bottom: solid 1px #f5f5f6;}
     th{background:#f5f5f6;padding:3px;}
     td{
-        padding:8px 10px;
+        padding:8px 10px; cursor: pointer;
         &.type2{padding:6px;}
         &.type3{padding:0 6px;}
-        &.nodata_td{background:#fff !important;}
+        &.nodata_td{cursor: default;background:#fff !important;}
+    }
+    // &.else_case{
+    //     tbody{
+    //         tr{
+    //             &:hover{
+    //                 td{background:#fff !important;}
+    //             }
+    //         }
+    //     }
+    // }
+}
+.api_middle_sub_cols,.popup_content_low{
+    .list_table{
+        tbody{
+            tr{
+                &:hover{
+                    td{background:#fff !important;}
+                    *,
+                    .tdtext{color:#3f4247;}
+                }
+                td{ cursor: default;}
+            }
+        }
     }
 }
 .thtext{display:inline-block;font-size:13px;color:#3f4247;line-height:1;}

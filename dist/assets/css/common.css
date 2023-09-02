@@ -4164,6 +4164,7 @@ select.form_select.dtype2 {
 }
 .list_table td {
   padding: 8px 10px;
+  cursor: pointer;
 }
 .list_table td.type2 {
   padding: 6px;
@@ -4172,7 +4173,20 @@ select.form_select.dtype2 {
   padding: 0 6px;
 }
 .list_table td.nodata_td {
+  cursor: default;
   background: #fff !important;
+}
+
+.api_middle_sub_cols .list_table tbody tr:hover td, .popup_content_low .list_table tbody tr:hover td {
+  background: #fff !important;
+}
+.api_middle_sub_cols .list_table tbody tr:hover *,
+.api_middle_sub_cols .list_table tbody tr:hover .tdtext, .popup_content_low .list_table tbody tr:hover *,
+.popup_content_low .list_table tbody tr:hover .tdtext {
+  color: #3f4247;
+}
+.api_middle_sub_cols .list_table tbody tr td, .popup_content_low .list_table tbody tr td {
+  cursor: default;
 }
 
 .thtext {
