@@ -3535,13 +3535,13 @@ textarea.form_textarea.warn {
   border-top: 0;
 }
 .tb_box_wrap .list_table th {
-  padding: 4px 5px 5px;
+  padding: 6px 6px 7px;
 }
 .tb_box_wrap .list_table th .thtext {
   color: #6f757d;
 }
 .tb_box_wrap .list_table td {
-  padding: 4px 5px 5px;
+  padding: 6px 6px 7px;
   font-weight: 300;
 }
 .tb_box_wrap .list_table td.has_check {
@@ -4157,6 +4157,8 @@ select.form_select.dtype2 {
 .list_table .has_check {
   width: 16px;
   padding: 8px 20px;
+  font-size: 0;
+  line-height: 0;
 }
 .list_table tr:hover td, .list_table tr.active td {
   background-color: #f0fefb;
@@ -4172,14 +4174,19 @@ select.form_select.dtype2 {
   padding: 3px;
 }
 .list_table td {
-  padding: 8px 10px;
+  padding: 11px 10px;
   cursor: pointer;
+  line-height: 1;
 }
 .list_table td.type2 {
-  padding: 6px;
+  padding: 0 6px;
+  font-size: 0;
+  line-height: 0;
 }
 .list_table td.type3 {
   padding: 0 6px;
+  font-size: 0;
+  line-height: 0;
 }
 .list_table td.nodata_td {
   cursor: default;
@@ -4215,7 +4222,7 @@ select.form_select.dtype2 {
 }
 
 .data_count_box_wrap {
-  margin-top: 0;
+  margin-top: 1px;
   font-size: 0;
   line-height: 0;
 }
